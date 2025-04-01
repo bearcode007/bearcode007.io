@@ -1,0 +1,782 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px; /* 默认字体大小 16px，1rem = 16px */
+    font-family: 'Noto Serif JP','Microsoft YaHei' , 'Roboto';
+    letter-spacing: 0.17rem; /* 字母之间的间距 */
+    line-height: 2rem;
+  }
+  
+  /* 背景容器 */
+  .background-container {
+    position: relative;
+    width: 100%;
+    height: auto; /* 高度为视口的高度，适应屏幕 */
+    background-size: cover; /* 保持图片比例，覆盖整个容器 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white; 
+  }
+  
+
+  
+  /* 顶部导航栏 */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2vh 8vw 1vh ;
+    position: fixed; /* 固定导航栏 */
+    z-index: 9999; /* 确保导航栏处于页面所有其他内容的上层 */
+    background-color: transparent; /* 初始状态下背景透明 */
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+  }
+
+  .header.scrolled {
+    background-color: white; /* 滚动时背景变为白色 */
+  }
+  
+  .logo img {
+    width: 4rem; /* logo 的宽度 */
+    height: auto;
+    padding-top: 1rem;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navbar ul li {
+    margin-left: 5vw;
+  }
+
+/* 汉堡菜单按钮样式 */
+.hamburger-menu {
+  display: none; /* 默认不显示 */
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  top: 4vh;
+  right: 6vw;
+  z-index: 1000; /* 确保按钮在最上层 */
+  position: absolute;
+  border: none;
+  background-color: transparent;
+}
+
+.hamburger-menu span {
+  display: none; /* 默认不显示 */
+  width: 100%;
+  height:2px;
+  background-color: rgb(31, 31, 31);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 1000; /* 确保按钮在最上层 */
+}
+
+.hamburger-menu span:nth-child(1) {
+  top:0;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-menu span:nth-child(3) {
+ bottom: 0;
+}
+
+
+
+
+/* 小屏幕菜单样式 */
+.mobile-menu {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* 铺满整个屏幕 */
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  z-index: 999; /* 确保菜单在内容上层 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mobile-menu ul {
+  list-style: none; /* 去掉列表符号 */
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 文字居中 */
+}
+
+.mobile-menu ul li {
+  margin: 1.5rem 0; /* 菜单项之间的间距 */
+}
+
+.mobile-menu ul li a {
+  color: white; /* 文字颜色 */
+  text-decoration: none; /* 去掉下划线 */
+  font-size: 1.2rem; /* 文字大小 */
+  font-family: Noto Serif JP;
+  font-weight: 500;
+}
+
+/* 小屏幕下显示汉堡按钮 */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hamburger-menu span {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .navbar ul {
+  display: none;
+  }
+
+}
+
+/* 点击汉堡按钮后显示菜单 */
+.mobile-menu.active {
+  display: flex; /* 显示菜单 */
+}
+
+
+  /* 导航栏链接样式 */
+.navbar a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: Robot0;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+  /* 下拉菜单样式 */
+.navbar .dropdown {
+    position: relative; /* 使得子菜单可以相对于这个父元素定位 */
+  }
+  
+  .navbar .dropdown-menu {
+    display: none; /* 默认隐藏菜单 */
+    position: absolute;
+    top: 106%; /* 将菜单放置在父项的下方 */
+    left: 0;
+    background-color: white;
+    min-width: 150px; /* 可以根据需要调整菜单宽度 */
+    width: auto;
+    z-index: 1000;
+  }
+  
+  .navbar .dropdown-menu li {
+    padding: 0rem 0.1rem 0.1rem 0.25rem;
+    margin: 0; /* 确保没有额外的 margin */
+    white-space: nowrap; /* 禁止换行 */
+  }
+
+  /* 下拉菜单链接样式 */
+.navbar .dropdown-menu li a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1rem;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+  /* 创建下划线的伪元素 */
+.navbar a::after,
+.navbar .dropdown-menu li a::after {
+  content: ''; /* 创建伪元素 */
+  position: absolute;
+  bottom: -2px; /* 下划线离文字稍微有些距离 */
+  left: 0;
+  width: 0; /* 初始宽度为0 */
+  height: 1px; /* 下划线的高度 */
+  background-color:#774CE8; /* 下划线的颜色 */
+  transition: width 0.3s ease; /* 平滑过渡下划线的宽度 */
+}
+
+/* 鼠标悬停时文字颜色变紫色 */
+.navbar a:hover,
+.navbar .dropdown-menu li a:hover {
+  color:#774CE8; /* 鼠标悬停时文字变为紫色 */
+}
+
+/* 鼠标悬停时下划线从左到右扩展 */
+.navbar a:hover::after,
+.navbar .dropdown-menu li a:hover::after {
+  width: 100%; /* 鼠标悬停时下划线的宽度扩展到100% */
+}
+  
+  /* 鼠标悬停显示下拉菜单 */
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block; /* 鼠标悬停时显示菜单 */
+  }
+
+  .navbar .dropdown-menu .menu-item-1 {
+    font-family: 'Roboto'; /* 这里是第一个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-2 {
+    font-family: 'Noto Serif JP'; /* 这里是第二个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-3 {
+    font-family: 'Microsoft YaHei'; /* 这里是第三个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-4 {
+    font-family: 'Noto Serif JP'; /* 这里是第四个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-5 {
+    font-family: 'Noto Serif JP'; /* 这里是第五个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-6 {
+    font-family: 'Roboto'; /* 这里是第六个菜单项的字体 */
+    font-weight: 400;
+  }
+
+  .navbar .dropdown-menu li::before {
+    content: '—'; /* 使用短横杠 */
+    margin-right: 0.5rem; /* 设置横杠与文字之间的间距 */
+    font-size: 1rem; /* 调整横杠的大小 */
+    color: rgb(31, 31, 31); /* 设置横杠的颜色 */
+  }
+
+  main {
+    text-align: center;
+    color: rgb(31, 31, 31);
+  }
+
+  /* 图片容器 */
+  .image-container {
+    width: 50vw; /* 图片宽度 */
+    height: auto; /* 高度自适应 */
+    margin: 16vh auto -20vh 20vw; /* 上边距 17vh，水平居中 */
+    position: relative; /* 相对定位，用于内部文字的绝对定位 */
+  }
+
+  /* 图片样式 */
+  .image-container img {
+    width: 100%; /* 图片宽度填满容器 */
+    height: auto; /* 高度自适应 */
+    display: block; /* 避免图片下方有空白间隙 */
+  }
+
+/* 
+  .text-overlay {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    width: 80%;
+  }
+
+  .text-overlay h{
+    font-size: 4rem; 
+    font-family: 'Microsoft YaHei'; 
+    white-space: nowrap; 
+    font-weight: 500;
+    margin-bottom:3rem;
+  }
+
+  .text-overlay h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-family: 'Noto Serif JP';
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  
+  .text-overlay h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+    font-family: 'Roboto';
+    font-weight: 400;
+  }
+  
+  .text-overlay p {
+    font-size: 1.2rem;
+    font-family: 'Noto Serif JP';
+    font-weight: 500;
+  } */
+
+  .full-width-image img {
+    width: 100%;
+    height: auto;
+  } 
+
+
+  /* 外层容器，包含图片和文字块 */
+  .section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+  
+  .image-text-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+  }
+  
+  .image {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .text-box {
+    position: relative;
+    width: 50%;
+    background-color: #F6E3E9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* 使文字居中 */
+    color: rgb(31, 31, 31);
+  }
+
+  .text-box2 {
+    position: relative;
+    width: 50%;
+    background-color: #EFF9E1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* 使文字居中 */
+  }
+  .text-box3 {
+    position: relative;
+    width: 50%;
+    background-color: #E7E2F4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* 使文字居中 */
+  }
+
+  .text-box4 {
+    position: relative;
+    width: 50%;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* 使文字居中 */
+  }
+  
+  .tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(31, 31, 31,0.4);
+    padding: 0.5rem 2rem ;
+    color: white;
+    font-weight: bold;
+    border-radius: 0 0 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .tag2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(31, 31, 31,0.4);
+    padding: 0.5rem 2rem ;
+    color: white;
+    font-weight: bold;
+    border-radius: 0 0 0.5rem 0 ;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin: 4vh 0 0 0 ;
+    font-weight: 500;
+    font-family: 'Roboto'; 
+    color: #383838;
+  }
+
+  .title2 {
+    font-size: 3rem;
+    margin: 4vh 0 0 0;
+    font-weight: 500;
+    font-family: 'Microsoft YaHei'; 
+    color: #383838;
+  }
+
+  .title3 {
+    font-size: 2rem;
+    margin: 3vh 0 4vh 0;
+    font-weight: 600;
+    font-family: 'Noto Serif JP'; 
+    color: #383838;
+  }
+
+  .title4 {
+    font-size: 3rem;
+    margin: 4vh 0 0 0;
+    font-weight: 600;
+    font-family: 'Noto Serif JP'; 
+    color: #383838;
+  }
+
+  .title5 {
+    font-size: 3rem;
+    margin: 4vh 0;
+    font-weight: 600;
+    font-family: 'Noto Serif JP'; 
+    color: #383838;
+  }
+  
+  .description {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-family: "Noto Serif JP";
+    font-weight: 500;
+    width: 30vw;
+    margin: 8vh auto;
+    color: rgb(31, 31, 31);
+  }
+
+  .description2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-family: "Roboto";
+    font-weight: 400;
+    width: 30vw;
+    margin: 8vh auto;
+    color: rgb(31, 31, 31);
+  }
+
+  .description3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-family: "Noto Serif JP";
+    font-weight: 500;
+    width: 30vw;
+    margin: 8vh auto;
+    color: rgb(31, 31, 31);
+  }
+
+  .description4 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-family: "Noto Serif JP";
+    font-weight: 500;
+    width: 30vw;
+    margin: 6vh auto;
+    color: rgb(31, 31, 31);
+  }
+
+  .description5 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-family: "Noto Serif JP";
+    font-weight: 500;
+    width: 25vw;
+    margin: 8vh auto;
+    color: rgb(31, 31, 31);
+  }
+  
+  .button {
+    display: inline-block;
+    background-color: #ffff;
+    color: #383838;
+    text-decoration: none; 
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto'; 
+    font-weight: 500;
+    border-radius: 999rem; /* 圆角设置为两边圆弧 */
+    text-align: center; /* 设置按钮内文字水平居中 */
+    padding: 0.6rem 5rem; /* 上下 10px，左右 82px */
+    width: auto;
+    margin: 0 auto;
+  }
+  
+  .button:hover {
+    background-color: transparent; /* 悬浮时背景色透明 */
+    color: rgb(31, 31, 31); /* 保持文字颜色 */
+    outline: 3px solid#FFF; /* 悬浮时添加边框 */
+  }
+
+  /* 初始状态：文字隐藏在下方 */
+  .text-content.scroll-effect {
+    opacity: 0; /* 初始透明度为 0 */
+    transform: translateY(50px); /* 初始位置：向下移动 50px */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* 平滑过渡效果 */
+  }
+
+  /* 滚动到视口时的状态：文字从下往上移动并显示 */
+  .text-content.scroll-effect.active {
+    opacity: 1; /* 完全显示 */
+    transform: translateY(0); /* 移动到原始位置 */
+  }
+
+    /* 默认情况下显示项目部分 */
+    .section-container  {
+      display: block;
+    }
+
+  .mobile-layout  {
+    display: none; /* 隐藏项目部分 */
+    }
+
+  /* 底部样式 */
+  .footer {
+    background-color: rgb(31, 31, 31); /* 页脚背景颜色 */
+    padding: 2rem 0; /* 内边距 */
+    text-align: center; /* 居中对齐 */
+    font-size: 1.2rem; /* 字体大小 */
+    color: #fff; /* 文字颜色 */
+    position: relative;
+    width: 100%;
+  }
+  
+  .footer p {
+    margin: 0; /* 去掉默认的段落间距 */
+  }
+  
+  @media (max-width: 1400px) {
+  
+    .hero p {
+      font-size: 1.7rem;
+    }
+  
+    .content h2 {
+      font-size: 1.4rem;
+    }
+  
+    .content p {
+      font-size: 1rem;
+    }
+
+    .logo img {
+        width: 3.5rem; /* logo 的宽度 */
+        height: auto;
+      }
+
+    .navbar .dropdown-menu li a {
+        font-size: 0.8rem;
+      }
+
+    .navbar a {
+        font-size: 1rem;
+      }
+
+      .tag {
+        font-size: 1rem;
+      }
+    
+      .tag2 {
+        font-size: 1rem;
+      }
+      
+      .title {
+        font-size: 1.7rem; 
+      }
+      .title2 {
+        font-size: 1.7rem;
+      }
+    
+      .title3 {
+        font-size: 1.7rem;
+        margin: 2vh 0;
+      }
+    
+      .title4 {
+        font-size: 1.7rem;
+      }
+    
+      .title5 {
+        font-size: 1.7rem;
+      }
+      
+      .description {
+        font-size: 1rem;
+        margin: 4vh auto;
+      }
+
+      .description2 {
+        font-size: 1rem;
+        margin: 4vh auto;
+      }
+
+      .description3 {
+        font-size: 1rem;
+        width: 32vw;
+        margin: 4vh auto;
+      }
+
+      .description4 {
+        font-size: 1rem;
+        margin: 4vh auto ;
+      }
+
+      .description5 {
+        font-size: 1rem;
+        margin: 4vh auto;
+      }
+      
+      .button {
+        font-size: 1rem;
+      }
+
+          /* 图片容器 */
+      .image-container {
+        width: 50vw; /* 图片宽度 */
+        height: auto; /* 高度自适应 */
+        margin: 16vh auto -10vh 20vw; /* 上边距 17vh，水平居中 */
+        position: relative; /* 相对定位，用于内部文字的绝对定位 */
+      }
+
+  }
+
+  
+  @media (max-width: 768px) {
+   
+     /* 背景容器 */
+  .background-container {
+    height: auto; /* 高度为视口的高度，适应屏幕 */
+  }
+
+    main {
+      padding: 10vh 0 0 0;
+    }
+
+    .header {
+      padding: 3vh 6vw 1vh ;
+    }
+
+    .hero .myName {
+      font-size: 3rem; /* 大标题 */
+    }
+  
+    .content h1 {
+      font-size: 1.6rem;
+    }
+    
+  
+    .content h2 {
+      font-size: 1.2rem;
+    }
+  
+    .content p {
+      font-size: 1rem;
+    }
+
+    .logo img {
+        width: 3rem; /* logo 的宽度 */
+        height: auto;
+      }
+    
+    .section-container  {
+        display: none; /* 隐藏项目部分 */
+      }  
+
+    .mobile-layout {
+      display: flex; /* 使用 flex 布局 */
+      flex-direction: column; /* 垂直排列 */
+      align-items: center; /* 内容居中 */
+      justify-content: center; /* 内容居中 */
+      text-align: center; /* 文字居中 */
+       /*background-color: #E7E2F4; 背景色 */
+    }
+
+    .mobile-layout img {
+      width: 100%; /* 图片宽度占满容器 */
+      height: auto; /* 高度自适应 */
+    }
+
+    .mobile-layout button {
+      display: inline-block;
+      background-color: #ffff;
+      text-decoration: none; 
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+      font-family: 'Roboto'; 
+      font-weight: 400;
+      border-radius: 999rem; /* 圆角设置为两边圆弧 */
+      text-align: center; /* 设置按钮内文字水平居中 */
+      padding: 0rem 3rem; 
+      width: auto;
+      margin: 0vh auto; 
+    }
+
+    .mobile-layout button:hover {
+      background-color: transparent; /* 悬浮时背景色透明 */
+      color: rgb(31, 31, 31); /* 保持文字颜色 */
+      outline: 2px solid#FFF; /* 悬浮时添加边框 */
+    }
+
+    .bg-color-1 {
+      background-color: #E7E2F4; /* 背景色 1 */
+    }
+    
+    .bg-color-2 {
+      background-color: #C3E1F6; /* 背景色 2 */
+    }
+
+    .bg-color-3 {
+      background-color: #F8EDDB; /* 背景色 2 */
+    }
+
+    .bg-color-4 {
+      background-color: #F5F5F5; /* 背景色 2 */
+    }
+
+    .bg-color-5 {
+      background-color: #EFF9E1; /* 背景色 2 */
+    }
+
+    .footer{
+      font-size: 0.7rem;
+      padding: 0.8rem 0; /* 内边距 */
+    }
+
+    /* 图片容器 */
+    .image-container {
+      width: 60vw; /* 图片宽度 */
+      height: auto; /* 高度自适应 */
+      margin: 0 auto 0vh 20vw; /* 上边距 17vh，水平居中 */
+      position: relative; /* 相对定位，用于内部文字的绝对定位 */
+    }
+
+}

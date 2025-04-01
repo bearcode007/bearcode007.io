@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer">
+    <title>Scence Map</title>
+    <link rel="stylesheet" href="scene map.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1234567_xxx.css">
+
+  </head>
+
+
+
+  <body>
+     <!-- 背景区域 -->
+     <div class="background-container">
+        <!-- 顶部导航栏 -->
+        <header class="header">
+          <div class="logo">
+              <a href="./index.html"> <!-- 将图片包裹在 <a> 标签中 -->
+                <img data-src="https://i.imgur.com/eDoAbSe.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea47530ba3d5a1d7e7fea2.png"
+                alt="Logo" />
+                </a>
+          </div>
+  
+          <nav class="navbar">
+            <ul>
+              <li class="dropdown">
+                  <a href="#project-section">Project</a>
+                  <!-- 暂时不要下拉菜单了，因为效果有点丑 -->
+                  <!-- <ul class="dropdown-menu">
+                      <li><a href="#" class="menu-item-1">SceneMap</a></li>
+                      <li><a href="#" class="menu-item-2">不動産サイト</a></li>
+                      <li><a href="#" class="menu-item-3">易米易货</a></li>
+                      <li><a href="#" class="menu-item-4">アクティブカレンダー</a></li>
+                      <li><a href="#" class="menu-item-5">カクテルメーカー</a></li>
+                      <li><a href="#" class="menu-item-6">OTHERS</a></li>
+                    </ul> -->
+                </li>
+              <li><a href="./about.html">About Me</a></li>
+            </ul>
+          </nav>
+
+            <!-- 汉堡菜单按钮 -->
+          <button class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+  
+          <!-- 小屏幕菜单 -->
+          <div class="mobile-menu">
+            <ul>
+              <li><a href="./scene map.html">SceneMap</a></li>
+              <li><a href="./fangdichan.html">不動産サイト</a></li>
+              <li><a href="./laonian.html">シニアのひろば</a></li>
+              <li><a href="./yimiyihuo.html">易米易货</a></li>
+              <li><a href="./jiweijiu.html">カクテルメーカー</a></li>
+              <li><a href="./other.html">OTHERS</a></li>
+              <li><a href="./about.html">About Me</a></li>
+            </ul>
+          </div>
+
+        </header>
+
+          <!-- 主体内容 -->
+          <main>
+            <section class="hero">
+              <img data-src="https://i.imgur.com/2IltuhI.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea56bd0ba3d5a1d7e80c01.png"
+                alt="mainimage" class="main-image" />
+            </section>
+            <section class="content">
+              <p class="intro-text">アニメ取材地検索アプリ「SceneMap」は、アニメの取材地を検索し、シーンと実際の風景を比較できるサービスです。気になるアニメを検索すると取材地が表示され、旅行ルート提案や対比写真の作成も可能です。</p>
+              <div class="icon-modules">
+                <div class="icon-module">
+                  <img data-src="https://i.imgur.com/nq66w1V.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea57410ba3d5a1d7e80c2a.png"
+                  alt="icon1" class="icon" />
+                  <div class="module-text">
+                    <span class="title">TIME</span>
+                    <span class="subtitle">1ヶ月</span>
+                  </div>
+                </div>
+                <div class="icon-module">
+                  <img data-src="https://i.imgur.com/DAtsxia.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea57410ba3d5a1d7e80c29.png"
+                  alt="icon2" class="icon" />
+                  <div class="module-text">
+                    <span class="title">DATE</span>
+                    <span class="subtitle">2024年11月</span>
+                  </div>
+                </div>
+                <div class="icon-module">
+                  <img data-src="https://i.imgur.com/6khQtkx.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea57410ba3d5a1d7e80c27.png"
+                  alt="icon3" class="icon" />
+                  <div class="module-text">
+                    <span class="title">ROLE</span>
+                    <span class="subtitle">UI/UX designer</span>
+                  </div>
+                </div>
+                <div class="icon-module">
+                  <img data-src="https://i.imgur.com/bhUsAK4.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea57410ba3d5a1d7e80c28.png"
+                  alt="icon4" class="icon" />
+                  <div class="module-text">
+                    <span class="title">AGENCY</span>
+                    <span class="subtitle">Google UX</span>
+                    <span class="subtitle">Design Course</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+      </div>
+
+      <!-- 问题部分 -->
+          <section class="background-section">
+            <div class="bg-overlay">
+              <h1 class="main-title">なぜこのアプリ</h1>
+              <div class="template">
+                <img data-src="https://i.imgur.com/alpN6Rh.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea58150ba3d5a1d7e80c6f.png"
+                alt="image" class="template-image" />
+                
+                <div class="template-text">
+                  <p>アニメファンが好きなアニメ作品を見て、現実の取材地に行って写真を撮りたいと思っても、</p>
+                </div>
+              </div>
+          
+              <div class="template">
+                <div class="template-text">
+                  <p1>現在の情報はネット上に散らばっていて、取材地を簡単かつ正確に見つけるのが難しいです。</p1>
+                </div>
+                <img data-src="https://i.imgur.com/6XfIdU8.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea58150ba3d5a1d7e80c6e.png"
+                alt="image" class="template-image" />
+              </div>
+              <div class="template">
+                <div class="template-text">
+                  <p2>現在の情報はネット上に散らばっていて、取材地を簡単かつ正確に見つけるのが難しいです。</p2>
+                </div>
+              </div>
+
+              <!-- 用户研究 -->
+              <div class="template-top">
+                <h1 class="main-title">ユーザーリサーチ</h1>
+                <h3 class="small-title">ペルソナ</h3>
+              </div>
+            
+              <div class="template-bottom">
+                <img data-src="https://i.imgur.com/RHMhCFf.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea58140ba3d5a1d7e80c6c.png"
+                alt="image" class="template-image-bottom" />
+                <div class="template-text-bottom">
+                  <p>王さん</p>
+                  <p>28歳</p>
+                  <p3>普通の会社員、趣味はアニメ鑑賞と旅行です。アニメ関連のイベントやコミケなどにもよく参加している。普段は仕事が忙しく、休みも短いため、旅行の計画を立てる時間があまりない。旅行の際はネットで他の人が作った旅行プランを参考にすることが多い。</p3>
+                </div>
+              </div>
+              <div class="template-text-solo">
+                  <p>普通の会社員、趣味はアニメ鑑賞と旅行です。アニメ関連のイベントやコミケなどにもよく参加している。普段は仕事が忙しく、休みも短いため、旅行の計画を立てる時間があまりない。旅行の際はネットで他の人が作った旅行プランを参考にすることが多い。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="two-blocks">
+            <div class="block left">
+              <h3 class="small-title2">エピソード</h3>
+              <p>多くの場所を旅行したので、最近行きたい場所が減ってきました。好きなアニメの取材地に行って写真を撮れば、アニメをもっと身近に感じられて楽しめそうです。</p>
+            </div>
+            <div class="block right">
+              <h3 class="small-title2">ペイン</h3>
+              <p>普段は忙しくて、アニメの取材地に関する情報が少なく、休みの間にどう計画を立てるか分からないです。</p>
+            </div>
+          </section>
+          
+          <section class="content-section">
+            <div class="sectionTitle">
+            <h2 class="section-title">ユーザージャーニーマップ</h2> <!-- 标题 -->
+            </div>
+            <p class="section-text">目標：アニメファンとして、好きなアニメに登場する撮影地を巡りたい。</p> <!-- 文字说明 -->
+            <div class="otherimage">
+              <img data-src="https://i.imgur.com/ZxBxgpE.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea58150ba3d5a1d7e80c71.png"
+              alt="image" class="responsive-image" />
+            </div>
+          </section>
+
+          <section class="image-section">
+            <h2 class="main-title">どう解決</h2> <!-- 标题, 使用之前定义的main-title类 -->
+            
+            <div class="otherimage3">
+              <div class="image-item">
+                <img data-src="https://i.imgur.com/ExfkxNP.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea58210ba3d5a1d7e80c75.png"
+                alt="image" class="image" />
+                <p class="image-subtitle">取材地のマップ表示</p> <!-- 小标题 -->
+                <p class="image-caption">取材地がマップ上にアイコンで表示され、選択したアニメや地域の全ての取材地が確認できます。</p> <!-- 文字说明 -->
+              </div>
+              <div class="image-item">
+                <img data-src="https://i.imgur.com/D7trQpe.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea58200ba3d5a1d7e80c74.png"
+                alt="image" class="image" />
+                <p class="image-subtitle">アニメ作品検索</p> <!-- 小标题 -->
+                <p class="image-caption">アニメを検索すると、取材地がマップとリストで表示されます。</p> <!-- 文字说明 -->
+              </div>
+              <div class="image-item">
+                <img data-src="https://i.imgur.com/Osk0VQn.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea58250ba3d5a1d7e80c77.png"
+                alt="image" class="image" />
+                <p class="image-subtitle">カスタムルート作成</p> <!-- 小标题 -->
+                <p class="image-caption">取材地を基に最適な旅行ルートが作成されます。</p> <!-- 文字说明 -->
+              </div>
+            </div>
+          </section>
+          
+          <section class="design-section">
+            <h1 class="main-title">デザイン<!-- 使用已定义的 main-title 类 -->
+
+              <!-- 手绘线框图小标题 -->
+              <div class="sectionTitle">
+                <h2 class="sub-title">手書きのワイヤーフレーム</h2> 
+              </div>
+              <div class="handImage">
+                <img data-src="https://i.imgur.com/HurXlxJ.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea59d80ba3d5a1d7e80cff.png"
+                alt="image" class="handImageFive" />
+              </div>
+              <div class="handDecription">
+                <h2 class="handDecriptionText">5つのホーム画面ワイヤーフレームを通じて、異なるレイアウト案を探り、個人的に好ましいデザイン要素をマークしました。</h2> <!-- 手绘线框图小标题 -->
+              </div>
+
+              <!-- 电子线框图 -->
+              <div class="sectionTitle">
+                <h2 class="sub-title">電子ワイヤーフレーム</h2> 
+              </div>
+
+              <div class="handImage1">
+                <img data-src="https://i.imgur.com/mn9YNSK.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea5a320ba3d5a1d7e80d39.png"
+                alt="image" class="handImageFive1" />
+              </div>
+
+              <!-- 用户测试 -->
+              <div class="sectionTitle">
+                <h2 class="sub-title">ユーザーテスト</h2> 
+              </div>
+
+              <div class="userTestContainer">
+                <div class="userTestImage"> 
+                  <!-- 第一张图 -->
+                  <img data-src="https://i.imgur.com/MQ4WIHn.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea5a2e0ba3d5a1d7e80d34.png"
+                  alt="image" class="testImage" />
+                
+                  <!-- 第二张图 -->
+                  <img data-src="https://i.imgur.com/8mot6Dn.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea5a2f0ba3d5a1d7e80d35.png"
+                  alt="image" class="testImage" />
+               </div>
+                <!-- 文字描述 -->
+                <div class="testDescription">
+                  <p>
+                    ユーザーテストの結果、ホーム画面に<span class="highlight">地図がない</span>と場所がわかりにくく、<span class="highlight">情報が多すぎる</span>ことが判明しました。改善案として、<span class="highlight">地図を中心に</span>配置し、<span class="highlight">場所情報を強調</span>。<span class="highlight">作品展示</span>はサブメニューに移動し、<span class="highlight">写真アップロード</span>ボタンを<span class="highlight">追加</span>しました。
+                  </p>
+                </div>
+              </div>
+
+              <div class="userTestContainer1">
+
+                <!-- 文字描述 -->
+                <div class="testDescription1">
+                  <p>
+                    ユーザーテストを通じて、初期バージョンの行程安排ページの機能が不足しており、ユーザーが<span class="highlight">地点情報や行程安排</span>を直感的に<span class="highlight">理解できない</span>ことが判明しました。改善後、スマートな行程安排、地図の<span class="highlight">可視化、交通手段の推薦機能</span>を追加し、ユーザーがより簡単に旅程を計画できるようになりました。
+                  </p>
+                </div>
+
+                <div class="userTestImage"> 
+                  
+                  <!-- 第一张图 -->
+                  <img data-src="https://i.imgur.com/V0m3cAc.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea5a2d0ba3d5a1d7e80d33.png"
+                  alt="image" class="testImage1" />
+                
+                  <!-- 第二张图 -->
+                  <img data-src="https://i.imgur.com/nJ8KQkM.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea5b080ba3d5a1d7e80dbd.png"
+                  alt="image" class="testImage" />
+                </div>
+
+                <div class="testDescription2">
+                  <p>
+                    ユーザーテストを通じて、初期バージョンの行程安排ページの機能が不足しており、ユーザーが<span class="highlight">地点情報や行程安排</span>を直感的に<span class="highlight">理解できない</span>ことが判明しました。改善後、スマートな行程安排、地図の<span class="highlight">可視化、交通手段の推薦機能</span>を追加し、ユーザーがより簡単に旅程を計画できるようになりました。
+                  </p>
+                </div>
+                
+              </div>
+
+              <div class="userTestContainer2">
+                <div class="userTestImage"> 
+                  <!-- 第一张图 -->
+                  <img data-src="https://i.imgur.com/f0wwpqQ.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea5b080ba3d5a1d7e80dbe.png"
+                  alt="image" class="testImage" />
+                
+                  <!-- 第二张图 -->
+                  <img data-src="https://i.imgur.com/U5Q3FCD.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea5b080ba3d5a1d7e80dbc.png"
+                  alt="image" class="testImage" />
+                </div>
+              
+                <!-- 文字描述 -->
+                <div class="testDescription">
+                  <p>
+                    ユーザーテストを通じて、初期バージョンの地点詳細ページの<span class="highlight">機能が単一</span>であり、ユーザーが<span class="highlight">コメント機能を追加</span>して意思決定を支援してほしいという要望が判明しました。改善後、<span class="highlight">ユーザーコメントと注意事項の提示</span>を追加し、ユーザーがより包括的に地点情報を理解できるようになりました。
+                  </p>
+                </div>
+              </div>
+
+            <div class="sectionTitle">
+              <h2 class="sub-title">ユーザーフロー</h2> <!-- 新的小标题 -->
+            </div>
+            <div class="otherimage2">
+              <img data-src="https://i.imgur.com/izErE3C.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea58260ba3d5a1d7e80c78.png"
+                  alt="image" class="responsive-image" />
+            </div>
+          </section>
+          
+          <section class="design-section">
+            <div class="sectionTitle">
+              <h2 class="section-subtitle">プロトタイプ</h2> <!-- 居左的小标题 -->
+            </div>
+            <!-- 原型的四个模块 -->
+            <div class="design-container">
+              <div class="design">
+
+                 <img data-src="https://i.imgur.com/3KmkJ2L.gif"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea65130ba3d5a1d7e8124a.png"
+                  alt="image" class="design-image" />
+
+                <div class="design-text">
+                  <h3 class="design-number">現在地と人気アニメをチェック</h3> <!-- 数字标题 -->
+                  <p class="design-description">ホーム画面では自動的に現在地を取得し、周辺の聖地を表示します。また、他の都市を選択することも可能です。さらに、人気アニメをすぐに確認できる機能もあります。</p> <!-- 第一段文字 -->
+                </div>
+              </div>
+              
+              <div class="design2">
+                <div class="design-text">
+                  <h3 class="design-number">アニメ検索と聖地発見</h3>
+                  <p class="design-description2">検索ボタンで好きなアニメを探したり、人気作品から直接選んで閲覧できます。地図にはアニメの取景地が表示され、クリックするとアイコンが点灯します。</p>
+                </div>
+
+                <img data-src="https://i.imgur.com/nH9i0YJ.gif"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea65130ba3d5a1d7e8124b.png"
+                  alt="image" class="design2-image" />
+              </div>
+              
+              <div class="design">
+
+                <img data-src="https://i.imgur.com/s0y9MH0.gif"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea65120ba3d5a1d7e81248.png"
+                  alt="image" class="design-image" />
+                <div class="design-text">
+                  <h3 class="design-number">聖地の詳細と旅程プラン</h3>
+                  <p class="design-description">場所の詳細情報とユーザーレビューを確認でき、「行きたい」ボタンで目的地が旅程に追加され、最適な旅程が提案されます。</p>
+                </div>
+              </div>
+              
+              <div class="design2">
+                <div class="design-text">
+                  <h3 class="design-number">テンプレートで簡単比較</h3>
+                  <p class="design-description2">ホーム画面のプラスボタンで写真をアップロードし、「比較画像」ボタンでテンプレートを使って作成できます。アップロード後、コミュニティで「いいね」ができ、マイページで投稿内容を確認できます。</p>
+                </div>
+
+                <img data-src="https://i.imgur.com/s2t0CTa.gif"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea65120ba3d5a1d7e81249.png"
+                  alt="image" class="design2-image" />
+              </div>
+            </div>
+
+            <!-- 小尺寸原型的四个模块 -->
+            <div class="mobileDesignContent">
+              <div class="mobileDesign">
+                <img data-src="https://i.imgur.com/3KmkJ2L.gif"
+                data-fallback="https://pic1.imgdb.cn/item/67ea65130ba3d5a1d7e8124a.png"
+                alt="image" class="designImage" />
+                <div class="designText">
+                  <p class="designDescription">ホーム画面では自動的に現在地を取得し、周辺の聖地を表示します。また、他の都市を選択することも可能です。さらに、人気アニメをすぐに確認できる機能もあります。</p> <!-- 第一段文字 -->
+                </div>
+              </div>
+              
+              <div class="mobileDesign">
+                <img data-src="https://i.imgur.com/nH9i0YJ.gif"
+                data-fallback="https://pic1.imgdb.cn/item/67ea65130ba3d5a1d7e8124b.png"
+                alt="image" class="designImage" />
+                <div class="designText">
+                  <p class="designDescription">検索ボタンで好きなアニメを探したり、人気作品から直接選んで閲覧できます。地図にはアニメの取景地が表示され、クリックするとアイコンが点灯します。</p>
+                </div>
+              </div>
+              
+              <div class="mobileDesign">
+                <img data-src="https://i.imgur.com/s0y9MH0.gif"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea65120ba3d5a1d7e81248.png"
+                  alt="image" class="designImage" />
+                <div class="designText">
+                  <p class="designDescription">場所の詳細情報とユーザーレビューを確認でき、「行きたい」ボタンで目的地が旅程に追加され、最適な旅程が提案されます。</p>
+                </div>
+              </div>
+              
+              <div class="mobileDesign">
+                <img data-src="https://i.imgur.com/s2t0CTa.gif"
+                data-fallback="https://pic1.imgdb.cn/item/67ea65120ba3d5a1d7e81249.png"
+                alt="image" class="designImage" />
+                <div class="designText">
+                  <p class="designDescription">ホーム画面のプラスボタンで写真をアップロードし、「比較画像」ボタンでテンプレートを使って作成できます。アップロード後、コミュニティで「いいね」ができ、マイページで投稿内容を確認できます。</p>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          
+        </section>
+
+
+          <section class="finaldesign">
+            <h1 class="main-title">最終デザイン</h1>
+            <img data-src="https://i.imgur.com/QA81Q5g.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea58270ba3d5a1d7e80c79.png"
+                  alt="image" class="final-image" />
+          </section>
+
+
+          <section class="finaldesign1">
+            <h1 class="main-title">デザインシステム</h1>
+            <img data-src="https://i.imgur.com/8iXPEsi.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea5a310ba3d5a1d7e80d38.png"
+                  alt="image" class="final-image" />
+          </section>
+  
+          <!-- 最后一部分 -->
+          <section class="other-project" id="project-section">
+            <h1 class="main-title2">Other Projects</h1>
+            <div class="projectImage">
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/o35nVJ9.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea4dd10ba3d5a1d7e806a6.png"
+                alt="图片" class="project-image" />
+
+                <div class="overlay">
+                  <span class="label1">実案件</span>
+                  <h2 class="overlay-title2">不動産サイト</h2>
+                  <p class="overlay-description">不動産会社の業務内容と事例を紹介する企業サイト。</p>
+                  <a href="./fangdichan.html" class="overlay-btn1">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/guAXS1x.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4e050ba3d5a1d7e80744.png"
+        alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label2">架空</span>
+                  <h2 class="overlay-title2">シニアのひろば</h2>
+                  <p class="overlay-description3">中高年向け、コミュニティ活動を探して参加できるリマインダー付きのレスポンシブカレンダーアプリ・サイト。</p>
+                  <a href="./laonian.html" class="overlay-btn2">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="other-project">
+            <div class="projectImage">
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/XAIbpYQ.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4ded0ba3d5a1d7e806fd.png"
+        alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label3">実案件</span>
+                  <h2 class="overlay-title3">易米易货</h2>
+                  <h2 class="overlay-title2">イ·べイ·イ·か</h2>
+                  <p class="overlay-description">物品を交換し、無駄なく生活を楽しむための、簡単で便利な物々交換アプリ。</p>
+                  <a href="./yimiyihuo.html" class="overlay-btn3">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/8ayNutR.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4e0f0ba3d5a1d7e80761.png"
+        alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label4">架空</span>
+                  <h2 class="overlay-title2">カクテルメーカー</h2>
+                  <p class="overlay-description">自宅で簡単にカクテルが作れるウェブサイト。</p>
+                  <a href="./jiweijiu.html" class="overlay-btn4">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="other-project">
+            <div class="projectImage">
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/zAIas2w.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4f450ba3d5a1d7e808b1.png"
+        alt="图片" class="project-image" />
+                <div class="overlay">
+                  <h2 class="overlay-title">OTHERS</h2>
+                  <p class="overlay-description2">GRAPHIC DESIGN, ILLUSTRATION，SHORT ANIMATION</p>
+                  <a href="./other.html" class="overlay-btn5">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- 小屏幕布局（768px 及以下显示） -->
+           <section class="mobileOtherProject" id="project-section">
+            <h1 class="main-title2">Other Projects</h1>
+
+            <!-- 第二个项目 -->
+            <div class="mobile-layout bg-color-2">
+              <img data-src="https://i.imgur.com/vwBXaXF.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea530c0ba3d5a1d7e80a1c.png"
+              alt="图片"/>
+              <a href="./fangdichan.html" class="button">view more</a>
+            </div>
+
+            <!-- 第三个项目 -->
+            <div class="mobile-layout bg-color-5">
+              <img data-src="https://i.imgur.com/pAQlDMS.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea53320ba3d5a1d7e80a26.png"
+              alt="图片"/>
+              <a href="./laonian.html" class="button">view more</a>
+            </div>
+
+            <!-- 第四个项目 -->
+           <div class="mobile-layout bg-color-3">
+            <img data-src="https://i.imgur.com/QwB7Y45.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ea531b0ba3d5a1d7e80a20.png"
+            alt="图片"/>
+              <a href="./yimiyihuo.html" class="button">view more</a>
+            </div>
+            <!-- 第五个项目 -->
+            <div class="mobile-layout bg-color-1">
+              <img data-src="https://i.imgur.com/zLkehoh.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea533c0ba3d5a1d7e80a2a.png"
+              alt="图片"/>
+              <a href="./jiweijiu.html" class="button">view more</a>
+            </div>
+
+            <!-- 第六个项目 -->
+            <div class="mobile-layout bg-color-4">
+              <img data-src="https://i.imgur.com/PIagNqT.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea53560ba3d5a1d7e80a45.png"
+        alt="图片"/>
+              <a href="./other.html" class="button">view more</a>
+            </div>
+           </section>
+
+            <!-- 底部 -->
+      <footer class="footer">
+        <p>&copy; 2025 Tian Jingwen. All Rights Reserved.</p>
+      </footer>
+
+      <script src="index.js"></script>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          function switchImage(imgElement, fallbackSrc) {
+            let testImg = new Image();
+            testImg.src = imgElement.dataset.src;
+  
+            testImg.onload = function () {
+              imgElement.src = imgElement.dataset.src;
+            };
+  
+            testImg.onerror = function () {
+              imgElement.src = fallbackSrc;
+            };
+          }
+  
+          function checkAndReplaceImages() {
+            document.querySelectorAll('img[data-src]').forEach(img => {
+              let fallbackSrc = img.dataset.fallback;
+              switchImage(img, fallbackSrc);
+            });
+          }
+  
+          function checkAndReplaceBackground() {
+            let bgElement = document.querySelector('.background-container');
+            if (bgElement) {
+              let testImg = new Image();
+              let foreignSrc = "https://i.imgur.com/PDpgoVe.png";
+              let localSrc = "https://pic1.imgdb.cn/item/67ea58150ba3d5a1d7e80c70.png";
+  
+              testImg.src = foreignSrc;
+  
+              testImg.onload = function () {
+                bgElement.style.backgroundImage = `url(${foreignSrc})`;
+              };
+  
+              testImg.onerror = function () {
+                bgElement.style.backgroundImage = `url(${localSrc})`;
+              };
+            }
+          }
+  
+          checkAndReplaceImages();
+          checkAndReplaceBackground();
+        });
+      </script>
+
+  </body>
+<html>

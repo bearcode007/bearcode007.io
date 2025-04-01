@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer">
+    <title>Tian Jingwen(den seibun)- Portfolio</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1234567_xxx.css">
+
+  </head>
+  <body>
+    <!-- 背景区域 -->
+    <div class="background-container">
+      <!-- 顶部导航栏 -->
+      <header class="header">
+        <div class="logo">
+            <a href="./index.html"> <!-- 将图片包裹在 <a> 标签中 -->
+              <img data-src="https://i.imgur.com/eDoAbSe.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea47530ba3d5a1d7e7fea2.png"
+              alt="Logo" />
+            </a>
+        </div>
+
+        <!-- 汉堡菜单按钮 -->
+        <button class="hamburger-menu" onclick="toggleMenu()">
+         <span></span>
+         <span></span>
+         <span></span>
+        </button>
+
+        <!-- 小屏幕菜单 -->
+        <div class="mobile-menu">
+          <ul>
+            <li><a href="./scene map.html">SceneMap</a></li>
+            <li><a href="./fangdichan.html">不動産サイト</a></li>
+            <li><a href="./laonian.html">シニアのひろば</a></li>
+            <li><a href="./yimiyihuo.html">易米易货</a></li>
+            <li><a href="./jiweijiu.html">カクテルメーカー</a></li>
+            <li><a href="./other.html">OTHERS</a></li>
+            <li><a href="./about.html">About Me</a></li>
+          </ul>
+        </div>
+
+        <nav class="navbar">
+          <ul>
+            <li class="dropdown">
+                <a href="#project-section">Project</a>
+                <!-- 暂时不想要了 -->
+                <!-- <ul class="dropdown-menu">
+                    <li><a href="#" class="menu-item-1">SceneMap</a></li>
+                    <li><a href="#" class="menu-item-2">不動産サイト</a></li>
+                    <li><a href="#" class="menu-item-3">易米易货</a></li>
+                    <li><a href="#" class="menu-item-4">アクティブカレンダー</a></li>
+                    <li><a href="#" class="menu-item-5">カクテルメーカー</a></li>
+                    <li><a href="#" class="menu-item-6">OTHERS</a></li>
+                  </ul> -->
+              </li>
+            <li><a href="#">About Me</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="image-container">
+          <img data-src="https://i.imgur.com/JYKs5RO.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea4d130ba3d5a1d7e8054a.png"
+              alt="Image" />
+
+          <!-- <section class="text-overlay">
+            <h>田&nbsp;靓雯</h>
+            <h1>でん&nbsp;&nbsp;&nbsp;せいぶん</h1>
+            <h2>UI/UX&nbsp;,&nbsp;WEB&nbsp;,&nbsp;DESIGN</h2>
+            <p>優しいデザインで、直感的で使いやすい体験を提供しています。</p>
+          </section> -->
+        </div>
+        <section class="full-width-image">
+          <img data-src="https://i.imgur.com/QvTa2Fx.gifv"
+              data-fallback="https://pic1.imgdb.cn/item/67ea4d6c0ba3d5a1d7e805cb.gif"
+              alt="Image 2" />
+        </section>
+      </main>
+    </div>
+
+    <!-- 第一个项目 -->
+    <section class="section-container" id="project-section">
+      <div class="image-text-container">
+        <img data-src="https://i.imgur.com/WGbVHiy.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea4dc20ba3d5a1d7e8067a.png"
+              alt="图片" class="image" />
+    
+        <div class="text-box">
+          <span class="tag">架空</span> <!-- 标签放在右上角 -->
+          <div class="text-content scroll-effect">
+            <h2 class="title">Scene Map</h2>
+            <div class="description">好きなアニメの舞台を探し、現地で写真を撮ってシェアできる巡礼アプリ。</div>
+            <a href="./scene map.html" class="button">view more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- 第二个项目 -->
+     <section class="section-container">
+      <div class="image-text-container">
+        <div class="text-box2">
+          <span class="tag2">実案件</span> <!-- 标签放在右上角 -->
+          <div class="text-content scroll-effect">
+            <h2 class="title4">不動産サイト</h2>
+            <div class="description5">不動産会社の業務内容と事例を紹介する企業サイト。</div>
+            <a href="./fangdichan.html" class="button">view more</a>
+          </div>
+        </div>
+
+        <img data-src="https://i.imgur.com/o35nVJ9.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4dd10ba3d5a1d7e806a6.png"
+        alt="图片" class="image" />
+      </div>
+    </section>
+
+     <!-- 第三个项目 -->
+     <section class="section-container">
+      <div class="image-text-container">
+        <img data-src="https://i.imgur.com/XAIbpYQ.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4ded0ba3d5a1d7e806fd.png"
+        alt="图片" class="image" />
+    
+        <div class="text-box3">
+          <span class="tag">実案件</span> <!-- 标签放在右上角 -->
+          <div class="text-content scroll-effect">
+            <h2 class="title2">易米易货</h2>
+            <h3 class="title3">イ·べイ·イ·か</h3>
+            <div class="description4">物品を交換し、無駄なく生活を楽しむための、簡単で便利な物々交換アプリ。</div>
+            <a href="./yimiyihuo.html" class="button">view more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- 第四个项目 -->
+     <section class="section-container">
+      <div class="image-text-container">
+        <div class="text-box">
+          <span class="tag2">架空</span> <!-- 标签放在右上角 -->
+          <div class="text-content scroll-effect">
+            <h2 class="title4">シニアのひろば</h2>
+            <div class="description">中高年向け、コミュニティ活動を探して参加できるリマインダー付きのレスポンシブカレンダーアプリ・サイト。</div>
+            <a href="./laonian.html" class="button">view more</a>
+          </div>
+        </div>
+
+        <img data-src="https://i.imgur.com/guAXS1x.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4e050ba3d5a1d7e80744.png"
+        alt="图片" class="image" />
+      </div>
+    </section>
+
+    <!-- 第五个项目 -->
+    <section class="section-container">
+      <div class="image-text-container">
+        <img data-src="https://i.imgur.com/8ayNutR.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4e0f0ba3d5a1d7e80761.png"
+        alt="图片" class="image" />
+    
+        <div class="text-box">
+          <span class="tag">架空</span> <!-- 标签放在右上角 -->
+          <div class="text-content scroll-effect">
+            <h2 class="title5">カクテルメーカー</h2>
+            <div class="description3">自宅で簡単にカクテルが作れるウェブサイト。</div>
+            <a href="./jiweijiu.html" class="button">view more</a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- 第六个项目 -->
+      <section class="section-container">
+        <div class="image-text-container">
+          <div class="text-box4">
+            <div class="text-content scroll-effect">
+            <h2 class="title">OTHERS</h2>
+            <div class="description2">GRAPHIC DESIGN, ILLUSTRATION，SHORT ANIMATION</div>
+            <a href="./other.html" class="button">view more</a>
+            </div>
+          </div>
+  
+          <img data-src="https://i.imgur.com/zAIas2w.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4f450ba3d5a1d7e808b1.png"
+        alt="图片" class="image" />
+        </div>
+      </section>
+
+       <!-- 小屏幕布局（768px 及以下显示） -->
+       <!-- 第一个项目 -->
+      <div class="mobile-layout bg-color-1">
+        <img data-src="https://i.imgur.com/KGoF5uW.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea52fd0ba3d5a1d7e80a11.png"
+        alt="图片"/>
+        <a href="./scene map.html" class="button">view more</a>
+      </div>
+
+       <!-- 第二个项目 -->
+       <div class="mobile-layout bg-color-2">
+        <img data-src="https://i.imgur.com/vwBXaXF.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea530c0ba3d5a1d7e80a1c.png"
+        alt="图片"/>
+        <a href="./fangdichan.html" class="button">view more</a>
+      </div>
+
+       <!-- 第三个项目 -->  
+     <div class="mobile-layout bg-color-5">
+      <img data-src="https://i.imgur.com/pAQlDMS.png"
+      data-fallback="https://pic1.imgdb.cn/item/67ea53320ba3d5a1d7e80a26.png"
+      alt="图片"/>
+        <a href="./laonian.html" class="button">view more</a>
+      </div>
+      
+       <!-- 第四个项目 -->
+       <div class="mobile-layout bg-color-3">
+        <img data-src="https://i.imgur.com/QwB7Y45.png"
+      data-fallback="https://pic1.imgdb.cn/item/67ea531b0ba3d5a1d7e80a20.png"
+      alt="图片"/>
+        <a href="./yimiyihuo.html" class="button">view more</a>
+      </div>
+
+      <!-- 第五个项目 -->
+      <div class="mobile-layout bg-color-1">
+        <img data-src="https://i.imgur.com/zLkehoh.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea533c0ba3d5a1d7e80a2a.png"
+        alt="图片"/>
+        <a href="./jiweijiu.html" class="button">view more</a>
+      </div>
+
+      <!-- 第六个项目 -->
+      <div class="mobile-layout bg-color-4">
+        <img data-src="https://i.imgur.com/PIagNqT.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea53560ba3d5a1d7e80a45.png"
+        alt="图片"/>
+        <a href="./other.html" class="button">view more</a>
+      </div>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <p>&copy; 2025 Tian Jingwen. All Rights Reserved.</p>
+    </footer>
+
+
+    <script src="index.js"></script>
+    <script>
+      function switchImage(imgElement, fallbackSrc) {
+        let testImg = new Image();
+        testImg.src = imgElement.dataset.src; // 先尝试国外图床
+    
+        testImg.onload = function () {
+          imgElement.src = imgElement.dataset.src; // 成功加载则使用国外图床
+        };
+    
+        testImg.onerror = function () {
+          imgElement.src = fallbackSrc; // 失败则切换到国内图床
+        };
+      }
+    
+      function checkAndReplaceImages() {
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          let fallbackSrc = img.dataset.fallback;
+          switchImage(img, fallbackSrc);
+        });
+      }
+    
+      window.addEventListener("load", checkAndReplaceImages);
+    </script>
+    
+
+  </body>
+</html>

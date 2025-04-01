@@ -1,0 +1,1772 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px; /* 默认字体大小 16px，1rem = 16px */
+    font-family: 'Noto Serif JP','Microsoft YaHei' , 'Roboto';
+    letter-spacing: 0.17rem; /* 字母之间的间距 */
+    line-height:2rem;
+  }
+  
+  /* 背景容器 */
+  .background-container {
+    position: relative;
+    width: 100%;
+    height: auto; /* 高度为视口的高度，适应屏幕 */
+    background-size: cover; /* 保持图片比例，覆盖整个容器 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white; 
+    background-position: 50% -44px; /* 50% 表示水平居中，10% 表示垂直位置向上10%的位置 */
+    background-image: url('./image/s.bac1.png');
+  }
+
+
+  /* 顶部导航栏 */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    padding: 2vh 8vw 1vh;
+    position: fixed; /* 固定导航栏 */
+    z-index: 9999; /* 确保导航栏处于页面所有其他内容的上层 */
+    background-color: transparent; /* 初始状态下背景透明 */
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+  }
+
+  .header.scrolled {
+    background-color: white; /* 滚动时背景变为白色 */
+  }
+  
+  .logo img {
+    width: 4rem; /* logo 的宽度 */
+    height: auto;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .navbar{
+    padding-top: 1rem;
+  }
+
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navbar ul li {
+    margin-left: 5vw;
+  }
+
+/* 汉堡菜单按钮样式 */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  top: 4vh;
+  right: 6vw;
+  z-index: 1000;
+  position: absolute;
+  border: none;
+  background-color: transparent;
+}
+
+.hamburger-menu span {
+  display: none; /* 默认不显示 */
+  width: 100%;
+  height:2px;
+  background-color: rgb(31, 31, 31);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 1000; /* 确保按钮在最上层 */
+}
+
+.hamburger-menu span:nth-child(1) {
+  top:0;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-menu span:nth-child(3) {
+ bottom: 0;
+}
+
+/* 小屏幕菜单样式 */
+.mobile-menu {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* 铺满整个屏幕 */
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  z-index: 999; /* 确保菜单在内容上层 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mobile-menu ul {
+  list-style: none; /* 去掉列表符号 */
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 文字居中 */
+}
+
+.mobile-menu ul li {
+  margin: 1.5rem 0; /* 菜单项之间的间距 */
+}
+
+.mobile-menu ul li a {
+  color: white; /* 文字颜色 */
+  text-decoration: none; /* 去掉下划线 */
+  font-size: 1.2rem; /* 文字大小 */
+  font-family: Noto Serif JP;
+  font-weight: 500;
+}
+
+/* 小屏幕下显示汉堡按钮 */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .hamburger-menu span {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .navbar ul {
+  display: none;
+  }
+}
+
+/* 点击汉堡按钮后显示菜单 */
+.mobile-menu.active {
+  display: flex; /* 显示菜单 */
+}
+
+
+  /* 导航栏链接样式 */
+.navbar a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: Robot0;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+  /* 下拉菜单样式 */
+.navbar .dropdown {
+    position: relative; /* 使得子菜单可以相对于这个父元素定位 */
+  }
+  
+  .navbar .dropdown-menu {
+    display: none; /* 默认隐藏菜单 */
+    position: absolute;
+    top: 106%; /* 将菜单放置在父项的下方 */
+    left: 0;
+    /* background-color: white; */
+    min-width: 150px; /* 可以根据需要调整菜单宽度 */
+    width: auto;
+    z-index: 1000;
+    background-color:rgb(256, 256, 256);
+  }
+  
+  .navbar .dropdown-menu li {
+    padding: 1rem 1rem 1rem 0.5rem;
+    margin: 0; /* 确保没有额外的 margin */
+    white-space: nowrap; /* 禁止换行 */
+  }
+
+  /* 下拉菜单链接样式 */
+.navbar .dropdown-menu li a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1.2rem;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+  /* 创建下划线的伪元素 */
+.navbar a::after,
+.navbar .dropdown-menu li a::after {
+  content: ''; /* 创建伪元素 */
+  position: absolute;
+  bottom: -2px; /* 下划线离文字稍微有些距离 */
+  left: 0;
+  width: 0; /* 初始宽度为0 */
+  height: 1px; /* 下划线的高度 */
+  background-color:#774CE8; /* 下划线的颜色 */
+  transition: width 0.3s ease; /* 平滑过渡下划线的宽度 */
+}
+
+/* 鼠标悬停时文字颜色变紫色 */
+.navbar a:hover,
+.navbar .dropdown-menu li a:hover {
+  color:#774CE8; /* 鼠标悬停时文字变为紫色 */
+}
+
+/* 鼠标悬停时下划线从左到右扩展 */
+.navbar a:hover::after,
+.navbar .dropdown-menu li a:hover::after {
+  width: 100%; /* 鼠标悬停时下划线的宽度扩展到100% */
+}
+  
+  /* 鼠标悬停显示下拉菜单 */
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block; /* 鼠标悬停时显示菜单 */
+  }
+
+  .navbar .dropdown-menu .menu-item-1 {
+    font-family: 'Roboto'; /* 这里是第一个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-2 {
+    font-family: 'Noto Serif JP'; /* 这里是第二个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-3 {
+    font-family: 'Microsoft YaHei'; /* 这里是第三个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-4 {
+    font-family: 'Noto Serif JP'; /* 这里是第四个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-5 {
+    font-family: 'Noto Serif JP'; /* 这里是第五个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-6 {
+    font-family: 'Roboto'; /* 这里是第六个菜单项的字体 */
+    font-weight: 400;
+  }
+
+  .navbar .dropdown-menu li::before {
+    content: '—'; /* 使用短横杠 */
+    margin-right: 0.5rem; /* 设置横杠与文字之间的间距 */
+    font-size: 1rem; /* 调整横杠的大小 */
+    color: rgb(31, 31, 31); /* 设置横杠的颜色 */
+  }
+  
+  /* 主体内容 */
+  main {
+    text-align: center;
+    color: rgb(31, 31, 31);
+  }
+
+  /* 主图片样式 */
+  .main-image {
+    width: 50vw; /* 等于 965px */
+    height: auto;
+    margin: 19vh auto 0 auto; /* 距离顶部的间距 */
+    display: block;
+  }
+
+    /* 介绍文本样式 */
+  .intro-text {
+    text-align: left;
+    font-size: 1.2rem; /* 可调整大小 */
+    margin: 2vh 24vw 8vh 24vw;
+  }
+
+  /* 图标模块容器样式 */
+  .icon-modules {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* 使模块能够在小屏幕上换行 */
+    margin: 0 16vw; /* 居中显示 */
+  }
+
+  /* 每个模块的样式 */
+  .icon-module {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    width: auto; /* 模块宽度 */
+     /*margin: 0 auto; 模块之间的间距 */
+    text-align: left;
+  }
+
+  /* 图标样式 */
+  .icon {
+    width: 2rem; /* 38px */
+    height: auto;
+    margin-right: 0.5rem; /* 图标和文字之间的距离 */
+    margin-top: 0.1rem;
+  }
+
+    /* 模块内文字容器样式 */
+  .module-text {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: flex-start; /* 左对齐 */
+  }
+
+  /* 模块内文字样式 */
+  .module-text .title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    position: relative; /* 让伪元素相对于父元素定位 */
+    text-decoration: none; /* 去掉默认的下划线 */
+    margin-bottom: 1rem; /* 增加标题和副标题之间的间距 */
+    font-family: Roboto;
+  }
+
+  .module-text .title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem; /* 调整下划线与文字的距离 */
+    width: 3rem; /* 自定义下划线长度，可以调整为任意百分比或固定值 */
+    height: 2px; /* 下划线的厚度 */
+    background-color: #774CE8; /* 紫色下划线 */
+    border-radius: 999px;
+  }
+
+  .module-text .subtitle {
+    font-size: 1rem;
+    font-family: Roboto;
+  }
+
+  /* 背景图部分 暂时把图片取了，不想要背景了*/
+/* .background-section {
+  background-image: url('');
+  background-size: cover; 
+  width: 100%;
+  height: auto;
+  text-align: center;
+  position: relative;
+  background-position: 50% 50%; 
+} */
+
+.bg-overlay {
+  background-color: rgb(255, 255, 255,); 
+}
+
+/* 大标题样式 */
+.main-title {
+  font-size: 2rem;
+  margin: 20vh 0 8vh 0;
+  color:rgb(31, 31, 31); 
+  text-align: center;
+}
+
+/* 模板通用样式 */
+.template {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; /* 左边图片，右边文字 */
+}
+
+.template-image {
+  height: 40vh;
+  width: auto;
+}
+
+.template-text {
+  width: 30vw;
+  padding-left: 2rem;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color:rgb(31, 31, 31); 
+}
+.template-text p1{
+  display: block;
+}
+
+.template-text p2{
+  display: none;
+}
+
+.template-top {
+  text-align: center;
+}
+
+.template-top .small-title {
+  font-size: 1.6rem;
+  position: relative;
+  text-align: center; /* 小标题左对齐 */
+  color:#774CE8; 
+  margin: 0 auto 2vh auto; /* 只给左边添加padding */
+  display:block;
+  width: fit-content;
+}
+
+/* 小标题下划线 */
+.template-top .small-title::after {
+  content: '';
+  position: absolute;
+  top: 3rem;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 2px;
+  background-color: #774CE8; /* 下划线颜色 */
+}
+
+.template-bottom {
+  display: flex;
+  align-items: flex-start; /* 图片和文字顶部对齐 */
+  justify-content: flex-start;
+  margin: 12vh 18vw 0 18vw;
+}
+
+.template-image-bottom {
+  width: 10vw; 
+  height: auto;
+}
+
+.template-text-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 两端对齐 */
+  padding-left: 4vh;
+  font-size: 1.2rem;
+  text-align: left;
+  font-weight: 500;
+  color:rgb(31, 31, 31); 
+}
+
+.template-text-bottom p {
+  margin-bottom: 0.5vh; /* 前两个段落的间距 */
+}
+
+.template-text-bottom p:nth-child(3) {
+  margin-top: 1.5vh; /* 第三个段落与前两个段落的间距 */
+}
+
+.template-text-bottom p:first-child {
+  font-size: 1.4rem; /* 设置第一个段落的文字大小 */
+  font-weight: 600;
+}
+
+.template-text-solo{
+  display: none;
+}
+
+/* 容器样式 */
+.two-blocks {
+  display: flex; /* 使用flex布局 */
+  justify-content: space-between; /* 让两个块在容器内左右分布 */
+  margin: 4vh 18vw 0 18vw;
+}
+
+/* 每个块的基本样式 */
+.block {
+  width: 49%; /* 每个块的宽度占容器的48%，中间留一点空隙 */
+  height: auto;
+  background-color: #774CE8; /* 背景色紫色 */
+  border-radius: 20px; /* 圆角效果 */
+  padding: 1rem 1.5rem; /* 内边距 */
+  color: #fff; /* 文字颜色白色 */
+  text-align: left; /* 文字左对齐 */
+}
+
+/* 小标题样式 */
+.small-title2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #fff; /* 小标题颜色为白色 */
+  font-weight: 500;
+}
+
+/* 段落样式 */
+.block p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem; /* 段落之间增加一点空间 */
+}
+
+/* 下半部分样式 */
+.content-section {
+  padding: 12vh 12vw 0 12vw;
+}
+
+
+/* 标题样式 */
+.section-title {
+  font-size: 1.6rem;
+  position: relative;
+  margin: 0 auto 2rem auto;
+  text-align: center; /* 小标题左对齐 */
+  color:#774CE8; 
+  display:block;
+  width: fit-content;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  top: 3rem;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 2px;
+  background-color: #774CE8; /* 下划线颜色 */
+}
+
+
+
+/* 正文文字样式 */
+.section-text {
+  font-size: 1.4rem;
+  color: rgb(31, 31, 31); /* 黑色 */
+  font-weight: 500;
+  margin: 0 auto 12vh auto;
+  text-align: center;
+}
+
+/* 图片容器 */
+.image-container {
+  text-align: center; /* 图片居中 */
+  margin: 0 10vw;
+}
+
+/* 图片自适应 */
+.responsive-image {
+  width: 100%; /* 图片宽度铺满容器 */
+  height: auto; /* 高度自适应 */
+}
+
+.handImageFive {
+  width: 70vw; /* 图片宽度铺满容器 */
+  height: auto; /* 高度自适应 */
+  margin: 0 auto;
+}
+
+.handImageFive1 {
+  width: 100%; /* 图片宽度铺满容器 */
+  height: auto; /* 高度自适应 */
+}
+
+
+
+/* 手绘线框图描述容器 */
+.handDecription {
+  display: flex; /* 使用 Flexbox 布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  width: 76vw; /* 宽度为 80vw */
+  height: 100%; /* 高度填满父容器 */
+  margin: 0 auto; /* 水平居中 */
+}
+
+/* 手绘线框图描述文字 */
+.handDecriptionText {
+  font-size: 1.2rem; /* 文字大小为 1.2rem */
+  text-align: left; /* 文字水平居中 */
+  margin: 0; /* 去掉默认的 margin */
+  font-family: 'Noto Serif JP';
+  font-weight: 500;
+  color: rgb(31, 31, 31);
+  margin-bottom: 8vh;
+}
+
+/* 图片部分 */
+.image-section {
+  margin: 0 14vw; /* 给图片部分上下添加一些间距 */
+}
+
+.image-container {
+  display: flex; /* 横向排列 */
+  justify-content: space-between; /* 图片之间的间距均匀分布 */
+  align-items: flex-start; /* 图片与文字顶部对齐 */
+}
+
+.image-item {
+  text-align: left; /* 文字与图片左对齐 */
+  width: 18vw;
+  height: auto;
+}
+
+.image {
+  width: 17vw; 
+  height: auto; /* 图片高度自适应 */
+}
+
+.image-subtitle {
+  font-size: 1.4rem; /* 小标题的字体大小 */
+  font-weight: 600; 
+  color: #774CE8; /* 小标题颜色 */
+  text-align: justify; /* 小标题文字两端对齐 */
+}
+
+.image-caption {
+  font-size: 1.2rem; /* 文字说明的字体大小 */
+  color: rgb(31, 31, 31); /* 文字颜色 */
+  text-align: justify; /* 段落文字两端对齐 */
+  margin-top: 0.5rem; /* 文字和小标题之间的间距 */
+  font-weight: 500;
+}
+
+/* 小标题样式 */
+.sub-title {
+  font-size: 1.6rem;
+  position: relative;
+  margin: 8vh auto 8vh auto;
+  text-align: center; /* 小标题左对齐 */
+  color:#774CE8; 
+  display:block;
+  width: fit-content;
+}
+
+.sub-title:after {
+  content: '';
+  position: absolute;
+  top: 3rem;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 2px;
+  background-color: #774CE8; /* 下划线颜色 */
+}
+
+/* 图片容器样式 */
+.image-container2 {
+  display: flex;
+  justify-content: center; /* 图片居中 */
+  margin: 12vh 38vh;
+}
+
+/* 自适应图片 */
+.responsive-image {
+  max-width: 100%; /* 图片自适应容器宽度 */
+  height: auto; /* 保持图片的高度比例 */
+}
+
+/* 小标题样式 */
+.section-subtitle {
+  font-size: 1.6rem;
+  position: relative;
+  margin-bottom: 2rem;
+  text-align: center; /* 小标题左对齐 */
+  color:#774CE8; 
+  display:block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.section-subtitle:after {
+  content: '';
+  position: absolute;
+  top: 3rem;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 2px;
+  background-color: #774CE8; /* 下划线颜色 */
+}
+
+/* 模块容器 */
+.design-container {
+  padding: 0 6vw; /* 左右边距 */
+}
+
+.mobileDesignContent{
+  display: none;
+}
+
+/* 用户测试容器 */
+.userTestContainer {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: ce; /* 水平居中 */
+  width: 100%; /* 宽度填满父容器 */
+  margin: 16vh 0 0 0; /* 水平居中 */
+}
+
+.userTestContainer1 {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: ce; /* 水平居中 */
+  width: 100%; /* 宽度填满父容器 */
+  margin: 12vh 0 12vh 0; /* 水平居中 */
+}
+
+.userTestContainer2 {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: ce; /* 水平居中 */
+  width: 100%; /* 宽度填满父容器 */
+  margin: 0 0 16vh 0; /* 水平居中 */
+}
+
+
+
+/* 图片样式 */
+.testImage {
+  width: 12vw; /* 图片宽度 */
+  height: auto; /* 高度自适应 */
+  margin-right: 3rem; /* 图片之间的间距 */
+}
+
+/* 第一张图的左边距 */
+.testImage:first-child {
+  margin-left: 12vw; /* 第一张图的左边距 */
+}
+
+.testImage1 {
+    width: 12vw; /* 图片宽度 */
+    height: auto; /* 高度自适应 */
+    margin-right: 3rem; /* 图片之间的间距 */
+   margin-left: 3vw; /* 第一张图的左边距 */
+}
+
+
+/* 文字描述样式 */
+.testDescription {
+  width: 40vw; /* 文字宽度 */
+  text-align: left; /* 文字左对齐 */
+  margin-right: 3rem; /* 文字与第二张图的间距 */
+  font-family: 'Noto Serif JP';
+  font-weight: 500;
+  color: rgb(31, 31, 31); /* 默认文字颜色 */
+  font-size: 1.2rem;
+}
+
+.testDescription1 {
+  width: 40vw; /* 文字宽度 */
+  text-align: left; /* 文字左对齐 */
+  font-family: 'Noto Serif JP';
+  font-weight: 500;
+  color: rgb(31, 31, 31); /* 默认文字颜色 */
+  font-size: 1.2rem;
+  margin-left: 12vw;
+}
+
+.testDescription2 {
+  display: none;
+}
+
+/* 高亮词语样式 */
+.highlight {
+  color: #774CE8; /* 紫色 */
+  font-weight: 600;
+}
+
+/* 单个模块样式 */
+.design {
+  display: flex;
+  align-items: center; /* 图片和文字居中对齐 */
+  margin: 12vh 12vw 0 16vw;
+}
+
+.design2 {
+  display: flex;
+  align-items: center; /* 图片和文字居中对齐 */
+  margin: 12vh 16vw 0 12vw;
+}
+
+/* 模块图片 */
+.design-image {
+  width: 16vw; 
+  height: auto;
+  margin-right: auto; /* 图片与文字的间距 */
+}
+
+
+.design2-image {
+  width: 16vw; /* 图片占据40%宽度，保持自适应 */
+  height: auto;
+  margin-left: auto; /* 图片与文字的间距 */
+}
+
+/* 模块文字样式 */
+.design-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 文字居中对齐 */
+  width: 30vw;
+}
+
+.design-number {
+  font-size: 1.6rem;
+  color:#774CE8;
+  margin-bottom: 1rem;
+  font-family: Noto Serif JP;
+  font-weight: 600;
+  width:100%;
+  text-align: center;
+}
+
+.design-description {
+  font-size: 1.2rem;
+  color: rgb(31, 31, 31);
+}
+
+.design-description2 {
+  font-size: 1.2rem;
+  color: rgb(31, 31, 31);
+  padding-left:1rem;
+}
+
+/* finaldesign 部分 */
+.finaldesign {
+  text-align: center; /* 使内容居中 */
+  margin: 0 24vw;
+}
+
+.finaldesign1 {
+  text-align: center; /* 使内容居中 */
+  margin: 0 16vw;
+}
+
+
+
+/* finaldesign 图片样式 */
+.final-image {
+  width: 100%; /* 图片宽度自适应 */
+  max-width: 100%; /* 最大宽度100%，避免图片过大 */
+  height: auto; /* 高度根据宽度自适应 */
+}
+
+/* Other Project 部分 */
+.other-project {
+  text-align: center; /* 标题居中 */
+}
+
+.mobileOtherProject{
+  display: none;
+}
+
+/* 大标题样式 */
+.main-title2 {
+  font-size: 2rem;
+  margin: 20vh 0 8vh 0;
+  color:rgb(31, 31, 31); 
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 400;
+}
+
+/* 图片容器 */
+.image-container {
+  display: flex;
+}
+
+.otherimage {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  justify-content: space-between; /* 图片之间保持一定的间距 */
+  margin:0 10vw;
+}
+
+.otherimage2 {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  justify-content: space-between; /* 图片之间保持一定的间距 */
+  margin:0 20vw 12vh 20vw;
+}
+
+.handImage {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  justify-content: space-between; /* 图片之间保持一定的间距 */
+  margin:0 10vw;
+}
+
+.handImage1 {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  margin:0;
+}
+
+
+
+.otherimage3 {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  justify-content: space-between; /* 图片之间保持一定的间距 */
+}
+
+.projectImage {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  justify-content: space-between; /* 图片之间保持一定的间距 */
+}
+
+
+/* 图片盒子 */
+.image-box {
+  position: relative; /* 为蒙版定位做准备 */
+  width: 49%; /* 每个图片占容器的45% */
+  margin: 0.5rem auto; /* 两个图片之间保持一定的间距 */
+}
+
+/* 图片样式 */
+.project-image {
+  width: 100%; /* 图片宽度自适应 */
+  height: auto;
+  display: block; /* 去除图片底部空隙 */
+}
+
+/* 图片蒙版样式 */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 黑色半透明蒙版 */
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.3s ease; /* 蒙版淡入淡出效果 */
+}
+
+/* 图片悬浮时蒙版显示 */
+.image-box:hover .overlay {
+  opacity: 1;
+}
+
+/* 标签文字样式 */
+.label1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #0087B3;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.label2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #65A30D;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.label3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #F5B038;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.label4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #B362FF;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* 蒙版中的大标题样式 */
+.overlay-title {
+  font-size: 1.6rem;
+  color: white;
+  margin: 0 0 0 0;
+  font-family:Roboto;
+  font-weight: 500;
+}
+
+.overlay-title2{
+  font-size: 1.6rem;
+  color: white;
+  margin: 0 0 0 0;
+  font-family:Noto Serif JP ;
+  font-weight: 600;
+}
+
+.overlay-title3{
+  font-size: 1.6rem;
+  color: white;
+  margin: 0 0 0 0;
+  font-family:Microsoft YaHei;
+  font-weight: 500;
+}
+
+/* 蒙版中的段落文字样式 */
+.overlay-description {
+  font-size: 1.2rem;
+  color: white;
+  margin:2rem 2rem;
+  max-width:35rem ;
+  font-weight: 400;
+  font-family:Noto Serif JP ;
+}
+
+/* 蒙版中的段落文字样式 */
+.overlay-description2 {
+  font-size: 1.2rem;
+  color: white;
+  margin:2rem 2rem;
+  max-width:30rem ;
+  font-family: Roboto;
+}
+
+.overlay-description3 {
+  font-size: 1.2rem;
+  color: white;
+  margin:2rem 2rem;
+  max-width:37rem ;
+  font-weight: 400;
+  font-family:Noto Serif JP ;
+}
+
+
+ /* 按钮样式 */
+ .overlay-btn1 {
+  background-color: #0087B3;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn2 {
+  background-color: #65A30D;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn3 {
+  background-color: #F5B038;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn4 {
+  background-color: #B362FF;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn5 {
+  background-color: #a3a3a3;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn1:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+.overlay-btn2:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+.overlay-btn3:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+.overlay-btn4:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+.overlay-btn5:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+/* 底部样式 */
+.footer {
+  background-color: rgb(31, 31, 31); /* 页脚背景颜色 */
+  padding: 2rem 0; /* 内边距 */
+  text-align: center; /* 居中对齐 */
+  font-size: 1.2rem; /* 字体大小 */
+  color: #fff; /* 文字颜色 */
+  position: relative;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0; /* 去掉默认的段落间距 */
+}
+
+
+@media (max-width: 1024px) {
+
+  .main-title{
+    margin: 8vh 0 4vh 0;
+  }
+
+  .intro-text{
+    margin: 2vh 24vw 4vh 24vw;
+  }
+
+
+  .icon-modules{
+    margin:2vh 6vw 2vh 22vw ;
+    justify-content: center; /* 每行水平居中 */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; /* 模块之间的间距，可根据需要调整 */
+  }
+  
+  .icon-module {
+    display: flex;
+    justify-content: flex-start; /* 每列元素左对齐 */
+    width: calc(50% - 10px); /* 每行两个模块，减去间距的一半 */
+  }
+
+   /* 图标样式 */
+   .icon {
+    width: 2rem; /* 38px */
+    height: auto;
+    margin-right: 0.5rem; /* 图标和文字之间的距离 */
+    margin-top: 0.1rem;
+  }
+
+   /* 模块内文字样式 */
+   .module-text .title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem; /* 增加标题和副标题之间的间距 */
+
+  }
+
+  .module-text .title::after {
+    bottom: -0.1rem; /* 调整下划线与文字的距离 */
+    width: 1.5rem; /* 自定义下划线长度，可以调整为任意百分比或固定值 */
+    height: 1px; /* 下划线的厚度 */
+  }
+
+  .module-text .subtitle {
+    font-size: 1rem;
+    font-family: Roboto;
+  }
+
+  .template{
+    margin-bottom: 2vh;
+  }
+
+  .template-image{
+    height: 30vh;
+    width: auto;
+  }
+
+  .template-text p1{
+    margin-bottom: 0;
+  }
+
+  .template-bottom{
+    margin: 8vh 18vw 0 18vw;
+  }
+
+  .content-section{
+    padding: 8vh 12vw 0 12vw;
+  }
+
+  .section-text{
+    margin-bottom: 4vh;
+  }
+
+  .sub-title{
+    margin: 4vh auto 4vh 12vw;
+  }
+
+  .design-number{
+   font-size: 1.4rem;
+  }
+
+  .main-title2{
+    margin: 12vh 0 8vh 0;
+  }
+
+
+}
+
+
+@media (max-width: 768px) {
+  html{
+    line-height:1.4rem;
+  }
+  
+
+  .header {
+    padding: 3vh 6vw 1vh ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .hamburger-menu {
+    margin-right: 0;
+  }
+
+  .logo img {
+    width: 3rem; /* logo 的宽度 */
+    height: auto;
+    padding-top: 0;
+  }
+
+  /* 主图片样式 */
+  .main-image {
+    width: 80vw; 
+    margin: 12vh auto 0 auto; /* 距离顶部的间距 */
+  }
+
+   /* 介绍文本样式 */
+   .intro-text {
+    font-size: 1rem; /* 可调整大小 */
+    margin: 2vh 8vw 4vh 8vw;
+  }
+
+  .icon-modules{
+    margin:2vh 8vw 2vh 16vw ;
+    justify-content: center; /* 每行水平居中 */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; /* 模块之间的间距，可根据需要调整 */
+  }
+  
+  .icon-module {
+    display: flex;
+    justify-content: flex-start; /* 每列元素左对齐 */
+    width: calc(50% - 10px); /* 每行两个模块，减去间距的一半 */
+  }
+
+   /* 图标样式 */
+   .icon {
+    width: 1.2rem; /* 38px */
+    height: auto;
+    margin-right: 0.3rem; /* 图标和文字之间的距离 */
+    margin-top: 0.4rem;
+  }
+
+   /* 模块内文字样式 */
+   .module-text .title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem; /* 增加标题和副标题之间的间距 */
+
+  }
+
+  .module-text .title::after {
+    bottom: -0.1rem; /* 调整下划线与文字的距离 */
+    width: 1.5rem; /* 自定义下划线长度，可以调整为任意百分比或固定值 */
+    height: 1px; /* 下划线的厚度 */
+  }
+
+  .module-text .subtitle {
+    font-size: 0.8rem;
+    font-family: Roboto;
+  }
+
+    /* 大标题样式 */
+  .main-title {
+    font-size: 1.4rem;
+    margin: 8vh 0 4vh 0;
+    color:rgb(31, 31, 31); 
+    text-align: center;
+  }
+
+  /* 模板通用样式 */
+  .template {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+  }
+
+  .template-image {
+    height: 25vh;
+    width: auto;
+  }
+
+  .template-text {
+    width: 300px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color:rgb(31, 31, 31); 
+    margin-bottom: 1rem;
+    padding-left: 0;
+  }
+
+  .template-text p1{
+    display: none;
+  }
+  
+  .template-text p2{
+    display: block;
+  }
+
+  .template-top1 {
+    text-align: center;
+  }
+
+  .template-top .small-title {
+    font-size: 1.2rem;
+    color:#774CE8; 
+    display:inline-block;
+    width: fit-content;
+    margin-left: 0;
+  }
+
+  /* 小标题下划线 */
+  .template-top .small-title::after {
+    content: '';
+    position: absolute;
+    top: 1.8rem;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 1px;
+    background-color: #774CE8; /* 下划线颜色 */
+  }
+
+  .template-bottom {
+    margin: 4vh 0 0 0 ;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .template-image-bottom {
+    width: 16vw; 
+    height: auto;
+  }
+
+  .template-text-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 两端对齐 */
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 500;
+    color:rgb(31, 31, 31); 
+    padding-left: 1vh;
+  }
+
+  .template-text-bottom p {
+    margin-bottom: 0.3vh; /* 前两个段落的间距 */
+  }
+
+  .template-text-bottom p:first-child {
+    font-size: 1.2rem; /* 设置第一个段落的文字大小 */
+    font-weight: 600;
+  }
+
+  .template-text-bottom p3{
+    display: none;
+  }
+
+  .template-text-solo{
+    display: block;
+    font-size: 0.8rem;
+    margin: 1vh 8vw 0 8vw;
+  }
+
+  /* 容器样式 */
+  .two-blocks {
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 让两个块在容器内左右分布 */
+    margin: 1vh 4vw 0 4vw;
+  }
+
+  /* 每个块的基本样式 */
+  .block {
+    width: 49%; /* 每个块的宽度占容器的48%，中间留一点空隙 */
+    height: auto;
+    background-color: #774CE8; /* 背景色紫色 */
+    border-radius: 10px; /* 圆角效果 */
+    padding: 0.5rem 0.5rem; /* 内边距 */
+    color: #fff; /* 文字颜色白色 */
+    text-align: left; /* 文字左对齐 */
+  }
+
+  /* 小标题样式 */
+  .small-title2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #fff; /* 小标题颜色为白色 */
+    font-weight: 500;
+  }
+
+  /* 段落样式 */
+  .block p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem; /* 段落之间增加一点空间 */
+  }
+
+  /* 下半部分样式 */
+  .content-section {
+    width:fit-content;
+    padding: 4vh 0;
+    text-align: center;
+  }
+
+  .sectionTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 标题样式 */
+  .section-title {
+    font-size: 1.2rem;
+    color:#774CE8; 
+    display:block;
+    width: fit-content;
+    text-align: center;
+  }
+
+  .section-title:after {
+    content: '';
+    position: absolute;
+    top: 1.8rem;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 1px;
+    background-color: #774CE8; /* 下划线颜色 */
+  }
+
+  /* 正文文字样式 */
+  .section-text {
+    font-size: 1rem;
+    color: rgb(31, 31, 31); /* 黑色 */
+    font-weight: 500;
+    margin: 0 8vw 4vh 8vw; /* 文字与图片的间距 */
+    text-align: left;
+  }
+
+  .image-section {
+    margin: 0 8vw; /* 给图片部分上下添加一些间距 */
+  }
+
+  .image-item {
+    text-align: left; /* 文字与图片左对齐 */
+    width: 24vw;
+    height: auto;
+  }
+
+  .image {
+    width: 17vw; 
+    height: auto; /* 图片高度自适应 */
+  }
+
+  .image-subtitle {
+    font-size: 1rem; /* 小标题的字体大小 */
+    font-weight: 600; 
+    text-align: justify; /* 小标题文字两端对齐 */
+    line-height: 1.2rem;
+  }
+
+  .image-caption {
+    font-size: 0.8rem; /* 文字说明的字体大小 */
+    color: rgb(31, 31, 31); /* 文字颜色 */
+    text-align: justify; /* 段落文字两端对齐 */
+    margin-top: 1vh; /* 文字和小标题之间的间距 */
+    line-height: 1.2rem;
+  }
+
+  .sub-title{
+    margin: 4vh auto;
+    font-size: 1rem;
+  }
+
+
+
+  /* 小标题下划线 */
+  .sub-title::after {
+    content: '';
+    position: absolute;
+    top: 1.8rem;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 1px;
+    background-color: #774CE8; /* 下划线颜色 */
+  }
+  
+  .section-subtitle{
+    font-size: 1.2rem;
+  }
+
+  /* 小标题下划线 */
+  .section-subtitle::after {
+    content: '';
+    position: absolute;
+    top: 1.8rem;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 1px;
+    background-color: #774CE8; /* 下划线颜色 */
+  }
+
+  .design-container {
+      display: none;
+    }
+
+  .mobileDesignContent{
+    display: block;
+  }
+
+  .mobileDesign{
+    display: flex;
+    flex-direction: column; /* 设置为垂直方向布局 */
+    align-items: center; /* 水平居中对齐 */
+    margin: 0 8vw;
+  }
+
+  .designImage {
+    width: 50vw; /* 图片宽度，可根据需要调整 */
+    height: auto; /* 图片高度自适应 */
+    object-fit: contain; /* 确保图片完整显示 */
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+  }
+
+  .designText {
+    text-align: left; /* 文字内容左对齐 */
+    margin-bottom: 6vh;
+  }
+
+  .designDescription{
+    font-size: 1rem; /* 字体大小，可根据需要调整 */
+  }
+
+    /* finaldesign 部分 */
+  .finaldesign {
+    text-align: center; /* 使内容居中 */
+    margin: 0 8vw;
+  }
+
+  /* finaldesign 图片样式 */
+  .final-image {
+    width: 100%; /* 图片宽度自适应 */
+    max-width: 100%; /* 最大宽度100%，避免图片过大 */
+    height: auto; /* 高度根据宽度自适应 */
+  }
+
+    /* 大标题样式 */
+  .main-title2 {
+    font-size: 1.4rem;
+    margin: 8vh 0 4vh 0;
+    color:rgb(31, 31, 31); 
+    text-align: center;
+  }
+
+    /* 图片盒子 */
+  .image-box {
+    margin: 0.1rem auto; /* 两个图片之间保持一定的间距 */
+  }
+
+  .other-project{
+    display: none;
+  }
+
+  .mobileOtherProject{
+    display: block;
+  }
+
+  .mobile-layout {
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 内容居中 */
+    justify-content: center; /* 内容居中 */
+    text-align: center; /* 文字居中 */
+     /*background-color: #E7E2F4; 背景色 */
+  }
+
+  .mobile-layout img {
+    width: 100%; /* 图片宽度占满容器 */
+    height: auto; /* 高度自适应 */
+  }
+
+  .mobile-layout .button {
+    display: inline-block;
+    background-color: #ffff;
+    text-decoration: none; 
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto'; 
+    font-weight: 400;
+    border-radius: 999rem; /* 圆角设置为两边圆弧 */
+    text-align: center; /* 设置按钮内文字水平居中 */
+    padding: 0.2rem 3rem; 
+    width: auto;
+    margin: 2vh auto; 
+  }
+
+  .mobile-layout .button:hover {
+    background-color: transparent; /* 悬浮时背景色透明 */
+    color: rgb(31, 31, 31); /* 保持文字颜色 */
+    outline: 2px solid#FFF; /* 悬浮时添加边框 */
+  }
+
+  .bg-color-1 {
+    background-color: #E7E2F4; /* 背景色 1 */
+  }
+  
+  .bg-color-2 {
+    background-color: #C3E1F6; /* 背景色 2 */
+  }
+
+  .bg-color-3 {
+    background-color: #F8EDDB; /* 背景色 2 */
+  }
+
+  .bg-color-4 {
+    background-color: #F5F5F5; /* 背景色 2 */
+  }
+
+  .bg-color-5 {
+    background-color: #EFF9E1; /* 背景色 2 */
+  }
+
+  .footer{
+    font-size: 0.7rem;
+    padding: 0.8rem 0; /* 内边距 */
+  }
+
+  .handDecriptionText{
+    font-size: 1rem;
+    margin-bottom: 4vh;
+  }
+
+  .handImageFive{
+    width: 90vw;
+  }
+
+  .handImage{
+    margin: 0 auto 2vh 0vw;
+  }
+
+  .handDecription{
+    width: 80vw;
+  }
+
+  .userTestContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2vh;
+    margin-bottom: 12vh;
+  }
+
+  .userTestContainer1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2vh;
+    margin-bottom: 12vh;
+  }
+
+  .userTestContainer2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2vh;
+    margin-bottom: 6vh;
+  }
+
+  .testImage{
+    width: 30vw;
+  }
+
+  .testImage1{
+    width: 30vw;
+    margin-left: 12vw;
+  }
+
+  .testDescription{
+    width: 80vw;
+    margin-right: 0;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+
+  .testDescription2{
+    display: block;
+    text-align: left; /* 文字左对齐 */
+    font-family: 'Noto Serif JP';
+    font-weight: 500;
+    color: rgb(31, 31, 31); /* 默认文字颜色 */
+    width: 80vw;
+    margin-right: 0;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+  
+  .testDescription1 {
+    display: none;
+  }
+
+  .otherimage2{
+    margin: 0 6vw 6vh 6vw;
+  }
+
+
+}
