@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="referrer" content="no-referrer">
+        <title>不動産サイト</title>
+        <link rel="stylesheet" href="./fangdichan.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1234567_xxx.css">
+
+  </head>
+
+  <body>
+        <!-- 背景区域 -->
+        <div class="background-container">
+            <!-- 顶部导航栏 -->
+            <header class="header">
+                <div class="logo">
+                    <a href="./index.html"> <!-- 将图片包裹在 <a> 标签中 -->
+                        <img data-src="https://i.imgur.com/eDoAbSe.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea47530ba3d5a1d7e7fea2.png"
+              alt="Logo" />
+                    </a>
+                </div>
+
+                <!-- 汉堡菜单按钮 -->
+                <button class="hamburger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+                </button>
+
+                <!-- 小屏幕菜单 -->
+                <div class="mobile-menu">
+                <ul>
+                    <li><a href="./scene map.html">SceneMap</a></li>
+                    <li><a href="./fangdichan.html">不動産サイト</a></li>
+                    <li><a href="./laonian.html">シニアのひろば</a></li>
+                    <li><a href="./yimiyihuo.html">易米易货</a></li>
+                    <li><a href="./jiweijiu.html">カクテルメーカー</a></li>
+                    <li><a href="./other.html">OTHERS</a></li>
+                    <li><a href="./about.html">About Me</a></li>
+                </ul>
+                </div>
+
+                <nav class="navbar">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#project-section">Project</a>
+                        <!-- 暂时不想要了 -->
+                        <!-- <ul class="dropdown-menu">
+                            <li><a href="#" class="menu-item-1">SceneMap</a></li>
+                            <li><a href="#" class="menu-item-2">不動産サイト</a></li>
+                            <li><a href="#" class="menu-item-3">易米易货</a></li>
+                            <li><a href="#" class="menu-item-4">アクティブカレンダー</a></li>
+                            <li><a href="#" class="menu-item-5">カクテルメーカー</a></li>
+                            <li><a href="#" class="menu-item-6">OTHERS</a></li>
+                        </ul> -->
+                    </li>
+                    <li><a href="./about.html">About Me</a></li>
+                </ul>
+                </nav>    
+            </header>
+           
+            <!-- 首页背景图片 -->
+            <img data-src="https://i.imgur.com/UXGZRsm.png"
+            data-fallback="https://pic1.imgdb.cn/item/67eca9460ba3d5a1d7e9cd96.png"
+            alt="Logo" class="backgroundImage"/>        
+     </div>
+
+       
+
+        <!-- 第一个大标题 -->
+        <div class="mainTitle">
+            <span class="number">01</span>
+            <span class="text">
+                <span class="firstLetter">I</span>NTRODUCTION
+            </span>
+            <span class="subText">概要</span>
+        </div>
+
+        <!-- 概要的段落内容 -->
+        <div class="firstTextContainer">
+            <p class="firstTextLine">本プロジェクトは、不動産会社のユーザー中心のウェブサイトをデザインし、明確なナビゲーションと直感的なレイアウトで、業務内容や実績を効果的に伝えることを目指しました。</p>
+        </div>
+
+        <!-- icon模块 -->
+        <div class="icon-modules">
+            <div class="icon-module">
+              <img data-src="https://i.imgur.com/Nq72cpP.png"
+              data-fallback="https://pic1.imgdb.cn/item/67eca95c0ba3d5a1d7e9cdf3.png"
+              alt="image" class="icon"/>    
+              <div class="module-text">
+                <span class="title">TIME</span>
+                <span class="subtitle">2ヶ月</span>
+              </div>
+            </div>
+            <div class="icon-module">
+                <img data-src="https://i.imgur.com/MrtezJ4.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eca95c0ba3d5a1d7e9cdf1.png"
+                alt="image" class="icon"/>  
+              <div class="module-text">
+                <span class="title">DATE</span>
+                <span class="subtitle">2024年9月</span>
+              </div>
+            </div>
+            <div class="icon-module">
+                <img data-src="https://i.imgur.com/2zOrua1.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eca95c0ba3d5a1d7e9cdf4.png"
+                alt="image" class="icon"/>  
+              <div class="module-text">
+                <span class="title">ROLE</span>
+                <span class="subtitle">UI/UX designer</span>
+                <span class="subtitle">Illustrator</span>
+              </div>
+            </div>
+            <div class="icon-module">
+                <img data-src="https://i.imgur.com/36SftDE.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eca95c0ba3d5a1d7e9cdf5.png"
+                alt="image" class="icon"/>  
+              <div class="module-text">
+                <span class="title">AGENCY</span>
+                <span class="subtitle2">不動産会社</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二个大标题 -->
+        <div class="mainTitle">
+            <span class="number">02</span>
+            <span class="text">
+                <span class="firstLetter">O</span>BJECTIVES
+            </span>
+            <span class="subText">目標</span>
+        </div>
+
+        <!-- 第二部分主体内容 -->
+        <div class="textBlocksContainer">
+            <div class="textBlock">
+                <div class="textContent">
+                    <h2 class="title">ブランドイメージの向上</h2>
+                    <div class="underline"></div>
+                    <p class="paragraph">現代的でプロフェッショナルかつ美しいデザインにより、企業ブランドの信頼性とイメージを強化し、訪問者がウェブサイトを利用する際に会社の専門性と信頼感を感じられるようにします。</p>
+                </div>
+            </div>
+            <div class="textBlock">
+                <div class="textContent">
+                    <h2 class="title">顧客からの問い合わせ数の増加</h2>
+                    <div class="underline"></div>
+                    <p class="paragraph">ウェブサイトのユーザーインターフェースと行動誘導要素を最適化することで、ユーザーが不動産情報を問い合わせやすくし、潜在顧客の転換率を高めます。</p>
+                </div>
+            </div>
+            <div class="textBlock">
+                <div class="textContent">
+                    <h2 class="title">会社業務の包括的な展示の強化</h2>
+                    <div class="underline"></div>
+                    <p class="paragraph">ウェブサイト上で不動産投資や賃貸など、会社の多岐にわたる事業を包括的に紹介し、ユーザーが会社の業務範囲を明確に理解できるようにすることで、潜在的な協力機会を高めます。</p>
+                </div>
+            </div>
+        </div>
+
+         <!-- 第三个大标题 -->
+         <div class="mainTitle">
+            <span class="number">03</span>
+            <span class="text">
+                <span class="firstLetter">C</span>OLOR
+            </span>
+            <span class="subText">色彩</span>
+         </div>
+
+         <div class="secondImageContainer">
+            <img data-src="https://i.imgur.com/Z3cRh3c.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eca9460ba3d5a1d7e9cd94.png"
+                alt="image" />  
+         </div>
+
+         <!-- 颜色说明部分 -->
+         <!-- 第一个颜色 -->
+         <div class="colorSection">
+            <!-- 左边块 -->
+            <div class="colorBlock">
+                <div class="colorSquare"></div>
+                <span class="colorCode">#ECF4F6</span>
+            </div>
+        
+            <!-- 右边块 -->
+            <div class="colorDescription">
+                <div class="colorDescriptionTextTop">
+                    <!-- 上面一行文字 -->
+                    <p>淡い青色で、温かみのある灰色のトーンを持ち、清潔で爽やかな視覚環境を作り出します。</p>
+                </div>
+                <!-- 下面一行文字和文字块 -->
+                <div class="keywordSection">
+                    <span class="keyword">key words:</span>
+                    <div class="keywordBox">快適感</div>
+                    <div class="keywordBox">温かみ</div>
+                    <div class="keywordBox">信頼感</div>
+                </div>
+            </div>
+         </div>
+
+         <!-- 第二个颜色 -->
+         <div class="colorSection">
+            <!-- 左边块 -->
+            <div class="colorBlock">
+                <div class="colorSquare2"></div>
+                <span class="colorCode">#0068B3</span>
+            </div>
+        
+            <!-- 右边块 -->
+            <div class="colorDescription">
+                <div class="colorDescriptionTextTop">
+                    <!-- 上面一行文字 -->
+                    <p>深い青色で、強い冷色調を持ち、良好なコントラストを生み出し、視覚的に層次感を作り、ユーザーの注意を効果的に引きます。</p>
+                </div>
+                <!-- 下面一行文字和文字块 -->
+                <div class="keywordSection">
+                    <span class="keyword">key words:</span>
+                    <div class="keywordBox2">力強さ</div>
+                    <div class="keywordBox2">安定感</div>
+                    <div class="keywordBox2">現代的</div>
+                </div>
+            </div>
+         </div>
+
+         <!-- 第三个颜色 -->
+         <div class="colorSection">
+            <!-- 左边块 -->
+            <div class="colorBlock">
+                <div class="colorSquare3"></div>
+                <span class="colorCode">#D5E923</span>
+            </div>
+        
+            <!-- 右边块 -->
+            <div class="colorDescription">
+                <div class="colorDescriptionTextTop">
+                    <!-- 上面一行文字 -->
+                    <p>鮮やかな黄緑色で、活力に満ちており、重要な情報を際立たせ、クリックや操作を促進し、ユーザーの参加感を高めます。</p>
+                </div>
+                <!-- 下面一行文字和文字块 -->
+                <div class="keywordSection">
+                    <span class="keyword">key words:</span>
+                    <div class="keywordBox3">活力</div>
+                    <div class="keywordBox3">明るい</div>
+                    <div class="keywordBox3">目を引く</div>
+                </div>
+            </div>
+         </div>
+
+         <!-- 第四个颜色 -->
+         <div class="colorSection">
+            <!-- 左边块 -->
+            <div class="colorBlock2">
+                <div class="colorRow">
+                    <div class="colorSquare4"></div>
+                    <div class="colorCode">#ECF4F6</div>
+                </div>
+                <div class="colorRow">
+                    <div class="colorSquare5"></div>
+                    <div class="colorCode">#D5E923</div>
+                </div>
+                <div class="colorRow">
+                    <div class="colorSquare6"></div>
+                    <div class="colorCode">#0087B3</div>
+                </div>
+            </div>
+        
+            <!-- 右边块 -->
+            <div class="colorDescription">
+                <div class="colorDescriptionTextTop">
+                    <!-- 上面一行文字 -->
+                    <p>挿絵の中で補助色として使用され、鮮やかで補完的な特徴を持ち、視覚的な階層感と感情的な表現を効果的に向上させます。これらの色の組み合わせは強いコントラストと調和を生み出し、デザインに活力と動感を加えます。</p>
+                </div>
+                <!-- 下面一行文字和文字块 -->
+                <div class="keywordSection">
+                    <span class="keyword">key words:</span>
+                    <div class="keywordBox4">階層感</div>
+                    <div class="keywordBox5">コントラスト</div>
+                    <div class="keywordBox6">バランス</div>
+                </div>
+            </div>
+         </div>
+
+         <!-- 第四个大标题 -->
+         <div class="mainTitle">
+            <span class="number">04</span>
+            <span class="text">
+                <span class="firstLetter">F</span>RAMEWORK
+            </span>
+            <span class="subText">ページ構成</span>
+         </div>
+
+         <div class="thirdImageContainer">
+            <img data-src="https://i.imgur.com/65xo3B3.png"
+            data-fallback="https://pic1.imgdb.cn/item/67eca9460ba3d5a1d7e9cd95.png"
+            alt="image" />  
+         </div>
+
+         <!-- 第五个大标题 -->
+         <div class="mainTitle">
+            <span class="number">05</span>
+            <span class="text">
+                <span class="firstLetter">I</span>MPROVEMENTS
+            </span>
+            <span class="subText">改善</span>
+         </div>
+ 
+         <!-- 优化方向 -->
+         <div class="improvementBlock">
+            <div class="improvementTopSection">
+                <h2>改善の方向性</h2>
+            </div>
+            <div class="improvementBottomSection">
+                <div class="improvementRow">
+                    <div class="improvementKeyword">視覚面</div>
+                    <div class="improvementDots">
+                       <span></span> <!-- 第三个圆点的实际元素 -->
+                    </div>
+                    <div class="improvementText">ブランドの認識度を強化し、プロフェッショナルなブランドイメージを構築します。</div>
+                    <div class="improvementDots">
+                        <span></span> <!-- 第三个圆点的实际元素 -->
+                    </div>
+                    <div class="improvementOutlineBox">色</div>
+                    <div class="improvementOutlineBox">ラウンドコーナー</div>
+                    <div class="improvementOutlineBox">アニメーション要素</div>
+                    <div class="improvementOutlineBox">イラスト</div>
+                </div>
+
+                <div class="improvementRow">
+                    <div class="improvementKeyword">交互面</div>
+                    <div class="improvementDots">
+                       <span></span> <!-- 第三个圆点的实际元素 -->
+                    </div>
+                    <div class="improvementText">インタラクション体験を向上させ、ページ情報の表示を最適化する。</div>
+                    <div class="improvementDots">
+                        <span></span> <!-- 第三个圆点的实际元素 -->
+                    </div>
+                    <div class="improvementOutlineBox">ホバーエフェクト</div>
+                    <div class="improvementOutlineBox">スクロールエフェクト</div>
+                </div>
+
+                <div class="improvementRow">
+                    <div class="improvementKeyword">機能面</div>
+                    <div class="improvementDots">
+                       <span></span> <!-- 第三个圆点的实际元素 -->
+                    </div>
+                    <div class="improvementText">新しい機能ページを追加し、重要な機能の表示優先度を高める。</div>
+                    <div class="improvementDots">
+                        <span></span> <!-- 第三个圆点的实际元素 -->
+                    </div>
+                    <div class="improvementOutlineBox">新機能ページ</div>
+                    <div class="improvementOutlineBox">機能表示の優先順位</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第一个小标题 -->
+        <h2 class="improvementTitle">新旧デザイン比較と改善</h2>
+
+        <!-- 内部第一个小标题 -->
+        <div class="innerTitle">ホームページ</div>
+
+        <!-- 改前首页 -->
+        <div class="contrastSection">
+            <div class="contrastLeft">
+                <span class="contrastText">改善前</span>
+                <div class="contrastLine"></div>
+            </div>
+            
+            <img data-src="https://i.imgur.com/mWGLRNl.png"
+            data-fallback="https://pic1.imgdb.cn/item/67eca9470ba3d5a1d7e9cd97.png"
+            alt="image" class="contrastImage"/>  
+        
+            <div class="contrastRight">
+                <div class="contrastTextBlock">
+                    <div class="contrastTopText">
+                        <span class="contrastSubText">単調な視覚表現</span>
+                    </div>
+                    <p class="contrastDescription">ホームページには大きな画像だけがあり、視覚的な変化がなく、魅力に欠けます。</p>
+                </div>
+        
+                <div class="contrastTextBlock">
+                    <div class="contrastTopText">
+                        <span class="contrastSubText">階層感がない</span>
+                    </div>
+                    <p class="contrastDescription">ナビゲーションバーに視覚的な区別がなく、ユーザーは重要な機能を見逃しやすいです。</p>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- 改后首页 -->
+        <div class="contrastSection2">
+            <div class="contrastLeft">
+                <span class="contrastText2">改善後</span>
+                <div class="contrastLine2"></div>
+            </div>  
+            
+       
+            <img data-src="https://i.imgur.com/WkhMwgD.gif"
+            data-fallback="https://pic1.imgdb.cn/item/67ed47d80ba3d5a1d7eb249c.gif"
+            alt="image" class="contrastImage2"/> 
+        
+            <div class="contrastRight">
+                <div class="contrastTextBlock">
+                    <div class="contrastTopText">
+                        <span class="contrastSubText2">「Contact」ボタンの強調</span>
+                    </div>
+                    <p class="contrastDescription">「Contact」ボタンは黄緑色の背景で、目立ちやすく、ナビゲーションが使いやすくなりました。</p>
+                </div>
+        
+                <div class="contrastTextBlock">
+                    <div class="contrastTopText">
+                        <span class="contrastSubText2">動的な画像表示</span>
+                    </div>
+                    <p class="contrastDescription">画像がループしてスクロールすることで、ページがより生き生きとし、多様な不動産情報をより良く展示できます。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 内部第二个小标题 -->
+        <div class="innerTitle">メンバーページ</div>
+
+        <!-- 改前首页 -->
+        <div class="contrastSection">
+            <div class="contrastLeft">
+                <span class="contrastText">改善前</span>
+                <div class="contrastLine"></div>
+            </div>
+            
+            <img data-src="https://i.imgur.com/CsVvoB1.png"
+            data-fallback="https://pic1.imgdb.cn/item/67eca9460ba3d5a1d7e9cd93.png"
+            alt="image" class="contrastImage"/> 
+        
+            <div class="contrastRight">
+                <div class="contrastTextBlock">
+                    <div class="contrastTopText">
+                        <span class="contrastSubText">情報の表示が単調</span>
+                    </div>
+                    <p class="contrastDescription">スタイルやデザインの階層が欠けており、退屈に感じられます。</p>
+                </div>
+        
+                <div class="contrastTextBlock">
+                    <div class="contrastTopText">
+                        <span class="contrastSubText">インタラクション不足</span>
+                    </div>
+                    <p class="contrastDescription">ページにインタラクティブな要素がなく、ユーザー体験が静的で、魅力やインタラクションを生み出せません。</p>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- 改后首页 -->
+        <div class="contrastSection">
+            <div class="contrastLeft">
+                <span class="contrastText2">改善後</span>
+                <div class="contrastLine2"></div>
+            </div>  
+            
+            <img data-src="https://i.imgur.com/Dt60lnA.gif"
+            data-fallback="https://pic1.imgdb.cn/item/67ed47db0ba3d5a1d7eb249d.gif"
+            alt="image" class="contrastImage2"/> 
+        
+            <div class="contrastRight">
+                <div class="contrastTextBlock">
+                    <div class="contrastTopText">
+                        <span class="contrastSubText2">写真にデザイン感を加える</span>
+                    </div>
+                    <p class="contrastDescription">写真に丸みを帯びた角と傾斜した黄緑色の背景を加え、元の単調な画像表示を打破し、視覚的な層次と現代的な感覚を増しました。</p>
+                </div>
+        
+                <div class="contrastTextBlock">
+                    <div class="contrastTopText">
+                        <span class="contrastSubText2">インタラクションを強化する</span>
+                    </div>
+                    <p class="contrastDescription">マウスをホバーすると、写真がクリアに表示され、クリックするとメンバーの詳細情報が表示されます。インタラクションを提供し、ユーザー体験が向上しました。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第一个小标题 -->
+        <h2 class="improvementTitle">新規ページ</h2>
+
+        <!-- 轮播图 -->
+        <div class="imageSlider">
+            <div class="imageSlider-container">
+                <!-- 添加左右箭头 -->
+                <div class="imageSlider-arrow imageSlider-arrow-left">&lt;</div>
+                <div class="imageSlider-arrow imageSlider-arrow-right">&gt;</div>
+                
+                <div class="imageSlider-item">
+                    <img data-src="https://i.imgur.com/ZtxKyGI.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecac100ba3d5a1d7e9d588.png"
+            alt="image" /> 
+                </div>
+
+                <div class="imageSlider-item">
+                    <img data-src="https://i.imgur.com/WJl5e9t.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecac300ba3d5a1d7e9d604.png"
+            alt="image" /> 
+                </div>
+                <div class="imageSlider-item">
+                    <img data-src="https://i.imgur.com/7Wd2f4f.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecac300ba3d5a1d7e9d603.png"
+            alt="image" /> 
+                </div>
+                <div class="imageSlider-item">
+                    <img data-src="https://i.imgur.com/31WE8rY.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecac300ba3d5a1d7e9d605.png"
+            alt="image" /> 
+                </div>
+                <div class="imageSlider-item">
+                    <img data-src="https://i.imgur.com/BGkepK3.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ecac300ba3d5a1d7e9d606.png"
+                    alt="image" /> 
+                </div>
+            </div>
+
+             <!-- 新增小圆点容器 -->
+            <div class="imageSlider-dots">
+                <div class="imageSlider-dot" data-index="0"></div>
+                <div class="imageSlider-dot" data-index="1"></div>
+                <div class="imageSlider-dot" data-index="2"></div>
+                <div class="imageSlider-dot" data-index="3"></div>
+                <div class="imageSlider-dot" data-index="4"></div>
+            </div>
+
+            <div class="imageSlider-text">
+                <div class="contrastTopText2">
+                    <span class="contrastSubText2">イラストを使って会社の成功事例を展示します</span>
+                </div>
+                <p>生き生きとしたビジュアルで、魅力的なストーリーを展開し、ユーザーの感情的共鳴を高め、感情的なつながりを強化します。</p>
+            </div>
+        </div>
+        
+        <!-- 第六个大标题 -->
+        <div class="mainTitle">
+            <span class="number">06</span>
+            <span class="text">
+                <span class="firstLetter">P</span>AGE&nbsp;OVERVIEW
+            </span>
+            <span class="subText">ページ一覧</span>
+        </div>
+        
+        <!-- 总览的图片 -->
+        <div class="overviewContainer">
+            <!-- 主图片 -->
+            <img data-src="https://i.imgur.com/KMxVk8O.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ecad490ba3d5a1d7e9d9a6.png"
+                    alt="image" class="overviewMainImage" />
+            
+            <!-- 背景层 -->
+            <div class="overviewBackgroundLayer">
+  
+                <img data-src="https://i.imgur.com/Vcv43oQ.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecb9fe0ba3d5a1d7e9f287.png"
+                        alt="image" class="overviewBackgroundImage" />
+
+                <img data-src="https://i.imgur.com/w0Vr4q1.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecbda10ba3d5a1d7e9f3c2.png"
+                alt="image" class="overviewBackgroundImage1" />      
+        
+                <!-- 三列图片 -->
+                <div class="overviewImageColumns">
+                    <!-- 第一列 (一张长图) -->
+                    <div class="overviewImageColumn">
+                        <img data-src="https://i.imgur.com/n0zEddK.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecadad0ba3d5a1d7e9dad4.png"
+                        alt="image" class="image3" />
+                    </div>
+        
+                    <!-- 第二列 (四张图片) -->
+                    <div class="overviewImageColumn">
+                        <img data-src="https://i.imgur.com/fxjRqZF.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecaebf0ba3d5a1d7e9dd31.png"
+                        alt="image" class="image1" />
+
+                        <img data-src="https://i.imgur.com/ItimCeU.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecaebd0ba3d5a1d7e9dd2c.png"
+                        alt="image"  />
+  
+                        <img data-src="https://i.imgur.com/T1RZW0W.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecaf220ba3d5a1d7e9de1b.png"
+                        alt="image"  />
+
+                        <img data-src="https://i.imgur.com/z83PnAB.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecaec20ba3d5a1d7e9dd39.png"
+                        alt="image"  />
+                    </div>
+        
+                    <!-- 第三列 (三张图片) -->
+                    <div class="overviewImageColumn">
+         
+                        <img data-src="https://i.imgur.com/459nM67.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecaebe0ba3d5a1d7e9dd30.png"
+                        alt="image" class="image2" />
+
+                        <img data-src="https://i.imgur.com/7OV9M5V.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecaec30ba3d5a1d7e9dd3b.png"
+                        alt="image"  />
+            
+                        <img data-src="https://i.imgur.com/b8o5UtC.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecaebd0ba3d5a1d7e9dd2d.png"
+                        alt="image" />
+                    </div>
+                </div>
+                  <!-- 图片作为纯色背景层 -->
+                <div class="overviewOverlayLayer">
+
+                    <img data-src="https://i.imgur.com/t3sGx6o.png"
+                        data-fallback="https://pic1.imgdb.cn/item/67ecafe20ba3d5a1d7e9e0a3.png"
+                        alt="image" class="overviewOverlayImage"/>
+                </div>
+            </div>
+        
+          
+        </div>
+
+        <!-- 第七个大标题 -->
+        <div class="mainTitle">
+            <span class="number">07</span>
+            <span class="text">
+                <span class="firstLetter">O</span>THER&nbsp;PROJECTS
+            </span>
+            <span class="subText">ほかのプロジェクト</span>
+        </div>
+
+         <!-- 最后一部分 -->
+         <section class="other-project" id="project-section">
+            <div class="projectImage">
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/4BjE1AR.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea4dc20ba3d5a1d7e8067a.png"
+              alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label1">架空</span>
+                  <h2 class="overlay-title">SceneMap</h2>
+                  <p class="overlay-description">好きなアニメの舞台を探し、現地で写真を撮ってシェアできる巡礼アプリ。</p>
+                  <a href="./scene map.html" class="overlay-btn1">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/uFu5gOG.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ea4e050ba3d5a1d7e80744.png"
+                    alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label2">架空</span>
+                  <h2 class="overlay-title2">シニアのひろば</h2>
+                  <p class="overlay-description">中高年向け、コミュニティ活動を探して参加できるリマインダー付きのレスポンシブカレンダーアプリ・サイト。</p>
+                  <a href="./laonian.html" class="overlay-btn2">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="other-project">
+            <div class="projectImage">
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/pDBMBBN.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ea4ded0ba3d5a1d7e806fd.png"
+                    alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label3">実案件</span>
+                  <h2 class="overlay-title3">易米易货</h2>
+                  <h2 class="overlay-title2">イ·べイ·イ·か</h2>
+                  <p class="overlay-description">物品を交換し、無駄なく生活を楽しむための、簡単で便利な物々交換アプリ。</p>
+                  <a href="./yimiyihuo.html" class="overlay-btn3">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/axZKEGL.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ea4e0f0ba3d5a1d7e80761.png"
+                    alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label4">架空</span>
+                  <h2 class="overlay-title2">カクテルメーカー</h2>
+                  <p class="overlay-description">自宅で簡単にカクテルが作れるウェブサイト。</p>
+                  <a href="./jiweijiu.html" class="overlay-btn4">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="other-project">
+            <div class="projectImage">
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/ZhnEmSD.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ea4f450ba3d5a1d7e808b1.png"
+                    alt="图片" class="project-image" />
+                <div class="overlay">
+                  <h2 class="overlay-title">OTHERS</h2>
+                  <p class="overlay-description2">GRAPHIC DESIGN, ILLUSTRATION，SHORT ANIMATION</p>
+                  <a href="./other.html" class="overlay-btn5">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- 小屏幕布局（768px 及以下显示） -->
+           <section class="mobileOtherProject" id="project-section">
+
+            <!-- 第二个项目 -->
+            <div class="mobile-layout bg-color-2">
+              <img data-src="https://i.imgur.com/evHwrU6.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ea52fd0ba3d5a1d7e80a11.png"
+                    alt="图片"/>
+              <a href="./scene map.html" class="button">view more</a>
+            </div>
+
+            <!-- 第三个项目 -->
+
+            <div class="mobile-layout bg-color-5">
+              <img data-src="https://i.imgur.com/JZbDsC6.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ea53320ba3d5a1d7e80a26.png"
+                    alt="图片"/>
+              <a href="./laonian.html" class="button">view more</a>
+            </div>
+            
+
+            <!-- 第四个项目 -->
+            <div class="mobile-layout bg-color-3">
+              <img data-src="https://i.imgur.com/1h6kYfW.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ea531b0ba3d5a1d7e80a20.png"
+                    alt="图片"/>
+              <a href="./yimiyihuo.html" class="button">view more</a>
+            </div>
+
+            <!-- 第五个项目 -->
+            <div class="mobile-layout bg-color-1">
+              <img data-src="https://i.imgur.com/JATnDeX.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ea533c0ba3d5a1d7e80a2a.png"
+                    alt="图片"/>
+              <a href="./jiweijiu.html" class="button">view more</a>
+            </div>
+
+            <!-- 第六个项目 -->
+            <div class="mobile-layout bg-color-4">
+              <img data-src="https://i.imgur.com/DIMz0Tu.png"
+                    data-fallback="https://pic1.imgdb.cn/item/67ea53560ba3d5a1d7e80a45.png"
+                    alt="图片"/>
+              <a href="./other.html" class="button">view more</a>
+            </div>
+           </section>
+
+
+            <!-- 底部 -->
+      <footer class="footer">
+        <p>&copy; 2025 Tian Jingwen. All Rights Reserved.</p>
+      </footer>
+
+
+     <script src="index.js"></script>
+     
+     <script>
+        function switchImage(imgElement, fallbackSrc) {
+          let testImg = new Image();
+          testImg.src = imgElement.dataset.src; // 先尝试国外图床
+      
+          testImg.onload = function () {
+            imgElement.src = imgElement.dataset.src; // 成功加载则使用国外图床
+          };
+      
+          testImg.onerror = function () {
+            imgElement.src = fallbackSrc; // 失败则切换到国内图床
+          };
+        }
+      
+        function checkAndReplaceImages() {
+          document.querySelectorAll('img[data-src]').forEach(img => {
+            let fallbackSrc = img.dataset.fallback;
+            switchImage(img, fallbackSrc);
+          });
+        }
+      
+        window.addEventListener("load", checkAndReplaceImages);
+      </script>
+  </body>
+</html>

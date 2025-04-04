@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer">
+    <title>易米易货</title>
+    <link rel="stylesheet" href="./yimiyihuo.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1234567_xxx.css">
+
+  </head>
+
+  <body>
+     <!-- 背景区域 -->
+     <div class="background-container">
+        <!-- 顶部导航栏 -->
+        <header class="header">
+          <div class="logo">
+              <a href="./index.html"> <!-- 将图片包裹在 <a> 标签中 -->
+                <img data-src="https://i.imgur.com/eDoAbSe.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea47530ba3d5a1d7e7fea2.png"
+                alt="Logo" />
+                </a>
+          </div>
+  
+          <nav class="navbar">
+            <ul>
+              <li class="dropdown">
+                  <a href="#project-section">Project</a>
+                  <!-- 暂时不要下拉菜单了，因为效果有点丑 -->
+                  <!-- <ul class="dropdown-menu">
+                      <li><a href="#" class="menu-item-1">SceneMap</a></li>
+                      <li><a href="#" class="menu-item-2">不動産サイト</a></li>
+                      <li><a href="#" class="menu-item-3">易米易货</a></li>
+                      <li><a href="#" class="menu-item-4">アクティブカレンダー</a></li>
+                      <li><a href="#" class="menu-item-5">カクテルメーカー</a></li>
+                      <li><a href="#" class="menu-item-6">OTHERS</a></li>
+                    </ul> -->
+                </li>
+              <li><a href="./about.html">About Me</a></li>
+            </ul>
+          </nav>
+
+            <!-- 汉堡菜单按钮 -->
+          <button class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+  
+          <!-- 小屏幕菜单 -->
+          <div class="mobile-menu">
+            <ul>
+              <li><a href="./scene map.html">SceneMap</a></li>
+              <li><a href="./fangdichan.html">不動産サイト</a></li>
+              <li><a href="./laonian.html">シニアのひろば</a></li>
+              <li><a href="./yimiyihuo.html">易米易货</a></li>
+              <li><a href="./jiweijiu.html">カクテルメーカー</a></li>
+              <li><a href="./other.html">OTHERS</a></li>
+              <li><a href="./about.html">About Me</a></li>
+            </ul>
+          </div>
+
+        </header>
+
+          <!-- 主体内容 -->
+          <main>
+            <section class="hero">
+              
+              <img data-src="https://i.imgur.com/ZlD2S9l.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecc8c10ba3d5a1d7e9f76c.png"
+              alt="image" class="main-image"/>
+            </section>
+          </main>
+      </div>
+
+        <!-- 第一个大标题 -->
+        <!-- <section class="mainTitle">
+            <div class="mainTitleContainer">
+            <img src="./image/yimiyihuo/2.png" alt="Icon" class="mainTitleIcon" />
+            <h1 class="mainTitleText">プロジェクト概要</h1>
+            </div>
+        </section> -->
+
+            <!-- 概要的段落内容 -->
+        <div class="firstTextContainer">
+            <p class="firstTextLine">「易米易貨」は、革新的なECプラットフォームで、ユーザーは現金を使わずに物々交換で商品を取引できます。環境保護と資源共有を促進し、ユーザーが簡単に現金なしでの取引を実現できるよう設計されています。</p>
+        </div>
+
+
+        <!-- icon模块 -->
+        <div class="icon-modules">
+            <div class="icon-module">
+         
+              <img data-src="https://i.imgur.com/uhMf9GU.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecc9150ba3d5a1d7e9f79a.png"
+              alt="image" class="icon"/>
+              <div class="module-text">
+                <span class="title">TIME</span>
+                <span class="subtitle">2ヶ月</span>
+              </div>
+            </div>
+            <div class="icon-module">
+          
+              <img data-src="https://i.imgur.com/JhApxX6.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecc9150ba3d5a1d7e9f798.png"
+              alt="image" class="icon"/>
+              <div class="module-text">
+                <span class="title">DATE</span>
+                <span class="subtitle">2024年8月</span>
+              </div>
+            </div>
+            <div class="icon-module">
+      
+              <img data-src="https://i.imgur.com/ju3Psmk.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecc9150ba3d5a1d7e9f799.png"
+              alt="image" class="icon"/>
+              <div class="module-text">
+                <span class="title">ROLE</span>
+                <span class="subtitle">UI/UX designer</span>
+              </div>
+            </div>
+            <div class="icon-module">
+              
+              <img data-src="https://i.imgur.com/A6AiehS.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecc9150ba3d5a1d7e9f79b.png"
+              alt="image" class="icon"/>
+              <div class="module-text">
+                <span class="title">AGENCY</span>
+                <span class="subtitle1">「易米易货」</span>
+                <span class="subtitle1">ECプラットフォーム</span>
+              </div>
+            </div>
+          </div>
+
+            <!--第二个大标题 -->
+            <section class="mainTitle">
+                <div class="mainTitleContainer">
+                <!-- <img src="./image/yimiyihuo/7.png" alt="Icon" class="mainTitleIcon" /> -->
+                <h1 class="mainTitleText">問題定義</h1>
+                </div>
+            </section>
+
+            <section>
+       
+              <img data-src="https://i.imgur.com/krhuFcN.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecc9b30ba3d5a1d7e9f7d0.png"
+              alt="image" class="gaishuImage"/>
+            </section>
+
+                <!-- 挑战的段落内容 -->
+            <div class="firstTextContainer">
+              <div class="tiaozhanTitle">
+                <h2 class="tiaozhanTitleText">挑戦</h2>
+              </div>
+                <p class="firstTextLine">現金を使わずに商品を取引できる革新的なECプラットフォームを設計し、信頼性、持続可能性、そしてコミュニティの繋がりを促進する、シームレスで直感的な物々交換体験を実現する。</p>
+            </div>
+
+            <!-- 对策的段落内容 -->
+            <div class="firstTextContainer">
+              <div class="tiaozhanTitle">
+                <h2 class="tiaozhanTitleText">対策</h2>
+              </div>
+                <p class="firstTextLine">「易米易貨」は、直感的なインターフェースを通じてユーザーがシームレスに商品を交換できるプラットフォームです。ユーザーレビュー、リアルタイムメッセージ、パーソナライズされた推薦機能を活用し、信頼とコミュニティの繋がりを促進します。</p>
+            </div>
+
+            <!-- 第三个大标题 -->
+            <section class="mainTitle">
+                <div class="mainTitleContainer">
+                <!-- <img src="./image/yimiyihuo/8.png" alt="Icon" class="mainTitleIcon" /> -->
+                <h1 class="mainTitleText">リサーチ</h1>
+                </div>
+            </section>
+
+                <!-- 通用小标题1 -->
+            <section class="commonTitleSection">
+                <div class="commonTitle">
+                <h2 class="commonTitleText">研究目標</h2>
+                <div class="commonTitleUnderline"></div>
+                </div>
+            </section>
+
+            <!-- 研究目标模块 -->
+            <section class="researchGoals">
+                <div class="goalBlock">
+                <p>ユーザーのニーズを理解する</p>
+                </div>
+                <div class="goalBlock">
+                <p>ユーザーの行動を分析する</p>
+                </div>
+            </section>
+
+            <section class="researchGoals1">
+                <div class="goalBlock">
+                <p>プラットフォームの機能を評価する</p>
+                </div>
+                <div class="goalBlock">
+                <p>ユーザー体験を向上させる</p>
+                </div>
+            </section>
+
+        
+                <!-- 通用小标题2 -->
+            <section class="commonTitleSection">
+                <div class="commonTitle">
+                <h2 class="commonTitleText">研究方法</h2>
+                <div class="commonTitleUnderline"></div>
+                </div>
+            </section>
+
+              <!-- 方法的段落内容 -->
+              <div class="firstTextContainer1">
+                <p class="firstTextLine">アンケート調査とユーザーインタビューを通じて、ユーザーのニーズ、行動習慣、および物々交換プラットフォームへの期待を深く理解します。</p>
+            </div>
+
+              <!-- 通用小标题3 -->
+              <section class="commonTitleSection">
+                <div class="commonTitle">
+                <h2 class="commonTitleText">調査の結果</h2>
+                <div class="commonTitleUnderline"></div>
+                </div>
+            </section>
+
+              <!-- 调查的段落内容 -->
+              <div class="firstTextContainer1">
+                <p class="firstTextLine">この調査では、ユーザーのニーズと動機、行動習慣、信用システムへの考え方、そして利用時の課題と改善提案について質問しました。</p>
+            </div>
+
+            <!-- 调查结果模块 -->
+            <section class="surveyResults">
+              
+                <img data-src="https://i.imgur.com/9G5Kr92.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecca0a0ba3d5a1d7e9f7e7.png"
+              alt="image" class="surveyImage"/>
+            
+                <img data-src="https://i.imgur.com/1uI0BSx.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecca0a0ba3d5a1d7e9f7ea.png"
+              alt="image" class="surveyImage"/>
+            </section>
+
+            <section class="surveyResults1">
+              
+                <img data-src="https://i.imgur.com/KsKaQbb.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecca0a0ba3d5a1d7e9f7e9.png"
+              alt="image" class="surveyImage"/>
+           
+                <img data-src="https://i.imgur.com/FEJeffj.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecca0a0ba3d5a1d7e9f7e8.png"
+              alt="image" class="surveyImage"/>
+            </section>
+
+              <!-- 通用小标题4 -->
+              <section class="commonTitleSection">
+                <div class="commonTitle">
+                <h2 class="commonTitleText">ペイン</h2>
+                <div class="commonTitleUnderline"></div>
+                </div>
+            </section>
+
+            <section class="surveyResults2">
+           
+                <img data-src="https://i.imgur.com/HjjFIT0.png"
+              data-fallback="https://pic1.imgdb.cn/item/67eccaa40ba3d5a1d7e9f828.png"
+              alt="image" class="surveyImage"/>
+         
+                <img data-src="https://i.imgur.com/7awsb4w.png"
+              data-fallback="https://pic1.imgdb.cn/item/67eccaa40ba3d5a1d7e9f827.png"
+              alt="image" class="surveyImage"/>
+            </section>
+
+            <!-- 通用小标题5 -->
+            <section class="commonTitleSection">
+                <div class="commonTitle">
+                <h2 class="commonTitleText">洞察</h2>
+                <div class="commonTitleUnderline"></div>
+                </div>
+            </section>
+
+            <!-- 洞察模块 -->
+            <section class="insights">
+            
+                <img data-src="https://i.imgur.com/YbjznVw.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccaea0ba3d5a1d7e9f83b.png"
+                alt="image" class="insightImage"/>
+            </section>
+
+            <!-- 通用小标题6 -->
+            <section class="commonTitleSection">
+                <div class="commonTitle">
+                <h2 class="commonTitleText">解決策</h2>
+                <div class="commonTitleUnderline"></div>
+                </div>
+            </section>
+
+             <!-- 解决模块 -->
+             <section class="solution">
+             
+                <img data-src="https://i.imgur.com/FQrOqtL.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccb420ba3d5a1d7e9f85f.png"
+                alt="image" class="solutionImage"/>
+            </section>
+
+             <!-- 洞察模块 -->
+             <section class="solution1">
+       
+                <img data-src="https://i.imgur.com/epFar9I.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccb710ba3d5a1d7e9f88b.png"
+                alt="image" class="solutionImage"/>
+            </section>
+
+            <!-- 第四个大标题 -->
+            <section class="mainTitle">
+                <div class="mainTitleContainer">
+                <!-- <img src="./image/yimiyihuo/18.png" alt="Icon" class="mainTitleIcon" /> -->
+                <h1 class="mainTitleText">デザイン</h1>
+                </div>
+            </section>
+
+            <!-- 通用小标题7 -->
+            <section class="commonTitleSection">
+                <div class="commonTitle">
+                <h2 class="commonTitleText">ログデザイン</h2>
+                <div class="commonTitleUnderline"></div>
+                </div>
+            </section>
+
+            <!-- Logo 设计理念说明模块 -->
+            <section class="logoConcept">
+                <!-- 左边 Logo -->
+                <div class="logoContainer">
+              
+                <img data-src="https://i.imgur.com/8U9WOnf.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccba30ba3d5a1d7e9f8a9.png"
+                alt="image" class="logoImage"/>
+                </div>
+            
+                <!-- 右边文字和颜色块 -->
+                <div class="textContainer">
+                <!-- 第一行文字 -->
+                <p class="conceptTitle">「易」の字を中心に、円形の変形と角丸の四角形ベースを使用し、シンプルで親しみやすいブランドイメージを表現しました。</p>
+            
+                <!-- 第二行文字 -->
+                <p class="conceptSubtitle">リサイクルマークを組み込むことで、環境保護の理念を強調し、物々交換の持続可能性と資源共有の価値を伝えています。</p>
+            
+                <!-- 颜色块和文字段落 -->
+                <div class="colorBlockContainer">
+                    <div class="colorInner">
+                        <!-- 颜色块 -->
+                        <div class="colorBlock"></div>
+                
+                        <!-- 颜色文字 -->
+                        <span class="colorText">#F5B038</span>
+                    </div>
+                    <!-- 文字段落 -->
+                    <p class="conceptDescription">
+                        温かみと活気のあるオレンジイエローで、親しみやすさと環境保護の理念を伝え、視覚的な吸引力とユーザーの感情的な共感を高めます。
+                    </p>
+                </div>
+                </div>
+            </section>
+
+             <!-- 通用小标题8 -->
+             <section class="commonTitleSection">
+                <div class="commonTitle">
+                <h2 class="commonTitleText">プロトタイプ</h2>
+                <div class="commonTitleUnderline"></div>
+                </div>
+            </section>
+
+                <!-- 原型 -->
+            <section class="wireframeFourImagesSection">
+             
+                <img data-src="https://i.imgur.com/Uc3GSdE.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccbf50ba3d5a1d7e9f8c5.png"
+                alt="image" class="wireframeFourImage"/>
+           
+                <img data-src="https://i.imgur.com/zrIYp5j.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccbf50ba3d5a1d7e9f8c7.png"
+                alt="image" class="wireframeFourImage"/>
+             
+                <img data-src="https://i.imgur.com/8kxics7.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccbf50ba3d5a1d7e9f8c8.png"
+                alt="image" class="wireframeFourImage"/>
+              
+                <img data-src="https://i.imgur.com/sLZDsvI.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccbf50ba3d5a1d7e9f8c6.png"
+                alt="image" class="wireframeFourImage"/>
+            </section>
+
+            <section class="wireframeFourImagesSection">
+              
+                <img data-src="https://i.imgur.com/uKGJ59p.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccc550ba3d5a1d7e9f8e7.png"
+                alt="image" class="wireframeFourImage"/>
+          
+                <img data-src="https://i.imgur.com/na0AC6N.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccc550ba3d5a1d7e9f8e8.png"
+                alt="image" class="wireframeFourImage"/>
+               
+                <img data-src="https://i.imgur.com/dkKfrgy.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccc550ba3d5a1d7e9f8e9.png"
+                alt="image" class="wireframeFourImage"/>
+              
+                <img data-src="https://i.imgur.com/D2UGTJV.png"
+                data-fallback="https://pic1.imgdb.cn/item/67eccc550ba3d5a1d7e9f8ea.png"
+                alt="image" class="wireframeFourImage"/>
+
+            </section>
+
+            <section class="wireframeFourImagesSection">
+          
+                <img data-src="https://i.imgur.com/FTAKfFU.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecccb20ba3d5a1d7e9f929.png"
+                alt="image" class="wireframeFourImage"/>
+              
+                <img data-src="https://i.imgur.com/ZTx6Zvm.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecccb20ba3d5a1d7e9f926.png"
+                alt="image" class="wireframeFourImage"/>
+              
+                <img data-src="https://i.imgur.com/nSVaVYC.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecccb20ba3d5a1d7e9f927.png"
+                alt="image" class="wireframeFourImage"/>
+              
+                <img data-src="https://i.imgur.com/zPfBZKa.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecccb20ba3d5a1d7e9f928.png"
+                alt="image" class="wireframeFourImage"/>
+
+            </section>
+
+             <!-- 第五个大标题 -->
+             <section class="mainTitle">
+                <div class="mainTitleContainer">
+                <!-- <img src="./image/yimiyihuo/20.png" alt="Icon" class="mainTitleIcon" /> -->
+                <h1 class="mainTitleText">ほかのプロジェクト</h1>
+                </div>
+            </section>
+
+             <!-- 最后一部分 -->
+         <section class="other-project" id="project-section">
+            <div class="projectImage">
+
+                <div class="image-box">
+                  <img data-src="https://i.imgur.com/4BjE1AR.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea4dc20ba3d5a1d7e8067a.png"
+              alt="图片" class="project-image" />
+                  <div class="overlay">
+                    <span class="label1">架空</span>
+                    <h2 class="overlay-title">SceneMap</h2>
+                    <p class="overlay-description">好きなアニメの舞台を探し、現地で写真を撮ってシェアできる巡礼アプリ。</p>
+                    <a href="./scene map.html" class="overlay-btn1">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                  </div>
+               </div>
+
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/PsGJ8NX.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea4dd10ba3d5a1d7e806a6.png"
+                alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label2">実案件</span>
+                  <h2 class="overlay-title2">不動産サイト</h2>
+                  <p class="overlay-description">不動産会社の業務内容と事例を紹介する企業サイト。</p>
+                  <a href="./fangdichan.html" class="overlay-btn2">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <section class="other-project">
+            <div class="projectImage">
+                <div class="image-box">
+                  <img data-src="https://i.imgur.com/uFu5gOG.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea4e050ba3d5a1d7e80744.png"
+                  alt="图片" class="project-image" />
+                    <div class="overlay">
+                      <span class="label3">架空</span>
+                      <h2 class="overlay-title2">シニアのひろば</h2>
+                      <p class="overlay-description3">中高年向け、コミュニティ活動を探して参加できるリマインダー付きのレスポンシブカレンダーアプリ・サイト。</p>
+                      <a href="./laonian.html" class="overlay-btn3">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                    </div>
+                  </div>
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/axZKEGL.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4e0f0ba3d5a1d7e80761.png"
+        alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label4">架空</span>
+                  <h2 class="overlay-title2">カクテルメーカー</h2>
+                  <p class="overlay-description">自宅で簡単にカクテルが作れるウェブサイト。</p>
+                  <a href="./jiweijiu.html" class="overlay-btn4">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="other-project">
+            <div class="projectImage">
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/ZhnEmSD.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea4f450ba3d5a1d7e808b1.png"
+                alt="图片" class="project-image" />
+                <div class="overlay">
+                  <h2 class="overlay-title">OTHERS</h2>
+                  <p class="overlay-description2">GRAPHIC DESIGN, ILLUSTRATION，SHORT ANIMATION</p>
+                  <a href="./other.html" class="overlay-btn5">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- 小屏幕布局（768px 及以下显示） -->
+           <section class="mobileOtherProject" id="project-section">
+
+            <!-- 第二个项目 -->
+            <div class="mobile-layout bg-color-1">
+              <img data-src="https://i.imgur.com/evHwrU6.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ea52fd0ba3d5a1d7e80a11.png"
+            alt="图片"/>
+              <a href="./scene map.html" class="button">view more</a>
+            </div>
+            
+
+            <!-- 第三个项目 -->
+            <div class="mobile-layout bg-color-2">
+              <img data-src="https://i.imgur.com/7Yih8Th.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea530c0ba3d5a1d7e80a1c.png"
+        alt="图片"/>
+              <a href="./fangdichan.html" class="button">view more</a>
+            </div>
+
+            <!-- 第四个项目 -->
+            <div class="mobile-layout bg-color-5">
+              <img data-src="https://i.imgur.com/JZbDsC6.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea53320ba3d5a1d7e80a26.png"
+              alt="图片"/>
+                <a href="./laonian.html" class="button">view more</a>
+            </div>
+            <!-- 第五个项目 -->
+            <div class="mobile-layout bg-color-1">
+              <img data-src="https://i.imgur.com/JATnDeX.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea533c0ba3d5a1d7e80a2a.png"
+        alt="图片"/>
+              <a href="./jiweijiu.html" class="button">view more</a>
+            </div>
+
+            <!-- 第六个项目 -->
+            <div class="mobile-layout bg-color-4">
+              <img data-src="https://i.imgur.com/DIMz0Tu.png"
+          data-fallback="https://pic1.imgdb.cn/item/67ea53560ba3d5a1d7e80a45.png"
+          alt="图片"/>
+              <a href="./other.html" class="button">view more</a>
+            </div>
+           </section>
+
+            <!-- 底部 -->
+      <footer class="footer">
+        <p>&copy; 2025 Tian Jingwen. All Rights Reserved.</p>
+      </footer>
+
+      <script src="index.js"></script>
+
+      <script>
+        function switchImage(imgElement, fallbackSrc) {
+          let testImg = new Image();
+          testImg.src = imgElement.dataset.src; // 先尝试国外图床
+      
+          testImg.onload = function () {
+            imgElement.src = imgElement.dataset.src; // 成功加载则使用国外图床
+          };
+      
+          testImg.onerror = function () {
+            imgElement.src = fallbackSrc; // 失败则切换到国内图床
+          };
+        }
+      
+        function checkAndReplaceImages() {
+          document.querySelectorAll('img[data-src]').forEach(img => {
+            let fallbackSrc = img.dataset.fallback;
+            switchImage(img, fallbackSrc);
+          });
+        }
+      
+        window.addEventListener("load", checkAndReplaceImages);
+      </script>
+
+  </body>
+<html>
+
+
+

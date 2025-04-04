@@ -1,0 +1,1368 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px; /* 默认字体大小 16px，1rem = 16px */
+    font-family: 'Noto Serif JP','Microsoft YaHei' , 'Roboto'，'Arial';
+    letter-spacing: 0.06rem; /* 字母之间的间距 */
+    line-height: normal;
+  }
+  
+ /* 背景容器 */
+.background-container {
+    position: relative;
+    background-color: #E7E2F4; /* 蓝灰色背景填充 */
+    display: flex;
+    flex-direction: column; /* 元素从上到下排列 */
+    justify-content: space-between; /* 让内容在顶部和底部分布 */
+    align-items: flex-end; /* 水平居中 */
+    aspect-ratio: 16/9;
+}
+.backgroundImage{
+  display: block;
+  width: 100%;
+  height:auto;
+  margin-top: auto;
+
+}
+  
+  /* 中等屏幕和大屏幕背景 */
+  @media (min-width: 1024px) {
+    .background-container {
+      background-image: url('');
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .background-container {
+      background-image: url('');
+    }
+  }
+  
+  /* 小屏幕背景 */
+  @media (max-width: 768px) {
+    .background-container {
+      background-image: url('');
+    }
+  }
+  
+  /* 顶部导航栏 */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2vh 8vw 1vh ;
+    position: fixed; /* 固定导航栏 */
+    z-index: 9999; /* 确保导航栏处于页面所有其他内容的上层 */
+    background-color: transparent; /* 初始状态下背景透明 */
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+  }
+
+  .header.scrolled {
+    background-color: white; /* 滚动时背景变为白色 */
+  }
+  
+  .logo img {
+    width: 4rem; /* logo 的宽度 */
+    height: auto;
+    padding-top: 1rem;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navbar ul li {
+    margin-left: 5vw;
+  }
+
+/* 汉堡菜单按钮样式 */
+.hamburger-menu {
+  display: none; /* 默认不显示 */
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  top: 4vh;
+  right: 6vw;
+  z-index: 1000; /* 确保按钮在最上层 */
+  position: absolute;
+  border: none;
+  background-color: transparent;
+}
+
+.hamburger-menu span {
+  display: none; /* 默认不显示 */
+  width: 100%;
+  height:2px;
+  background-color: rgb(31, 31, 31);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 1000; /* 确保按钮在最上层 */
+}
+
+.hamburger-menu span:nth-child(1) {
+  top:0;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-menu span:nth-child(3) {
+ bottom: 0;
+}
+
+
+
+
+/* 小屏幕菜单样式 */
+.mobile-menu {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* 铺满整个屏幕 */
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  z-index: 999; /* 确保菜单在内容上层 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mobile-menu ul {
+  list-style: none; /* 去掉列表符号 */
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 文字居中 */
+}
+
+.mobile-menu ul li {
+  margin: 1.5rem 0; /* 菜单项之间的间距 */
+}
+
+.mobile-menu ul li a {
+  color: white; /* 文字颜色 */
+  text-decoration: none; /* 去掉下划线 */
+  font-size: 1.2rem; /* 文字大小 */
+  font-family: Noto Serif JP;
+  font-weight: 500;
+}
+
+/* 小屏幕下显示汉堡按钮 */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hamburger-menu span {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .navbar ul {
+  display: none;
+  }
+
+}
+
+/* 点击汉堡按钮后显示菜单 */
+.mobile-menu.active {
+  display: flex; /* 显示菜单 */
+}
+
+
+  /* 导航栏链接样式 */
+.navbar a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: Robot0;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+   /* 下拉菜单样式 */
+.navbar .dropdown {
+    position: relative; /* 使得子菜单可以相对于这个父元素定位 */
+  }
+  
+  .navbar .dropdown-menu {
+    display: none; /* 默认隐藏菜单 */
+    position: absolute;
+    top: 106%; /* 将菜单放置在父项的下方 */
+    left: 0;
+    background-color: white;
+    min-width: 150px; /* 可以根据需要调整菜单宽度 */
+    width: auto;
+    z-index: 1000;
+  }
+  
+  .navbar .dropdown-menu li {
+    padding: 0rem 0.1rem 0.1rem 0.25rem;
+    margin: 0; /* 确保没有额外的 margin */
+    white-space: nowrap; /* 禁止换行 */
+  }
+
+  /* 下拉菜单链接样式 */
+.navbar .dropdown-menu li a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1rem;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+    /* 创建下划线的伪元素 */
+    .navbar a::after,
+    .navbar .dropdown-menu li a::after {
+    content: ''; /* 创建伪元素 */
+    position: absolute;
+    bottom: -2px; /* 下划线离文字稍微有些距离 */
+    left: 0;
+    width: 0; /* 初始宽度为0 */
+    height: 1px; /* 下划线的高度 */
+    background-color:#B362FF; /* 下划线的颜色 */
+    transition: width 0.3s ease; /* 平滑过渡下划线的宽度 */
+    }
+
+    /* 鼠标悬停时文字颜色变紫色 */
+    .navbar a:hover,
+    .navbar .dropdown-menu li a:hover {
+    color:#B362FF; /* 鼠标悬停时文字变为紫色 */
+    }
+
+    /* 鼠标悬停时下划线从左到右扩展 */
+    .navbar a:hover::after,
+    .navbar .dropdown-menu li a:hover::after {
+    width: 100%; /* 鼠标悬停时下划线的宽度扩展到100% */
+    }
+  
+  /* 鼠标悬停显示下拉菜单 */
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block; /* 鼠标悬停时显示菜单 */
+  }
+
+  .navbar .dropdown-menu .menu-item-1 {
+    font-family: 'Roboto'; /* 这里是第一个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-2 {
+    font-family: 'Noto Serif JP'; /* 这里是第二个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-3 {
+    font-family: 'Microsoft YaHei'; /* 这里是第三个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-4 {
+    font-family: 'Noto Serif JP'; /* 这里是第四个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-5 {
+    font-family: 'Noto Serif JP'; /* 这里是第五个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-6 {
+    font-family: 'Roboto'; /* 这里是第六个菜单项的字体 */
+    font-weight: 400;
+  }
+
+  .navbar .dropdown-menu li::before {
+    content: '—'; /* 使用短横杠 */
+    margin-right: 0.5rem; /* 设置横杠与文字之间的间距 */
+    font-size: 1rem; /* 调整横杠的大小 */
+    color: rgb(31, 31, 31); /* 设置横杠的颜色 */
+  }
+
+  /* 背景图片样式 */
+  /* 响应式图片，独立定位 */
+  .backgroundImage {
+      position: absolute;
+      bottom: 0; /* 图片底部贴着屏幕 */ 
+      left: 50%; /* 水平居中 */
+      transform: translateX(-50%); /* 通过transform让图片居中 */
+      width: 50vw; /* 根据屏幕宽度调整图片大小 */
+      height: auto; /* 高度自适应 */
+      object-fit: contain; /* 保持图片比例 */
+      z-index: 1; /* 确保图片在背景容器的上层 */
+  }
+
+  /* 大标题容器样式 */
+    .mainTitle {
+        margin-top: 17vh; /* 上边距 */
+        margin-bottom: 12vh; /* 下边距 */
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+    }
+
+    /* 内部容器样式 */
+    .mainTitleContainer {
+        text-align: center; /* 文字居中 */
+    }
+
+    /* 图片样式 */
+    .mainTitleIcon {
+        width: 6.5vw; /* 图片宽度 */
+        height: auto; /* 高度自适应 */
+        margin-bottom: 0.75rem; /* 图片与文字的间距 */
+    }
+
+    /* 文字标题样式 */
+    .mainTitleText {
+        font-size: 2.5rem; /* 文字大小，可根据需要调整 */
+        font-weight: bold; /* 文字加粗 */
+        color: rgb(31, 31, 31); /* 文字颜色，可根据需要调整 */
+        margin: 0; /* 去除默认的 margin */
+        font-family: "Noto Serif JP";
+        font-weight: 600;
+    }
+
+    /* 概要段落文字 */
+    /* 文本容器 */
+    .firstTextContainer {
+        width: 100%; /* 容器宽度占满整个屏幕 */
+        padding: 0 24vw ; /* 左右各留 5% 视口宽度的间距 */
+        margin: 8vh 0;
+    }
+
+    .firstTextContainer1 {
+        width: 100%; /* 容器宽度占满整个屏幕 */
+        padding: 0  ; /* 左右各留 5% 视口宽度的间距 */
+        margin-bottom: 12vh;
+    }
+
+    .firstTextContainer2 {
+        width: 100%; /* 容器宽度占满整个屏幕 */
+        padding: 0  ; /* 左右各留 5% 视口宽度的间距 */
+        margin-bottom: 2vh;
+    }
+
+    .firstTextContainer3 {
+        width: 100%; /* 容器宽度占满整个屏幕 */
+        padding: 0 26vw  ; /* 左右各留 5% 视口宽度的间距 */
+        margin-bottom: 12vh;
+    }
+
+
+    /* 文本行样式 */
+    .firstTextLine {
+        text-align: left; /* 左对齐 */
+        color: #1F1F1F; /* 深灰色文字 */
+        font-family: "Noto Serif JP";
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .firstTextLine1 {
+        text-align: center; 
+        color: #1F1F1F; /* 深灰色文字 */
+        font-family: "Noto Serif JP";
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .firstTextLine2 {
+        text-align: left; 
+        color: #1F1F1F; /* 深灰色文字 */
+        font-family: "Noto Serif JP";
+        font-size: 1rem;
+        font-weight: 400;
+        width: 60vw;
+    }
+
+     /* 图标模块容器样式 */
+    .icon-modules {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap; /* 使模块能够在小屏幕上换行 */
+        margin: 0 13vw; /* 居中显示 */
+    }
+
+    /* 每个模块的样式 */
+    .icon-module {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        width: auto; /* 模块宽度 */
+        /*margin: 0 auto; 模块之间的间距 */
+        text-align: left;
+    }
+
+    /* 图标样式 */
+    .icon {
+        width: 2rem; /* 38px */
+        height: auto;
+        margin-right: 0.5rem; /* 图标和文字之间的距离 */
+        margin-top: 0.1rem;
+    }
+
+        /* 模块内文字容器样式 */
+    .module-text {
+        display: flex;
+        flex-direction: column; /* 垂直排列 */
+        align-items: flex-start; /* 左对齐 */
+    }
+
+    /* 模块内文字样式 */
+    .module-text .title {
+        font-size: 1.2rem;
+        font-weight: 400;
+        position: relative; /* 让伪元素相对于父元素定位 */
+        text-decoration: none; /* 去掉默认的下划线 */
+        margin-bottom: 1rem; /* 增加标题和副标题之间的间距 */
+        font-family: Roboto;
+    }
+
+    .module-text .title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.75rem; /* 调整下划线与文字的距离 */
+        width: 3rem; /* 自定义下划线长度，可以调整为任意百分比或固定值 */
+        height: 2px; /* 下划线的厚度 */
+        background-color: #B362FF; /* 紫色下划线 */
+        border-radius: 999px;
+    }
+
+    .module-text .subtitle {
+        font-size: 1rem;
+        font-family: Roboto;
+    }
+
+    .tiaozhanTitle {
+      text-align: left; /* 左对齐 */
+      width: fit-content; /* 宽度匹配内容 */
+      display: flex; /* 使用 flex 布局 */
+     align-items: center; /* 垂直居中 */
+    }
+
+    .tiaozhanTitle::before {
+      content: "•"; /* 圆点 */
+      font-size: 1.4rem; /* 圆点大小，与文字保持一致 */
+      color: #1F1F1F; /* 圆点颜色 */
+      margin-right: 0.2rem; /* 圆点和文字之间的间距 */
+    }
+    
+    .tiaozhanTitleText {
+        font-size: 1.4rem; /* 文字大小 */
+        color: #1F1F1F; /* 文字颜色 */
+        margin: 0; /* 去除默认 margin */
+        font-family: "Noto Serif JP";
+        font-weight: 600;
+    }
+
+
+    /* 3.1的小标题 */
+    .commonTitleSection {
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        margin: 0 0 8vh 0 ; /* 上下边距，可根据需要调整 */
+    }
+
+    
+    /* 通用小标题样式 */
+    .commonTitle {
+        text-align: center; /* 文字居中 */
+    }
+    
+    .commonTitleText {
+        font-size: 2rem; /* 文字大小 */
+        color: #B362FF; /* 文字颜色 */
+        margin: 0; /* 去除默认 margin */
+        font-family: "Noto Serif JP";
+        font-weight: 600;
+    }
+    
+    .commonTitleUnderline {
+        height: 0.1rem; /* 下划线高度 */
+        background-color: #B362FF; /* 下划线颜色 */
+        margin-top: 0.5rem; /* 下划线与文字的间距 */
+        width: 100%; /* 下划线长度匹配文字长度 */
+    }
+
+     /* 横向排列块容器 */
+     .personaSection {
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        margin-bottom: 12vh;
+    }
+
+    .personaSection2{
+      display: none;
+  }
+
+    .personaSection2{
+        display: none;
+    }
+    
+    .personaContainer {
+        display: flex;
+        align-items: center; /* 内部元素垂直居中 */
+        gap: 2rem; /* 内部元素之间的间距 */
+    }
+    
+    /* 左边的图片 */
+    .personaLeftImage {
+        width: 8vw; /* 图片宽度 */
+        height: 8vw; /* 图片高度 */
+        object-fit: cover; /* 保持图片比例 */
+    }
+    
+    /* 中间的文字块 */
+    .personaTextBlock {
+        border: 0.1rem solid #B362FF; /* 边框 */
+        border-radius: 0.6rem; /* 圆角 */
+        padding: 0.5rem 0.8rem; 
+    }
+    
+    .personaTextLine {
+        font-size: 1.2rem; /* 文字大小 */
+        color: #1F1F1F; /* 文字颜色 */
+        margin: 0; /* 去除默认 margin */
+        text-align: left; /* 文字左对齐 */
+        font-family: Noto Serif JP;
+        font-weight: 500;
+    }
+
+    .personaTextLine1 {
+        font-size: 1.4rem; /* 文字大小 */
+        color: #B362FF; /* 文字颜色 */
+        margin: 0; /* 去除默认 margin */
+        text-align: left; /* 文字左对齐 */
+        font-family: Noto Serif JP;
+        font-weight: 500;
+    }
+    
+    /* 右边的文字和图片结合块 */
+    .personaImageTextBlock {
+        display: flex;
+        align-items: center; /* 内部元素垂直居中 */
+        gap: 0; /* 内部元素之间无间距 */
+    }
+    
+    .personaIcon {
+        width: 1.4vw; /* 图片宽度 */
+        height: auto; /* 高度自适应 */
+    }
+    
+    .personaImageText {
+        font-size: 1.4rem; /* 文字大小 */
+        color: #1F1F1F; /* 文字颜色 */
+        margin: 0; /* 去除默认 margin */
+        font-family: Noto Serif JP;
+        font-weight: 500;
+        width: 32vw;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .surveyResults2 {
+        width: 100%; /* 占满整个屏幕宽度 */
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        gap: 2vw; /* 两张图片之间的间距 */
+        padding: 5vh 0 12vh 0; /* 上下内边距 */
+    }
+
+    /* 图片样式 */
+    .surveyImage {
+        width: 35vw; /* 宽度为30vw */
+        height: auto; /* 高度自适应，保持图片比例 */
+    }
+
+     /* 研究目标模块 */
+     .researchGoals {
+        width: 100%; /* 占满整个屏幕宽度 */
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        gap: 2vw; /* 两个文字块之间的间距 */
+    }
+
+    .researchGoals1 {
+        width: 100%; /* 占满整个屏幕宽度 */
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        gap: 2vw; /* 两个文字块之间的间距 */
+        padding: 2vh 0 12vh 0; /* 上下内边距 */
+    }
+    
+    /* 文字块样式 */
+    .goalBlock {
+        width: 33vw; /* 宽度为33vw */
+        height: 30vh; /* 高度为30vh */
+        background-color: #B362FF; /* 背景颜色 */
+        border-radius: 1.25rem; /* 圆角 */
+        display: flex;
+        justify-content: flex-start; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        flex-direction: column;
+        margin-bottom: 12vh;
+        padding-top: 3rem;
+    }
+    
+    /* 文字样式 */
+    .goalBlock p {
+        font-family: 'Noto Serif JP', serif; /* 字体 */
+        font-weight: 600; /* 字重 */
+        font-size: 1.4rem; /* 字号 */
+        color: rgb(31, 31, 31); /* 文字颜色 */
+        text-align: center; /* 文字居中 */
+    }
+
+    .goalBlock p1 {
+        font-family: 'Noto Serif JP', serif; /* 字体 */
+        font-weight: 500; /* 字重 */
+        font-size: 1rem; /* 字号 */
+        color: rgb(31, 31, 31); /* 文字颜色 */
+        text-align: left; /* 文字居中 */
+        width: 30vw;
+        margin-top: 2vh;
+    }
+
+     /* 图片容器 */
+     .userFlowImageSection {
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中（可选） */
+        margin: 8vh 0 4vh 0; /* 上下边距，可根据需要调整 */
+        }
+    
+        /* 图片样式 */
+        .userFlowImage {
+        width: 75vw; /* 图片宽度 */
+        height: auto; /* 高度自适应 */
+        max-width: 100%; /* 防止图片超出容器 */
+        }
+    
+        /* 文字容器 */
+        .userFlowTextSection {
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中（可选） */
+        margin: 4vh 0 16vh 0; /* 上下边距，可根据需要调整 */
+        }
+    
+        .userFlowTextSection1 {
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中（可选） */
+            margin: 4vh 0 16vh 0; /* 上下边距，可根据需要调整 */
+        }
+    
+        /* 文字样式 */
+        .userFlowText {
+        font-size: 1rem; /* 文字大小 */
+        color: white; /* 文字颜色 */
+        background-color: #B362FF; /* 绿色背景 */
+        padding: 0.75rem 5rem; /* 上下 padding 0.75rem，左右 padding 5rem */
+        border-radius: 0.25rem; /* 圆角 */
+        margin: 0; /* 去除默认 margin */
+        font-family: Noto Serif JP;
+        font-weight: 400;
+        }
+
+        /* 洞察模块 */
+    .wireFrame {
+        width: 100%; /* 占满整个屏幕宽度 */
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        margin-top: 0; /* 上边距为0 */
+        margin-bottom: 8vh; /* 下边距为12vh */
+    }
+    
+    /* 图片样式 */
+    .wireFrameImage {
+        width: 45vw; /* 宽度为33vw */
+        height: auto; /* 高度自适应，保持图片比例 */
+    }
+    
+    .prototypeImageBlock {
+        width: 100%; /* 占满整个屏幕宽度 */
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        margin-top: 0; /* 上边距为0 */
+        margin-bottom: 4vh; 
+    }
+
+    .prototypeImage {
+        width: 45vw; /* 宽度为33vw */
+        height: auto; /* 高度自适应，保持图片比例 */
+        border-radius: 1.25rem;
+    }
+
+    .firstPrototype {
+        width: 100%; /* 占满整个屏幕宽度 */
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        margin-top: 0; /* 上边距为0 */
+        margin-bottom: 4vh; 
+    }
+
+    .firstPrototypeImage {
+        width: 40vw;
+        height: auto; /* 高度自适应，保持图片比例 */
+    }
+
+    .finalPrototypeBlock{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        gap: 4vw;
+        margin: 0 13vw 12vh 13vw;
+    }
+
+    .sceondLine{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .PrototypeImage{
+        width: 24vw;
+        height: auto;
+        border-radius: 0.75rem;
+        border: 0.06rem solid #B362FF; /* 添加一圈边框 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加底部阴影 */
+        margin-bottom: 2vh;
+    }
+
+    .PrototypeImage2{
+        width: 24vw;
+        height: auto;
+        border-radius: 0.75rem;
+        border: 0.06rem solid #B362FF; /* 添加一圈边框 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加底部阴影 */
+        margin-bottom: 0;
+    }
+
+     /* Other Project 部分 */
+     .other-project {
+        text-align: center; /* 标题居中 */
+    }
+    
+    .mobileOtherProject{
+        display: none;
+    }
+
+    
+    /* 图片容器 */
+    .image-container {
+        display: flex;
+    }
+    
+    .otherimage {
+        display: flex; /* 将图片容器设为 flex 布局 */
+        justify-content: space-between; /* 图片之间保持一定的间距 */
+        margin:0 10vw;
+    }
+    
+    .otherimage2 {
+        display: flex; /* 将图片容器设为 flex 布局 */
+        justify-content: space-between; /* 图片之间保持一定的间距 */
+        margin:0 10vw;
+    }
+    
+    .otherimage3 {
+        display: flex; /* 将图片容器设为 flex 布局 */
+        justify-content: space-between; /* 图片之间保持一定的间距 */
+    }
+    
+    .projectImage {
+        display: flex; /* 将图片容器设为 flex 布局 */
+        justify-content: space-between; /* 图片之间保持一定的间距 */
+    }
+    
+    
+    /* 图片盒子 */
+    .image-box {
+        position: relative; /* 为蒙版定位做准备 */
+        width: 49%; /* 每个图片占容器的45% */
+        margin: 0.5rem auto; /* 两个图片之间保持一定的间距 */
+    }
+    
+    /* 图片样式 */
+    .project-image {
+        width: 100%; /* 图片宽度自适应 */
+        height: auto;
+        display: block; /* 去除图片底部空隙 */
+    }
+    
+    /* 图片蒙版样式 */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7); /* 黑色半透明蒙版 */
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: opacity 0.3s ease; /* 蒙版淡入淡出效果 */
+    }
+    
+    /* 图片悬浮时蒙版显示 */
+    .image-box:hover .overlay {
+        opacity: 1;
+    }
+    
+    /* 标签文字样式 */
+    .label1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #774CE8;
+        padding: 0.5rem 1rem;
+        color: white;
+        font-weight: bold;
+        border-radius: 0 0 0 0.5rem;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .label2 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #0087B3;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 0 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .label3 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #65A30D;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 0 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .label4 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #F5B038;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 0 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    
+    /* 蒙版中的大标题样式 */
+    .overlay-title {
+        font-size: 1.6rem;
+        color: white;
+        margin: 0 0 0 0;
+        font-family:Roboto;
+        font-weight: 500;
+    }
+    
+    .overlay-title2{
+        font-size: 1.6rem;
+        color: white;
+        margin: 0 0 0 0;
+        font-family:Noto Serif JP ;
+        font-weight: 600;
+    }
+    
+    .overlay-title3{
+        font-size: 1.6rem;
+        color: white;
+        margin: 0 0 0 0;
+        font-family:Microsoft YaHei;
+        font-weight: 500;
+    }
+    
+    /* 蒙版中的段落文字样式 */
+    .overlay-description {
+        font-size: 1.2rem;
+        color: white;
+        margin:2rem 2rem;
+        max-width:35rem ;
+        font-weight: 400;
+        font-family:Noto Serif JP ;
+    }
+    
+    /* 蒙版中的段落文字样式 */
+    .overlay-description2 {
+        font-size: 1.2rem;
+        color: white;
+        margin:2rem 2rem;
+        max-width:30rem ;
+        font-family: Roboto;
+    }
+    
+    .overlay-description3 {
+        font-size: 1.2rem;
+        color: white;
+        margin:2rem 2rem;
+        max-width:37rem ;
+        font-weight: 400;
+        font-family:Noto Serif JP ;
+    }
+    
+    
+    /* 按钮样式 */
+    .overlay-btn1 {
+        background-color: #774CE8;
+        color: white;
+        padding: 0.5rem 4rem;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 999px;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        font-family: Roboto;
+    }
+
+    .overlay-btn2 {
+      background-color: #0087B3;
+      color: white;
+      padding: 0.5rem 4rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-family: Roboto;
+    }
+
+    .overlay-btn3 {
+      background-color: #65A30D;
+      color: white;
+      padding: 0.5rem 4rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-family: Roboto;
+    }
+
+    .overlay-btn4 {
+      background-color: #F5B038;
+      color: white;
+      padding: 0.5rem 4rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-family: Roboto;
+    }
+
+    .overlay-btn5 {
+      background-color: #a3a3a3;
+      color: white;
+      padding: 0.5rem 4rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-family: Roboto;
+    }
+      
+    .overlay-btn1:hover {
+        background-color: transparent; /* 背景变透明 */
+        outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+
+    .overlay-btn2:hover {
+      background-color: transparent; /* 背景变透明 */
+      outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+
+    .overlay-btn3:hover {
+      background-color: transparent; /* 背景变透明 */
+      outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+
+    .overlay-btn4:hover {
+      background-color: transparent; /* 背景变透明 */
+      outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+
+    .overlay-btn5:hover {
+      background-color: transparent; /* 背景变透明 */
+      outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+    
+    /* 底部样式 */
+    .footer {
+        background-color: rgb(31, 31, 31); /* 页脚背景颜色 */
+        padding: 2rem 0; /* 内边距 */
+        text-align: center; /* 居中对齐 */
+        font-size: 1.2rem; /* 字体大小 */
+        color: #fff; /* 文字颜色 */
+        position: relative;
+        width: 100%;
+    }
+    
+    .footer p {
+        margin: 0; /* 去掉默认的段落间距 */
+    }
+
+    @media (max-width: 768px) {
+      html{
+        line-height:1.4rem;
+      }
+  
+      .header {
+          padding: 3vh 6vw 1vh;
+        }
+  
+      .logo img {
+          width: 3rem; /* logo 的宽度 */
+          height: auto;
+          padding-top: 0;
+        }
+  
+        .mainTitle{
+          margin-top:8vh;
+          margin-bottom:4vh;
+        }
+  
+        .mainTitleIcon{
+          width:12vw;
+        }
+  
+        .mainTitleText{
+          font-size: 1rem;
+        }
+  
+        .firstTextLine{
+          font-size: 0.8rem;
+        }
+  
+        .icon-modules{
+          margin:2vh 8vw 2vh 11vw ;
+          justify-content: center; /* 每行水平居中 */
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px; /* 模块之间的间距，可根据需要调整 */
+        }
+        
+        .icon-module {
+          display: flex;
+          justify-content: flex-start; /* 每列元素左对齐 */
+          width: calc(50% - 10px); /* 每行两个模块，减去间距的一半 */
+        }
+      
+         /* 图标样式 */
+         .icon {
+          width: 1.2rem; /* 38px */
+          height: auto;
+          margin-right: 0.3rem; /* 图标和文字之间的距离 */
+          margin-top: 0.2rem;
+        }
+      
+         /* 模块内文字样式 */
+         .module-text .title {
+          font-size: 0.8rem;
+          font-weight: 400;
+          margin-bottom: 0.3rem; /* 增加标题和副标题之间的间距 */
+      
+        }
+      
+        .module-text .title::after {
+          bottom: -0.1rem; /* 调整下划线与文字的距离 */
+          width: 1.5rem; /* 自定义下划线长度，可以调整为任意百分比或固定值 */
+          height: 1px; /* 下划线的厚度 */
+        }
+      
+        .module-text .subtitle {
+          font-size: 0.8rem;
+          font-family: Roboto;
+        }
+  
+        .module-text .subtitle2{
+          font-size: 0.8rem;
+        }
+
+        .backgroundImage{
+          width: 40vw;
+        }
+
+        .commonTitleSection{
+          margin: 0 0 4vh 0;
+        }
+
+        .commonTitleText{
+          font-size: 1rem;
+        }
+
+        .commonTitleUnderline{
+          height:0.03rem;
+        }
+
+        .personaSection2{
+          display: block;
+          flex-direction: column;
+        }
+
+        .personaSection{
+          display: none;
+        }
+
+        .personaContainer{
+          margin: 0 14vw;
+          align-items: center;
+          gap:1rem;
+        }
+
+        .personaLeftImage{
+          width: 18vw;
+          height: 18vw;
+        }
+  
+        .personaTextLine1{
+          font-size: 1rem;
+        }
+  
+        .personaTextLine{
+          font-size: 0.8rem;
+        }
+  
+        .personaImageTextBlock{
+          margin: 4vh 10vw;
+        }
+  
+        .personaImageText{
+          font-size: 0.8rem;
+        }
+  
+        .personaIcon{
+          width: 5vw;
+        }
+
+        .surveyResults2{
+          flex-direction: column;
+          padding: 0;
+        }
+
+        .surveyImage{
+          width: 65vw;
+        }
+
+        .researchGoals{
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .goalBlock{
+          width: 80vw;
+          height: 20vh;
+          margin-bottom: 4vh;
+        }
+
+        .goalBlock p{
+          font-size: 1rem;
+        }
+
+        .goalBlock p1{
+          width: 70vw;
+        }
+
+        .userFlowImageSection{
+          margin-top: 4vh;
+        }
+
+        .userFlowImage{
+          width: 85vw;
+        }
+
+        .userFlowText{
+          font-size: 0.8rem;
+          padding: 0.75rem 1rem;
+          width: 88vw;
+        }
+
+        .userFlowTextSection{
+          margin: 0 0 8vh 0;
+        }
+
+        .wireFrameImage{
+          width: 60vw;
+        }
+
+        .wireFrame{
+         margin-bottom: 4vh;
+        }
+
+        .firstTextContainer1{
+          width: 100%;
+          padding: 0 5vw;
+          align-items: center;
+        }
+
+        .prototypeImage{
+          width: 60vw;
+          border-radius: 0.25rem;
+        }
+
+        .firstTextLine1{
+          font-size: 0.8rem;
+          font-weight: 500;
+        }
+
+        .firstTextContainer3{
+          font-size: 0.8rem;
+          margin-bottom: 4vh;
+          padding: 0 10vw;
+        }
+
+        .finalPrototypeBlock{
+          margin: 0 10vw 8vh 10vw;
+        }
+
+        .PrototypeImage{
+          border-radius: 0.25rem;
+        }
+
+        .PrototypeImage2{
+          border-radius: 0.25rem;
+        }
+
+        .mobileOtherProject{
+          display: block;
+        }
+      
+        .mobile-layout {
+          display: flex; /* 使用 flex 布局 */
+          flex-direction: column; /* 垂直排列 */
+          align-items: center; /* 内容居中 */
+          justify-content: center; /* 内容居中 */
+          text-align: center; /* 文字居中 */
+           /*background-color: #E7E2F4; 背景色 */
+        }
+      
+        .mobile-layout img {
+          width: 100%; /* 图片宽度占满容器 */
+          height: auto; /* 高度自适应 */
+        }
+      
+        .mobile-layout .button {
+          display: inline-block;
+          background-color: #ffff;
+          text-decoration: none; 
+          font-size: 0.8rem;
+          transition: background-color 0.3s ease;
+          font-family: 'Roboto'; 
+          font-weight: 400;
+          border-radius: 999rem; /* 圆角设置为两边圆弧 */
+          text-align: center; /* 设置按钮内文字水平居中 */
+          padding: 0.2rem 3rem; 
+          width: auto;
+          margin: 2vh auto; 
+          font-family: Roboto;
+          font-weight: 400;
+          color: #1F1F1F;
+        }
+      
+        .mobile-layout .button:hover {
+          background-color: transparent; /* 悬浮时背景色透明 */
+          color: rgb(31, 31, 31); /* 保持文字颜色 */
+          outline: 2px solid#FFF; /* 悬浮时添加边框 */
+        }
+      
+        .bg-color-1 {
+          background-color: #E7E2F4; /* 背景色 1 */
+        }
+        
+        .bg-color-2 {
+          background-color: #C3E1F6; /* 背景色 2 */
+        }
+      
+        .bg-color-3 {
+          background-color: #F8EDDB; /* 背景色 2 */
+        }
+      
+        .bg-color-4 {
+          background-color: #F5F5F5; /* 背景色 2 */
+        }
+      
+        .bg-color-5 {
+          background-color: #EFF9E1; /* 背景色 2 */
+        }
+      
+        .footer{
+          font-size: 0.7rem;
+          padding: 0.8rem 0; /* 内边距 */
+        }
+  
+        .other-project{
+          display: none;
+        }
+
+        .tiaozhanTitleText{
+          font-size: 1rem;
+        }
+
+        .tiaozhanTitle::before{
+          font-size: 1rem;
+        }
+
+        .personaImageText{
+          width: 60vw;
+        }
+
+        .personaImageTextBlock{
+          justify-content: center;
+        }
+        .goalBlock{
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          height: auto;
+          border-radius:0.5rem;
+        }
+
+      }

@@ -1,0 +1,1155 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px; /* 默认字体大小 16px，1rem = 16px */
+    font-family: 'Noto Serif JP','Microsoft YaHei' , 'Roboto';
+    letter-spacing: 0.17rem; /* 字母之间的间距 */
+    line-height:2rem;
+  }
+  
+  /* 背景容器 */
+  .background-container {
+    position: relative;
+    width: 100%;
+    height: auto; /* 高度为视口的高度，适应屏幕 */
+    background-size: cover; /* 保持图片比例，覆盖整个容器 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white; 
+    background-position: 50% -44px; /* 50% 表示水平居中，10% 表示垂直位置向上10%的位置 */
+    background-image: url('');
+  }
+
+  /* 顶部导航栏 */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    padding: 2vh 8vw 1vh ;
+    position: fixed; /* 固定导航栏 */
+    z-index: 9999; /* 确保导航栏处于页面所有其他内容的上层 */
+    background-color: transparent; /* 初始状态下背景透明 */
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+  }
+
+  .header.scrolled {
+    background-color: white; /* 滚动时背景变为白色 */
+  }
+  
+  .logo img {
+    width: 4rem; /* logo 的宽度 */
+    height: auto;
+    text-align: center;
+    padding-top: 1rem;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navbar ul li {
+    margin-left: 5vw;
+  }
+/* 汉堡菜单按钮样式 */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  top: 4vh;
+  right: 6vw;
+  z-index: 1000;
+  position: absolute;
+  border: none;
+  background-color: transparent;
+}
+
+.hamburger-menu span {
+  display: none; /* 默认不显示 */
+  width: 100%;
+  height:2px;
+  background-color: rgb(31, 31, 31);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 1000; /* 确保按钮在最上层 */
+}
+
+.hamburger-menu span:nth-child(1) {
+  top:0;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-menu span:nth-child(3) {
+ bottom: 0;
+}
+
+/* 小屏幕菜单样式 */
+.mobile-menu {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* 铺满整个屏幕 */
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  z-index: 999; /* 确保菜单在内容上层 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mobile-menu ul {
+  list-style: none; /* 去掉列表符号 */
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 文字居中 */
+}
+
+.mobile-menu ul li {
+  margin: 1.5rem 0; /* 菜单项之间的间距 */
+}
+
+.mobile-menu ul li a {
+  color: white; /* 文字颜色 */
+  text-decoration: none; /* 去掉下划线 */
+  font-size: 1.2rem; /* 文字大小 */
+  font-family: Noto Serif JP;
+  font-weight: 500;
+
+}
+
+/* 小屏幕下显示汉堡按钮 */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .hamburger-menu span {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .navbar ul {
+  display: none;
+  }
+}
+
+/* 点击汉堡按钮后显示菜单 */
+.mobile-menu.active {
+  display: flex; /* 显示菜单 */
+}
+
+
+  /* 导航栏链接样式 */
+.navbar a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: Robot0;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+  /* 下拉菜单样式 */
+.navbar .dropdown {
+    position: relative; /* 使得子菜单可以相对于这个父元素定位 */
+  }
+  
+  .navbar .dropdown-menu {
+    display: none; /* 默认隐藏菜单 */
+    position: absolute;
+    top: 106%; /* 将菜单放置在父项的下方 */
+    left: 0;
+    /* background-color: white; */
+    min-width: 150px; /* 可以根据需要调整菜单宽度 */
+    width: auto;
+    z-index: 1000;
+    background-color:rgb(256, 256, 256);
+  }
+  
+  .navbar .dropdown-menu li {
+    padding: 1rem 1rem 1rem 0.5rem;
+    margin: 0; /* 确保没有额外的 margin */
+    white-space: nowrap; /* 禁止换行 */
+  }
+
+  /* 下拉菜单链接样式 */
+.navbar .dropdown-menu li a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1.2rem;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+  /* 创建下划线的伪元素 */
+.navbar a::after,
+.navbar .dropdown-menu li a::after {
+  content: ''; /* 创建伪元素 */
+  position: absolute;
+  bottom: -2px; /* 下划线离文字稍微有些距离 */
+  left: 0;
+  width: 0; /* 初始宽度为0 */
+  height: 1px; /* 下划线的高度 */
+  background-color:#774CE8; /* 下划线的颜色 */
+  transition: width 0.3s ease; /* 平滑过渡下划线的宽度 */
+}
+
+/* 鼠标悬停时文字颜色变紫色 */
+.navbar a:hover,
+.navbar .dropdown-menu li a:hover {
+  color:#774CE8; /* 鼠标悬停时文字变为紫色 */
+}
+
+/* 鼠标悬停时下划线从左到右扩展 */
+.navbar a:hover::after,
+.navbar .dropdown-menu li a:hover::after {
+  width: 100%; /* 鼠标悬停时下划线的宽度扩展到100% */
+}
+  
+  /* 鼠标悬停显示下拉菜单 */
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block; /* 鼠标悬停时显示菜单 */
+  }
+
+  .navbar .dropdown-menu .menu-item-1 {
+    font-family: 'Roboto'; /* 这里是第一个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-2 {
+    font-family: 'Noto Serif JP'; /* 这里是第二个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-3 {
+    font-family: 'Microsoft YaHei'; /* 这里是第三个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-4 {
+    font-family: 'Noto Serif JP'; /* 这里是第四个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-5 {
+    font-family: 'Noto Serif JP'; /* 这里是第五个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-6 {
+    font-family: 'Roboto'; /* 这里是第六个菜单项的字体 */
+    font-weight: 400;
+  }
+
+  .navbar .dropdown-menu li::before {
+    content: '—'; /* 使用短横杠 */
+    margin-right: 0.5rem; /* 设置横杠与文字之间的间距 */
+    font-size: 1rem; /* 调整横杠的大小 */
+    color: rgb(31, 31, 31); /* 设置横杠的颜色 */
+  }
+
+  .navbar{
+    padding-top: 1rem;
+  }
+
+
+ /* 主图 */
+
+  .heroSection {
+    margin-top: 26vh;
+    margin-bottom: 20vh;
+    text-align: center;
+  }
+  .mainImage {
+    width: 24vw;
+    height: auto;
+  }
+  .contentSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 13vw;
+  }
+  .imageText {
+    display: flex;
+    align-items: center;
+  }
+  .sideImage {
+    width: 10vw;
+    height: auto;
+    margin-right: 3vw;
+  }
+  .textBlock {
+    display: flex;
+    flex-direction: column;
+    color: rgb(31, 31, 31);
+  }
+  .lineOne {
+    font-family: "Microsoft YaHei";
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .lineTwo {
+    font-family: "Noto Serif JP";
+    font-size: 1.5rem;
+    margin-bottom: 1.6rem;
+    text-align: left;
+    font-weight: 500;
+  }
+  .lineThree {
+    font-family: Roboto;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+  /* 左侧5个小图样式 */
+  .leftSmallImages {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: auto; 
+  }
+  
+  .leftSmallImages .smallImage {
+      position: absolute;
+      width: 4vw; /* 小图宽度 */
+      height: auto; /* 高度自适应 */
+      animation: rotate 2s infinite ease-in-out; /* 旋转动画 */
+      transform-origin: center; /* 旋转中心点为图片中心 */
+  }
+  
+  .leftSmallImages .smallImage:nth-child(1) {
+      top: 27vh;
+      left: 15vw;
+  }
+  
+  .leftSmallImages .smallImage:nth-child(2) {
+      top: 15vh;
+      left: 30.5vw;
+  }
+  
+  .leftSmallImages .smallImage:nth-child(3) {
+      top: 45vh;
+      left: 28vw;
+  }
+  
+  .leftSmallImages .smallImage:nth-child(4) {
+      top: 65vh;
+      left: 12vw;
+  }
+  
+  .leftSmallImages .smallImage:nth-child(5) {
+      top: 70vh;
+      left: 26vw;
+  }
+  
+  .image-container {
+    position: relative;
+    display: flex;
+    z-index: 100;
+    margin-top: -38%;
+  }
+  /* 右侧6个小图样式 */
+  .rightSmallImages {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: auto; 
+      z-index: auto;
+  }
+  
+  .rightSmallImages .smallImage {
+      position: absolute;
+      width: 4vw; /* 小图宽度 */
+      height: auto; /* 高度自适应 */
+      animation: rotate 2s infinite ease-in-out; /* 旋转动画 */
+      transform-origin: center; /* 旋转中心点为图片中心 */
+  }
+  
+  .rightSmallImages .smallImage:nth-child(1) {
+      top: 43vh;
+      right: 33vw;
+  }
+  
+  .rightSmallImages .smallImage:nth-child(2) {
+      top: 20vh;
+      right: 32vw;
+  }
+  
+  .rightSmallImages .smallImage:nth-child(3) {
+      top: 16vh;
+      right: 20vw;
+  }
+  
+  .rightSmallImages .smallImage:nth-child(4) {
+      top: 48vh;
+      right: 22vw;
+  }
+  
+  .rightSmallImages .smallImage:nth-child(5) {
+      top: 66vh;
+      right: 16vw;
+  }
+  
+  .rightSmallImages .smallImage:nth-child(6) {
+      top: 30vh;
+      right: 12vw;
+  }
+
+      /* 旋转动画 */
+  @keyframes rotate {
+      0% {
+      transform: rotate(0deg); /* 初始角度 */
+      }
+      25% {
+      transform: rotate(45deg); /* 向右旋转45度 */
+      }
+      75% {
+      transform: rotate(-45deg); /* 向左旋转45度 */
+      }
+      100% {
+      transform: rotate(0deg); /* 回到初始角度 */
+      }
+  }
+
+      /* 大图样式 */
+  .popupImage {
+      position: absolute;
+      width: 14vw; /* 大图宽度 */
+      height: auto; /* 高度自适应 */
+      z-index: 1000; /* 确保大图在最上层 */
+      pointer-events: none; /* 防止大图遮挡交互 */
+      animation: none; /* 禁用大图的动画 */
+  }
+
+    /* 居中标题样式 */
+  .centeredTitleSection {
+    text-align: center; /* 文字居中 */
+    padding: 12vh 0 8vh 0; /* 上下内边距 */
+    position: relative; /* 确保标题在文档流中 */
+    z-index: 1; /* 确保标题在背景之上 */
+    background-color: white; /* 背景颜色 */
+    margin-top: 100vh; /* 确保标题在内容下方 */
+  }
+
+  .centeredTitle {
+    font-size: 2rem; /* 字体大小 */
+    font-weight: bold; /* 字体粗细 */
+    color: #333; /* 字体颜色 */
+    font-family: 'Noto Serif JP', serif; /* 字体 */
+  }
+
+  .centeredTextSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* 确保标题在文档流中 */
+    z-index: 1; /* 确保标题在背景之上 */
+    background-color: white; /* 背景颜色 */
+  }
+
+  .centeredText{
+    font-size: 1.2rem; /* 字体大小 */
+    font-weight: 400; /* 字体粗细 */
+    color: #333; /* 字体颜色 */
+    font-family: 'Noto Serif JP', serif; /* 字体 */
+    text-align: left;
+    width: 60vw;
+    padding-bottom: 3vh;
+  }
+
+    /* 容器样式 */
+  .container {
+    display: flex; /* 左右布局 */
+    width: 100%;
+    height: auto; /* 占满整个视口高度 */
+    margin-top: 18vh;
+  }
+
+  /* 左边部分 */
+  .leftSection {
+    flex: 1; /* 占一半宽度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin-left: 6vw;
+  }
+
+  /* 右边部分 */
+  .rightSection {
+    flex: 1; /* 占一半宽度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin-right: 6vw;
+  }
+
+  /* 内容样式 */
+  .content {
+    text-align: center; /* 文字居中 */
+  }
+
+  /* 小标题样式 */
+  .title {
+    font-size: 1.5rem; /* 字体大小 */
+    font-weight: bold; /* 字体粗细 */
+    color: #333; /* 字体颜色 */
+    margin-bottom: 8vh; /* 标题与图片的间距 */
+  }
+
+  .title1 {
+    font-size: 1.5rem; /* 字体大小 */
+    font-weight: bold; /* 字体粗细 */
+    color: #333; /* 字体颜色 */
+    margin-bottom: 8vh; /* 标题与图片的间距 */
+    margin-right: 2vw;
+  }
+
+  /* 图片样式 */
+  .image {
+    width: 30vw; /* 图片宽度 */
+    height: auto; /* 高度自适应 */
+  }
+
+  /* Other Project 部分 */
+.other-project {
+  text-align: center; /* 标题居中 */
+}
+
+.mobileOtherProject{
+  display: none;
+}
+
+/* 大标题样式 */
+.main-title2 {
+  font-size: 2rem;
+  margin: 20vh 0 8vh 0;
+  color:rgb(31, 31, 31); 
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 400;
+}
+
+/* 图片容器 */
+.image-container {
+  display: flex;
+}
+
+.otherimage {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  justify-content: space-between; /* 图片之间保持一定的间距 */
+  margin:0 10vw;
+}
+
+.otherimage2 {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  justify-content: space-between; /* 图片之间保持一定的间距 */
+  margin:0 10vw;
+}
+
+.otherimage3 {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  justify-content: space-between; /* 图片之间保持一定的间距 */
+}
+
+.projectImage {
+  display: flex; /* 将图片容器设为 flex 布局 */
+  justify-content: space-between; /* 图片之间保持一定的间距 */
+}
+
+
+/* 图片盒子 */
+.image-box {
+  position: relative; /* 为蒙版定位做准备 */
+  width: 49%; /* 每个图片占容器的45% */
+  margin: 0.5rem auto; /* 两个图片之间保持一定的间距 */
+}
+
+/* 图片样式 */
+.project-image {
+  width: 100%; /* 图片宽度自适应 */
+  height: auto;
+  display: block; /* 去除图片底部空隙 */
+}
+
+/* 图片蒙版样式 */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 黑色半透明蒙版 */
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.3s ease; /* 蒙版淡入淡出效果 */
+}
+
+/* 图片悬浮时蒙版显示 */
+.image-box:hover .overlay {
+  opacity: 1;
+}
+
+/* 标签文字样式 */
+
+.label1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #774CE8;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.label2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #0087B3;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.label3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #65A30D;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.label4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #F5B038;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.label5 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #B362FF;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* 蒙版中的大标题样式 */
+.overlay-title {
+  font-size: 1.6rem;
+  color: white;
+  margin: 0 0 0 0;
+  font-family:Roboto;
+  font-weight: 500;
+}
+
+.overlay-title2{
+  font-size: 1.6rem;
+  color: white;
+  margin: 0 0 0 0;
+  font-family:Noto Serif JP ;
+  font-weight: 600;
+}
+
+.overlay-title3{
+  font-size: 1.6rem;
+  color: white;
+  margin: 0 0 0 0;
+  font-family:Microsoft YaHei;
+  font-weight: 500;
+}
+
+/* 蒙版中的段落文字样式 */
+.overlay-description {
+  font-size: 1.2rem;
+  color: white;
+  margin:2rem 2rem;
+  max-width:35rem ;
+  font-weight: 400;
+  font-family:Noto Serif JP ;
+}
+
+/* 蒙版中的段落文字样式 */
+.overlay-description2 {
+  font-size: 1.2rem;
+  color: white;
+  margin:2rem 2rem;
+  max-width:30rem ;
+  font-family: Roboto;
+}
+
+.mobileOtherProject{
+  display: none;
+}
+
+.overlay-description3 {
+  font-size: 1.2rem;
+  color: white;
+  margin:2rem 2rem;
+  max-width:37rem ;
+  font-weight: 400;
+  font-family:Noto Serif JP ;
+}
+
+
+ /* 按钮样式 */
+ .overlay-btn1 {
+  background-color: #774CE8;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn2 {
+  background-color: #0087B3;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn3 {
+  background-color: #65A30D;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn4 {
+  background-color: #F5B038;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn5 {
+  background-color: #B362FF;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn6 {
+  background-color: #a3a3a3;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: Roboto;
+}
+
+.overlay-btn1:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+.overlay-btn2:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+.overlay-btn3:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+.overlay-btn4:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+.overlay-btn5:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+.overlay-btn6:hover {
+  background-color: transparent; /* 背景变透明 */
+  outline: 3px solid#FFF; /* 悬浮时添加边框 */
+}
+
+/* 底部样式 */
+.footer {
+  background-color: rgb(31, 31, 31); /* 页脚背景颜色 */
+  padding: 2rem 0; /* 内边距 */
+  text-align: center; /* 居中对齐 */
+  font-size: 1.2rem; /* 字体大小 */
+  color: #fff; /* 文字颜色 */
+  position: relative;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0; /* 去掉默认的段落间距 */
+}
+
+
+  @media (max-width: 1400px) {
+
+        .leftSmallImages .smallImage:nth-child(1) {
+          top: 12vh;
+          left: 15vw;
+      }
+      
+      .leftSmallImages .smallImage:nth-child(2) {
+          top: 7vh;
+          left: 30.5vw;
+      }
+      
+      .leftSmallImages .smallImage:nth-child(3) {
+          top: 30vh;
+          left: 28vw;
+      }
+      
+      .leftSmallImages .smallImage:nth-child(4) {
+          top: 40vh;
+          left: 12vw;
+      }
+      
+      .leftSmallImages .smallImage:nth-child(5) {
+          top: 50vh;
+          left: 26vw;
+      }
+
+        .rightSmallImages .smallImage:nth-child(1) {
+          top: 28vh;
+          right: 33vw;
+      }
+      
+      .rightSmallImages .smallImage:nth-child(2) {
+          top: 10vh;
+          right: 30vw;
+      }
+      
+      .rightSmallImages .smallImage:nth-child(3) {
+          top: 7vh;
+          right: 18vw;
+      }
+      
+      .rightSmallImages .smallImage:nth-child(4) {
+          top: 30vh;
+          right: 20vw;
+      }
+      
+      .rightSmallImages .smallImage:nth-child(5) {
+          top: 45vh;
+          right: 10vw;
+      }
+      
+      .rightSmallImages .smallImage:nth-child(6) {
+          top: 18vh;
+          right: 10vw;
+      }
+
+      .centeredTitleSection{
+        margin-top: 70vh;
+      }
+
+  }
+
+
+
+  @media (max-width: 768px) {
+    html{
+      line-height:1.4rem;
+    }
+
+    .header {
+        padding: 3vh 6vw 1vh;
+      }
+
+    .logo img {
+        width: 3rem; /* logo 的宽度 */
+        height: auto;
+        padding-top: 0;
+      }
+
+      .heroSection{
+        margin-top: 16vh;
+        margin-bottom: 10vh;
+      }
+
+      .mainImage{
+        width: 40vw;
+      }
+
+      .lineOne{
+        font-size: 1.6rem;
+      }
+
+      .lineTwo{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .lineThree{
+        font-size: 0.8rem;
+        width: 60vw;
+      }
+
+      .sideImage{
+        width: 20vw;
+      }
+
+      .centeredTitleSection{
+        margin-top: 20vh;
+        padding-bottom: 4vh;
+      }
+
+      .centeredTitle{
+        font-size: 1.2rem;
+      }
+
+      .centeredText{
+        font-size: 0.8rem;
+        width: 80vw;
+      }
+
+      .container{
+        margin-top: 8vh;
+        flex-direction: column;
+      }
+
+      .title{
+        font-size: 1.2rem;
+        margin-bottom: 4vh;
+      }
+
+      .image{
+        width: 80vw;
+      }
+
+      .leftSection{
+        margin-left: 0;
+      }
+
+      .rightSection{
+        margin-right: 0;
+        margin-top: 8vh;
+      }
+
+      .title1{
+        font-size: 1.2rem;
+        margin-bottom: 4vh;
+      }
+
+        .leftSmallImages .smallImage:nth-child(1) {
+            top:-9vh;
+            left: 12vw;
+        }
+        
+        .leftSmallImages .smallImage:nth-child(2) {
+            top: -15vh;
+            left: 30.5vw;
+        }
+        
+        .leftSmallImages .smallImage:nth-child(3) {
+            top: -2vh;
+            left: 28vw;
+        }
+        
+        .leftSmallImages .smallImage:nth-child(4) {
+            top: 5vh;
+            left: 7vw;
+        }
+        
+        .leftSmallImages .smallImage:nth-child(5) {
+            top: 15vh;
+            left: 26vw;
+        }
+
+        .rightSmallImages .smallImage:nth-child(1) {
+            top: -10vh;
+            right: 33vw;
+        }
+        
+        .rightSmallImages .smallImage:nth-child(2) {
+            top: -15vh;
+            right: 13vw;
+        }
+        
+        .rightSmallImages .smallImage:nth-child(3) {
+            top: -5vh;
+            right: 8vw;
+        }
+        
+        .rightSmallImages .smallImage:nth-child(4) {
+            top: 0vh;
+            right: 22vw;
+        }
+        
+        .rightSmallImages .smallImage:nth-child(5) {
+            top: 8vh;
+            right: 7vw;
+        }
+        
+        .rightSmallImages .smallImage:nth-child(6) {
+            top: 17vh;
+            right: 12vw;
+        }
+
+        .leftSmallImages .smallImage{
+          width: 8vw;
+        }
+
+        .rightSmallImages .smallImage{
+          width: 8vw;
+        }
+
+        .mobileOtherProject{
+          display: block;
+        }
+      
+        .mobile-layout {
+          display: flex; /* 使用 flex 布局 */
+          flex-direction: column; /* 垂直排列 */
+          align-items: center; /* 内容居中 */
+          justify-content: center; /* 内容居中 */
+          text-align: center; /* 文字居中 */
+           /*background-color: #E7E2F4; 背景色 */
+        }
+      
+        .mobile-layout img {
+          width: 100%; /* 图片宽度占满容器 */
+          height: auto; /* 高度自适应 */
+        }
+      
+        .mobile-layout .button {
+          display: inline-block;
+          background-color: #ffff;
+          text-decoration: none; 
+          font-size: 0.8rem;
+          transition: background-color 0.3s ease;
+          font-family: 'Roboto'; 
+          font-weight: 400;
+          border-radius: 999rem; /* 圆角设置为两边圆弧 */
+          text-align: center; /* 设置按钮内文字水平居中 */
+          padding: 0.2rem 3rem; 
+          width: auto;
+          margin: 2vh auto; 
+        }
+      
+        .mobile-layout .button:hover {
+          background-color: transparent; /* 悬浮时背景色透明 */
+          color: rgb(31, 31, 31); /* 保持文字颜色 */
+          outline: 2px solid#FFF; /* 悬浮时添加边框 */
+        }
+      
+        .bg-color-1 {
+          background-color: #E7E2F4; /* 背景色 1 */
+        }
+        
+        .bg-color-2 {
+          background-color: #C3E1F6; /* 背景色 2 */
+        }
+      
+        .bg-color-3 {
+          background-color: #F8EDDB; /* 背景色 2 */
+        }
+      
+        .bg-color-4 {
+          background-color: #F5F5F5; /* 背景色 2 */
+        }
+      
+        .bg-color-5 {
+          background-color: #EFF9E1; /* 背景色 2 */
+        }
+      
+        .footer{
+          font-size: 0.7rem;
+          padding: 0.8rem 0; /* 内边距 */
+        }
+
+        .main-title2{
+          font-size: 1.2rem;
+        }
+
+        .other-project{
+          display: none;
+        }
+
+  }
+
+        

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer">
+    <title>シニアのひろば</title>
+    <link rel="stylesheet" href="./laonian.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1234567_xxx.css">
+
+  </head>
+
+  <body>
+     <!-- 背景区域 -->
+     <div class="background-container">
+        <!-- 顶部导航栏 -->
+        <header class="header">
+          <div class="logo">
+              <a href="./index.html"> <!-- 将图片包裹在 <a> 标签中 -->
+                <img data-src="https://i.imgur.com/eDoAbSe.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea47530ba3d5a1d7e7fea2.png"
+                alt="Logo" />
+                </a>
+          </div>
+  
+          <nav class="navbar">
+            <ul>
+              <li class="dropdown">
+                  <a href="#project-section">Project</a>
+                  <!-- 暂时不要下拉菜单了，因为效果有点丑 -->
+                  <!-- <ul class="dropdown-menu">
+                      <li><a href="#" class="menu-item-1">SceneMap</a></li>
+                      <li><a href="#" class="menu-item-2">不動産サイト</a></li>
+                      <li><a href="#" class="menu-item-3">易米易货</a></li>
+                      <li><a href="#" class="menu-item-4">アクティブカレンダー</a></li>
+                      <li><a href="#" class="menu-item-5">カクテルメーカー</a></li>
+                      <li><a href="#" class="menu-item-6">OTHERS</a></li>
+                    </ul> -->
+                </li>
+              <li><a href="./about.html">About Me</a></li>
+            </ul>
+          </nav>
+
+            <!-- 汉堡菜单按钮 -->
+          <button class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+  
+          <!-- 小屏幕菜单 -->
+          <div class="mobile-menu">
+            <ul>
+              <li><a href="./scene map.html">SceneMap</a></li>
+              <li><a href="./fangdichan.html">不動産サイト</a></li>
+              <li><a href="./laonian.html">シニアのひろば</a></li>
+              <li><a href="./yimiyihuo.html">易米易货</a></li>
+              <li><a href="./jiweijiu.html">カクテルメーカー</a></li>
+              <li><a href="./other.html">OTHERS</a></li>
+              <li><a href="./about.html">About Me</a></li>
+            </ul>
+          </div>
+
+        </header>
+
+          <!-- 主体内容 -->
+          <main>
+            <section class="hero">
+  
+              <img data-src="https://i.imgur.com/YfZEk17.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecbfd30ba3d5a1d7e9f46c.png"
+                alt="image" class="main-image"/>
+            </section>
+          </main>
+      </div>
+
+
+    <!-- 第一个大标题 -->
+    <!-- <section class="mainTitle">
+        <div class="mainTitleContainer">
+        <img src="./image/l2.png" alt="Icon" class="mainTitleIcon" />
+        <h1 class="mainTitleText">プロジェクト概要</h1>
+        </div>
+    </section> -->
+
+    <!-- 概要的段落内容 -->
+    <div class="firstTextContainer">
+        <p class="firstTextLine">このアプリは60歳以上向けの活動カレンダーで、イベントの表示・申し込み・リマインダー機能に加え、友達との連携や招待が可能。オフライン活動に特化し、高齢者が趣味を見つけて参加しやすく設計されています。</p>
+    </div>
+
+
+    <!-- icon模块 -->
+        <div class="icon-modules">
+            <div class="icon-module">
+
+              <img data-src="https://i.imgur.com/SUlQx26.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecc0280ba3d5a1d7e9f48a.png"
+                alt="icon" class="icon"/>
+              <div class="module-text">
+                <span class="title">TIME</span>
+                <span class="subtitle">1ヶ月</span>
+              </div>
+            </div>
+            <div class="icon-module">
+         
+              <img data-src="https://i.imgur.com/NMURc5d.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecc0280ba3d5a1d7e9f48b.png"
+                alt="icon" class="icon"/>
+              <div class="module-text">
+                <span class="title">DATE</span>
+                <span class="subtitle">2024年9月</span>
+              </div>
+            </div>
+            <div class="icon-module">
+
+              <img data-src="https://i.imgur.com/Fk7Sbtl.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecc0280ba3d5a1d7e9f489.png"
+                alt="icon" class="icon"/>
+              <div class="module-text">
+                <span class="title">ROLE</span>
+                <span class="subtitle">UI/UX designer</span>
+              </div>
+            </div>
+            <div class="icon-module">
+
+              <img data-src="https://i.imgur.com/mhRrrAc.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecbfa10ba3d5a1d7e9f457.png"
+                alt="icon" class="icon"/>
+              <div class="module-text">
+                <span class="title">AGENCY</span>
+                <span class="subtitle">Google UX</span>
+                <span class="subtitle">Design Course</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!--第二个大标题 -->
+        <section class="mainTitle">
+          <div class="mainTitleContainer">
+          <!-- <img src="./image/l3.png" alt="Icon" class="mainTitleIcon" /> -->
+          <h1 class="mainTitleText">市場分析</h1>
+          </div>
+       </section>
+
+        <!-- 市场分析图 -->
+        <!-- 左右布局容器 -->
+        <div class="split-layout">
+          <!-- 左侧内容 -->
+          <div class="left-section">
+            <!-- 扇形动画容器 -->
+            <div class="container">
+              <canvas id="pieChart" width="300" height="300"></canvas>
+              <div class="percentage">22.0%</div>
+            </div>
+
+            <div class="littleContent">
+
+              <img data-src="https://i.imgur.com/HVAddXB.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecbf7f0ba3d5a1d7e9f446.png"
+              alt="Image" class="littleImage"/>
+           </div>
+
+            <!-- 动画下方的文字 -->
+            <div class="animation-description">
+              2024年、中国の60歳以上の人口は3億を超え、割合は22.0%に達する。
+            </div>
+          </div>
+
+          <!-- 右侧内容 -->
+          <div class="right-section">
+              <!-- 数字滚动动画 + 固定文字 "h" -->
+              <div class="number-container">
+                <div class="number-display">0.0</div>
+                <span class="fixed-text">h</span>
+              </div>
+
+              <div class="littleContent">
+
+                <img data-src="https://i.imgur.com/TLRNUx7.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecbf800ba3d5a1d7e9f448.png"
+              alt="Image" class="littleImage"/>
+             </div>
+
+              <!-- 图片下方的文字 -->
+              <div class="image-description1">
+                高齢者ユーザーの1日あたりのスマートフォン使用時間は4.2時間です。
+              </div>
+          </div>
+        </div>
+
+        <!-- 横向数据 -->
+        <!-- 图表容器 -->
+      <div class="chart-container">
+        <div class="chart">
+          <!-- 纵轴 -->
+          <!-- 图表主体 -->
+          <div class="bar-container" data-label="交流活動への参加意欲" data-value="73" data-color="#FF6B35"></div>
+          <div class="bar-container" data-label="健康状態" data-value="58" data-color="#FDBFCB"></div>
+          <div class="bar-container" data-label="家族の絆" data-value="55" data-color="#E5D7FC"></div>
+          <div class="bar-container" data-label="収入の安定性" data-value="32" data-color="#E7F8CF"></div>
+          <div class="bar-container" data-label="住環境の快適さ" data-value="28" data-color="#FFE195"></div>
+          <div class="bar-container" data-label="社会からの認め" data-value="25" data-color="#C9EFFF"></div>
+          <!-- 横轴 -->
+          <div class="axis">
+            <span>0%</span>
+            <span>25%</span>
+            <span>50%</span>
+            <span>75%</span>
+          </div>
+        </div>
+
+        <div class="littleContent">
+
+          <img data-src="https://i.imgur.com/hWc5RTP.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecbf800ba3d5a1d7e9f449.png"
+              alt="Image" class="littleImage2"/>
+       </div>
+
+        <!-- 下方文字 -->
+        <div class="footer-text">
+          73%の高齢者が「交流活動への参加意欲」を幸福感に影響する重要な指標として挙げています。
+        </div>
+      </div>
+
+
+          <!--第二个大标题 -->
+        <section class="mainTitle">
+            <div class="mainTitleContainer">
+            <!-- <img src="./image/l3.png" alt="Icon" class="mainTitleIcon" /> -->
+            <h1 class="mainTitleText">問題定義</h1>
+            </div>
+        </section>
+
+            <!-- 左右布局部分 -->
+        <section class="problemSection">
+            <div class="problemLeft">
+                <div class="problemLeftContent">
+                    <!-- 小标题 -->
+                    <!-- <div class="problemSubTitle">
+                      <h2 class="problemSubTitleText">問題背景</h2>
+                      <div class="problemSubTitleUnderline"></div>
+                    </div> -->
+                    <!-- 图片 -->
+           
+                    <img data-src="https://i.imgur.com/RBHziWZ.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecc15c0ba3d5a1d7e9f4d7.png"
+              alt="Image" class="problemLeftImage"/>
+                </div>
+            </div>
+        
+            <div class="problemRight">
+            <!-- 第一组小标题和文字 -->
+                <div class="problemRightGroup">
+                    <div class="problemTitle">
+                      <h2 class="problemTitleText">核心的な問題</h2>
+                      <!-- <div class="problemTitleUnderline"></div> -->
+                    </div>
+                    <p class="problemRightText">高齢化が進む中、高齢者は身体健康だけでなく、情感的なつながりも重要です。しかし、既存のツールは彼らの情感的なニーズを満たしておらず、孤独感が増し、生活の質が低下しています。</p>
+                </div>
+            
+                <!-- 第二组小标题和文字 -->
+                <div class="problemRightGroup">
+                    <div class="problemTitle">
+                    <h2 class="problemTitleText">ターゲットユーザー</h2>
+                    <!-- <div class="problemTitleUnderline"></div> -->
+                    </div>
+                    <p class="problemRightText1">60歳以上の中高年層。中年層を主な対象としており、より高齢の方々への対応は難しいです。</p>
+                    <p class="problemRightText2">この年齢層（60歳前後）から退職が始まり、中高年の生活もこの時期から徐々に変化していきます。</p>
+                </div>
+        
+                <!-- 第三组小标题和文字 -->
+                <div class="problemRightGroup">
+                    <div class="problemTitle">
+                    <h2 class="problemTitleText">設計目標</h2>
+                    <!-- <div class="problemSubTitleUnderline"></div> -->
+                    </div>
+                    <p class="problemRightText">60歳以上の中高年層向けの使いやすい活動カレンダーアプリを設計し、コミュニティ活動への参加を支援し、オフラインでの交流を促進して生活の質を向上させます。</p>
+                </div>
+                
+            </div>
+        </section>
+
+         <!--第三个大标题 -->
+         <section class="mainTitle">
+            <div class="mainTitleContainer">
+            <!-- <img src="./image/l5.png" alt="Icon" class="mainTitleIcon" /> -->
+            <h1 class="mainTitleText">ユーザーリサーチ</h1>
+            </div>
+        </section>
+
+                <!-- 通用小标题1 -->
+        <section class="commonTitleSection">
+            <div class="commonTitle">
+            <h2 class="commonTitleText">ペルソナ</h2>
+            <div class="commonTitleUnderline"></div>
+            </div>
+        </section>
+
+                <!-- 横向排列块 -->
+        <section class="personaSection">
+            <div class="personaContainer">
+            <!-- 左边的图片 -->
+
+            <img data-src="https://i.imgur.com/wHS7TWR.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc19b0ba3d5a1d7e9f4e1.png"
+            alt="Image" class="personaLeftImage"/>
+        
+            <!-- 中间的文字块 -->
+            <div class="personaTextBlock">
+                <p class="personaTextLine1">李おじいさん</p>
+                <p class="personaTextLine">65歳</p>
+                <p class="personaTextLine">定年退職した元会社員</p>
+            </div>
+        
+            <!-- 右边的文字和图片结合块 -->
+            <div class="personaImageTextBlock">
+                
+                <img data-src="https://i.imgur.com/J4mdbYx.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecc1db0ba3d5a1d7e9f4fd.png"
+                alt="Image" class="personaIcon"/>
+                <p class="personaImageText">やることがなくて、家でテレビ見たり寝たりしてるよ。</p>
+  
+                <img data-src="https://i.imgur.com/k7uun0o.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecc1f60ba3d5a1d7e9f504.png"
+                alt="Image" class="personaIcon"/>
+            </div>
+            </div>
+        </section>
+
+
+        <section class="personaSection2">
+            <div class="personaContainer">
+                <!-- 左边的图片 -->
+                <img data-src="https://i.imgur.com/wHS7TWR.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecc19b0ba3d5a1d7e9f4e1.png"
+                alt="Image" class="personaLeftImage"/>
+        
+                <!-- 中间的文字块 -->
+                <div class="personaTextBlock">
+                    <p class="personaTextLine1">李おじいさん</p>
+                    <p class="personaTextLine">65歳</p>
+                    <p class="personaTextLine">定年退職した元会社員</p>
+                </div>          
+            </div>
+            <!-- 右边的文字和图片结合块 -->
+            <div class="personaImageTextBlock">
+              <img data-src="https://i.imgur.com/J4mdbYx.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ecc1db0ba3d5a1d7e9f4fd.png"
+              alt="Image" class="personaIcon"/>
+                <p class="personaImageText">やることがなくて、家でテレビ見たり寝たりしてるよ。</p>
+                <img data-src="https://i.imgur.com/k7uun0o.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecc1f60ba3d5a1d7e9f504.png"
+                alt="Image" class="personaIcon"/>
+            </div>
+        </section>
+
+
+
+
+                <!-- 左右排列的两个文字块 -->
+        <section class="painTextBlocksSection">
+            <div class="painTextBlockWrapper">
+                <!-- 左边的文字块 -->
+                <div class="painTextBlock">
+                    <p class="painTextTitle">ペイン</p>
+                    <ul class="painTextList">
+                    <li>生活が単調</li>
+                    <li>スマホの操作が複雑</li>
+                    <li>イベントがあっても時間を覚えていられない</li>
+                    </ul>
+                </div>
+        
+                <!-- 右边的文字块 -->
+                <div class="painTextBlock">
+                    <p class="painTextTitle">ゴール</p>
+                    <ul class="painTextList">
+                    <li>豊富な活動を選びたい</li>
+                    <li>簡単で使いやすいツール</li>
+                    <li>イベントを見逃さない</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 通用小标题2 -->
+        <section class="commonTitleSection2">
+          <div class="commonTitle">
+            <h2 class="commonTitleText">ユーザージャーニー</h2>
+            <div class="commonTitleUnderline"></div>
+          </div>
+       </section>
+
+            <!-- 任务 -->
+        <section class="mapCenteredTextSection">
+            <p class="mapCenteredText">任務：自分に合ったイベントを見つけて、一度参加する。</p>
+        </section>
+
+            <!-- 上一行文字和下面的 6 列文字 -->
+        <section class="mapTextGridSection">
+            <!-- 上一行文字（填充框） -->
+            <div class="mapFilledTextContainer">
+            <div class="mapTextColumn">
+                <span class="mapTextItem">イベント探す</span>
+            </div>
+            <div class="mapTextColumn">
+                <span class="mapTextItem">イベント選ぶ</span>
+            </div>
+            <div class="mapTextColumn">
+                <span class="mapTextItem">イベント申し込む</span>
+            </div>
+            <div class="mapTextColumn">
+                <span class="mapTextItem">アラーム設定</span>
+            </div>
+            <div class="mapTextColumn">
+                <span class="mapTextItem">イベント参加</span>
+            </div>
+            <div class="mapTextColumn">
+                <span class="mapTextItem">イベント後</span>
+            </div>
+            </div>
+        
+            <!-- 下面的 6 列文字（无填充） -->
+            <div class="mapTextRow">
+            <div class="mapTextColumn">
+                <p class="mapTextSubItem">スマホで検索</p>
+                <p class="mapTextSubItem">コミュニティ掲示板を見る</p>
+            </div>
+            <div class="mapTextColumn">
+                <p class="mapTextSubItem">イベント情報を読む</p>
+                <p class="mapTextSubItem">興味のあるものを選ぶ</p>
+            </div>
+            <div class="mapTextColumn">
+                <p class="mapTextSubItem">電話で問い合わせ</p>
+                <p class="mapTextSubItem">手書きで申し込む</p>
+            </div>
+            <div class="mapTextColumn">
+                <p class="mapTextSubItem">家族にリマインダーを頼む</p>
+                <p class="mapTextSubItem">スマホにメモ</p>
+            </div>
+            <div class="mapTextColumn">
+                <p class="mapTextSubItem">会場に行く</p>
+                <p class="mapTextSubItem">参加者と交流</p>
+            </div>
+            <div class="mapTextColumn">
+                <p class="mapTextSubItem1">次のイベントを考える</p>
+            </div>
+            </div>
+        </section>
+
+
+        <section class="mapTextGridSection2">
+            <!-- 上一行文字（填充框） -->
+            <div class="mapFilledTextContainer">
+                <div class="mapTextColumn">
+                    <span class="mapTextItem">イベント探す</span>
+                </div>
+                <div class="mapTextColumn">
+                    <span class="mapTextItem">イベント選ぶ</span>
+                </div>
+                <div class="mapTextColumn">
+                    <span class="mapTextItem">イベント申し込む</span>
+                </div>
+            </div>
+        
+            <!-- 下面的 6 列文字（无填充） -->
+            <div class="mapTextRow">
+                <div class="mapTextColumn">
+                    <p class="mapTextSubItem">スマホで検索</p>
+                    <p class="mapTextSubItem">コミュニティ掲示板を見る</p>
+                </div>
+                <div class="mapTextColumn">
+                    <p class="mapTextSubItem">イベント情報を読む</p>
+                    <p class="mapTextSubItem">興味のあるものを選ぶ</p>
+                </div>
+                <div class="mapTextColumn">
+                    <p class="mapTextSubItem">電話で問い合わせ</p>
+                    <p class="mapTextSubItem">手書きで申し込む</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mapTextGridSection2">
+            <!-- 上一行文字（填充框） -->
+            <div class="mapFilledTextContainer">
+                <div class="mapTextColumn">
+                    <span class="mapTextItem">アラーム設定</span>
+                </div>
+                <div class="mapTextColumn">
+                    <span class="mapTextItem">イベント参加</span>
+                </div>
+                <div class="mapTextColumn">
+                    <span class="mapTextItem">イベント後</span>
+                </div>
+            </div>
+        
+            <!-- 下面的 6 列文字（无填充） -->
+            <div class="mapTextRow">
+                <div class="mapTextColumn">
+                    <p class="mapTextSubItem">家族にリマインダーを頼む</p>
+                    <p class="mapTextSubItem">スマホにメモ</p>
+                </div>
+                <div class="mapTextColumn">
+                    <p class="mapTextSubItem">会場に行く</p>
+                    <p class="mapTextSubItem">参加者と交流</p>
+                </div>
+                <div class="mapTextColumn">
+                    <p class="mapTextSubItem1">次のイベントを考える</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+                <!-- 图片部分 -->
+        <section class="mapImageSection">
+ 
+            <img data-src="https://i.imgur.com/W4q31yY.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecc2960ba3d5a1d7e9f527.png"
+                alt="Image" class="mapImage"/>
+        </section>
+
+        <!--第四个大标题 -->
+        <section class="mainTitle">
+            <div class="mainTitleContainer">
+            <!-- <img src="./image/l9.png" alt="Icon" class="mainTitleIcon" /> -->
+            <h1 class="mainTitleText">デザインプロセス</h1>
+            </div>
+        </section>
+
+           <!-- 通用小标题3 -->
+           <section class="commonTitleSection2">
+            <div class="commonTitle">
+              <h2 class="commonTitleText">ユーザーフロー</h2>
+              <div class="commonTitleUnderline"></div>
+            </div>
+         </section>
+
+         <!-- 流程图片部分 -->
+        <!-- <section class="userFlowImageSection">
+            <img src="./image/l110.png" alt="Your Image" class="userFlowImage" />
+        </section>
+        
+       
+        <section class="userFlowTextSection">
+            <p class="userFlowText">新規ユーザーとして、ここにどんなイベントがあるのか知りたいです。</p>
+        </section> -->
+
+         <!-- 流程图片部分 -->
+         <section class="userFlowImageSection">
+
+            <img data-src="https://i.imgur.com/rWn0wz5.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecbf800ba3d5a1d7e9f44b.png"
+                alt="Image" class="userFlowImage"/>
+        </section>
+        
+        <!-- 流程文字部分 -->
+        <section class="userFlowTextSection">
+            <p class="userFlowText">興味のあるイベントを見つけたので</p>
+        </section>
+
+         <!-- 流程图片部分 -->
+         <section class="userFlowImageSection">
+       
+            <img data-src="https://i.imgur.com/KEIVtw5.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecbf800ba3d5a1d7e9f44a.png"
+                alt="Image" class="userFlowImage"/>
+        </section>
+        
+        <!-- 流程文字部分 -->
+        <section class="userFlowTextSection1">
+            <p class="userFlowText">次回もその友達と一緒に参加したいです</p>
+        </section>
+
+         <!-- 通用小标题4 -->
+         <section class="commonTitleSection2">
+            <div class="commonTitle">
+              <h2 class="commonTitleText">ワイヤーフレーム</h2>
+              <div class="commonTitleUnderline"></div>
+            </div>
+         </section>
+
+         <!-- 图片部分 -->
+        <section class="wireframeImageSection">
+  
+            <img data-src="https://i.imgur.com/nJP9hSE.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ecc3270ba3d5a1d7e9f54f.png"
+                alt="Image" class="wireframeImage"/>
+        </section>
+
+         <!-- 通用小标题5 -->
+         <section class="commonTitleSection2">
+            <div class="commonTitle">
+              <h2 class="commonTitleText">プロトタイプ</h2>
+              <div class="commonTitleUnderline"></div>
+            </div>
+         </section>
+
+         <!-- 小小标题 -->
+         <section class="commonTitleSection2">
+            <div class="commonTitle">
+              <h2 class="commonTitleText2">アプリ</h2>
+            </div>
+         </section>
+
+          <!-- 小小标题 -->
+          <section class="commonTitleSection3">
+            <div class="commonTitle">
+              <h2 class="commonTitleText3">高齢者のためのサービスを提供します。</h2>
+            </div>
+         </section>
+
+         <!-- 原型 -->
+        <section class="wireframeFourImagesSection">
+           
+            <img data-src="https://i.imgur.com/KNG1E1W.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc3b10ba3d5a1d7e9f571.png"
+            alt="Image" class="wireframeFourImage"/>
+            
+            <img data-src="https://i.imgur.com/nJP9hSE.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc3b10ba3d5a1d7e9f572.png"
+            alt="Image" class="wireframeFourImage"/>
+          
+            <img data-src="https://i.imgur.com/WMTt3Rd.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc3b00ba3d5a1d7e9f570.png"
+            alt="Image" class="wireframeFourImage"/>
+           
+            <img data-src="https://i.imgur.com/phmgt91.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc3b10ba3d5a1d7e9f574.png"
+            alt="Image" class="wireframeFourImage"/>
+        </section>
+
+        <section class="wireframeFourImagesSection">
+            
+            <img data-src="https://i.imgur.com/T7jjUD6.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc3b10ba3d5a1d7e9f573.png"
+            alt="Image" class="wireframeFourImage"/>
+            
+            <img data-src="https://i.imgur.com/jfDij3b.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc4b90ba3d5a1d7e9f5c3.png"
+            alt="Image" class="wireframeFourImage"/>
+            
+            <img data-src="https://i.imgur.com/2pcFFsw.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc4b90ba3d5a1d7e9f5c1.png"
+            alt="Image" class="wireframeFourImage"/>
+           
+            <img data-src="https://i.imgur.com/ZSQ2IXw.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc4b90ba3d5a1d7e9f5c2.png"
+            alt="Image" class="wireframeFourImage"/>
+        </section>
+
+        <section class="wireframeFourImagesSection">
+         
+            <img data-src="https://i.imgur.com/iV98nQM.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc4b90ba3d5a1d7e9f5c4.png"
+            alt="Image" class="wireframeFourImage"/>
+          
+            <img data-src="https://i.imgur.com/GI3M42Y.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc4b90ba3d5a1d7e9f5c0.png"
+            alt="Image" class="wireframeFourImage"/>
+          
+            <img data-src="https://i.imgur.com/ReQD61n.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc5400ba3d5a1d7e9f620.png"
+            alt="Image" class="wireframeFourImage"/>
+           
+            <img data-src="https://i.imgur.com/7mMGsMF.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc5400ba3d5a1d7e9f622.png"
+            alt="Image" class="wireframeFourImage"/>
+        </section>
+
+        <!-- 小小标题 -->
+        <section class="commonTitleSection2">
+            <div class="commonTitle">
+                <h2 class="commonTitleText2">ウェブサイト</h2>
+            </div>
+        </section>
+
+        <!-- 小小标题 -->
+        <section class="commonTitleSection3">
+          <div class="commonTitle">
+            <h2 class="commonTitleText3">地域の支援者と高齢者のご家族向けのサービスです。</h2>
+          </div>
+       </section>
+
+                <!-- 两行图片部分 -->
+        <section class="prototypeTwoRowsSection">
+            <!-- 第一行图片 -->
+            <div class="prototypeFirstRow">
+            
+            <img data-src="https://i.imgur.com/RzCSq0A.gif"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc5880ba3d5a1d7e9f640.gif"
+            alt="Image" class="prototypeFirstRowImage"/>
+            </div>
+        
+            <!-- 第二行图片 -->
+            <div class="prototypeSecondRow">
+          
+            <img data-src="https://i.imgur.com/2ZYp2Zn.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc5f10ba3d5a1d7e9f66f.png"
+            alt="Image" class="prototypeLeftImage"/>
+     
+            <img data-src="https://i.imgur.com/rz45kDU.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc5f10ba3d5a1d7e9f66e.png"
+            alt="Image" class="prototypeRightImage"/>
+            </div>
+        </section>
+
+        <section class="finaldesign1">
+          <section class="mainTitle">
+            <div class="mainTitleContainer">
+            <!-- <img src="./image/l30.png" alt="Icon" class="mainTitleIcon" /> -->
+            <h1 class="mainTitleText">デザインシステム</h1>
+            </div>
+        </section>
+       
+          <img data-src="https://i.imgur.com/uKYhjfv.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc6a70ba3d5a1d7e9f6c4.png"
+            alt="Image" class="final-image"/>
+        </section>
+
+        <!--第五个大标题 -->
+        <section class="mainTitle">
+          <div class="mainTitleContainer">
+          <!-- <img src="./image/l30.png" alt="Icon" class="mainTitleIcon" /> -->
+          <h1 class="mainTitleText">反省と改善</h1>
+          </div>
+        </section>
+
+        <section>
+        
+          <img data-src="https://i.imgur.com/P5PZj6N.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ecc6ed0ba3d5a1d7e9f6d9.png"
+            alt="Image" class="fansiImage"/>
+        </section>
+
+        <div class="fansiSection">
+          <!-- 第一组小标题和文字 -->
+              <div class="problemRightGroup">
+                  <div class="problemTitle">
+                    <h2 class="problemTitleText">多様な製品形態</h2>
+                  </div>
+                  <p class="problemRightText1">問題:多くの高齢者はスマートフォンの使用に慣れておらず、モバイルアプリだけでは全てのユーザーをカバーできない。
+                  </p>
+                  <p class="problemRightText2">改善方向:オフラインの活動カレンダーや電話サービスなど、非電子化された製品形態を検討し、多様なニーズに対応する。
+                  </p>
+              </div>
+          
+              <!-- 第二组小标题和文字 -->
+              <div class="problemRightGroup">
+                  <div class="problemTitle">
+                  <h2 class="problemTitleText">アクセシビリティ設計の深化</h2>
+                  </div>
+                  <p class="problemRightText1">問題:高齢者の視力、聴力、操作能力は年齢とともに低下するが、現行の設計ではこれらの変化に対応しきれていない。</p>
+                  <p class="problemRightText2">改善方向:高コントラストモード、音声読み上げ機能、操作の簡素化を最適化し、製品の包括性と使いやすさを向上させる。</p>
+              </div>
+      
+              <!-- 第三组小标题和文字 -->
+              <div class="problemRightGroup">
+                  <div class="problemTitle">
+                  <h2 class="problemTitleText">実名制と家族共有機能</h2>
+                  </div>
+                  <p class="problemRightText1">問題:高齢者の健康と安全は家族の関心事だが、現行の設計には家族の参加メカニズムが欠けている。</p>
+                  <p class="problemRightText2">改善方向:実名制と家族共有機能を導入し、家族が高齢者の活動と健康状態を把握できるようにする。</p>
+              </div>
+          </div>
+
+
+
+         <!--第五个大标题 -->
+         <section class="mainTitle">
+            <div class="mainTitleContainer">
+            <!-- <img src="./image/l30.png" alt="Icon" class="mainTitleIcon" /> -->
+            <h1 class="mainTitleText">ほかのプロジェクト</h1>
+            </div>
+        </section>
+
+         <!-- 最后一部分 -->
+         <section class="other-project" id="project-section">
+            <div class="projectImage">
+
+                <div class="image-box">
+                  <img data-src="https://i.imgur.com/4BjE1AR.png"
+                  data-fallback="https://pic1.imgdb.cn/item/67ea4dc20ba3d5a1d7e8067a.png"
+                  alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label1">架空</span>
+                  <h2 class="overlay-title">SceneMap</h2>
+                  <p class="overlay-description">好きなアニメの舞台を探し、現地で写真を撮ってシェアできる巡礼アプリ。</p>
+                  <a href="./scene map.html" class="overlay-btn1">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/PsGJ8NX.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea4dd10ba3d5a1d7e806a6.png"
+                alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label2">実案件</span>
+                  <h2 class="overlay-title2">不動産サイト</h2>
+                  <p class="overlay-description">不動産会社の業務内容と事例を紹介する企業サイト。</p>
+                  <a href="./fangdichan.html" class="overlay-btn2">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <section class="other-project">
+            <div class="projectImage">
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/pDBMBBN.png"
+                data-fallback="https://pic1.imgdb.cn/item/67ea4ded0ba3d5a1d7e806fd.png"
+                alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label3">実案件</span>
+                  <h2 class="overlay-title3">易米易货</h2>
+                  <h2 class="overlay-title2">イ·べイ·イ·か</h2>
+                  <p class="overlay-description">物品を交換し、無駄なく生活を楽しむための、簡単で便利な物々交換アプリ。</p>
+                  <a href="./yimiyihuo.html" class="overlay-btn3">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/axZKEGL.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4e0f0ba3d5a1d7e80761.png"
+        alt="图片" class="project-image" />
+                <div class="overlay">
+                  <span class="label4">架空</span>
+                  <h2 class="overlay-title2">カクテルメーカー</h2>
+                  <p class="overlay-description">自宅で簡単にカクテルが作れるウェブサイト。</p>
+                  <a href="./jiweijiu.html" class="overlay-btn4">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="other-project">
+            <div class="projectImage">
+              <div class="image-box">
+                <img data-src="https://i.imgur.com/ZhnEmSD.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea4f450ba3d5a1d7e808b1.png"
+        alt="图片" class="project-image" />
+                <div class="overlay">
+                  <h2 class="overlay-title">OTHERS</h2>
+                  <p class="overlay-description2">GRAPHIC DESIGN, ILLUSTRATION，SHORT ANIMATION</p>
+                  <a href="./other.html" class="overlay-btn5">view more</a> <!-- 使用 <a> 标签来实现跳转 -->
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- 小屏幕布局（768px 及以下显示） -->
+           <section class="mobileOtherProject" id="project-section">
+
+            <!-- 第二个项目 -->
+            <div class="mobile-layout bg-color-1">
+              <img data-src="https://i.imgur.com/evHwrU6.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ea52fd0ba3d5a1d7e80a11.png"
+            alt="图片"/>
+              <a href="./scene map.html" class="button">view more</a>
+            </div>
+            
+
+            <!-- 第三个项目 -->
+            <div class="mobile-layout bg-color-2">
+              <img data-src="https://i.imgur.com/7Yih8Th.png"
+              data-fallback="https://pic1.imgdb.cn/item/67ea530c0ba3d5a1d7e80a1c.png"
+              alt="图片"/>
+              <a href="./fangdichan.html" class="button">view more</a>
+            </div>
+
+            <!-- 第四个项目 -->
+           <div class="mobile-layout bg-color-3">
+            <img data-src="https://i.imgur.com/1h6kYfW.png"
+            data-fallback="https://pic1.imgdb.cn/item/67ea531b0ba3d5a1d7e80a20.png"
+            alt="图片"/>
+              <a href="./yimiyihuo.html" class="button">view more</a>
+            </div>
+            <!-- 第五个项目 -->
+            <div class="mobile-layout bg-color-1">
+              <img data-src="https://i.imgur.com/JATnDeX.png"
+        data-fallback="https://pic1.imgdb.cn/item/67ea533c0ba3d5a1d7e80a2a.png"
+        alt="图片"/>
+              <a href="./jiweijiu.html" class="button">view more</a>
+            </div>
+
+            <!-- 第六个项目 -->
+            <div class="mobile-layout bg-color-4">
+              <img data-src="https://i.imgur.com/DIMz0Tu.png"
+          data-fallback="https://pic1.imgdb.cn/item/67ea53560ba3d5a1d7e80a45.png"
+          alt="图片"/>
+              <a href="./other.html" class="button">view more</a>
+            </div>
+           </section>
+
+            <!-- 底部 -->
+      <footer class="footer">
+        <p>&copy; 2025 Tian Jingwen. All Rights Reserved.</p>
+      </footer>
+
+      <script src="index.js"></script>
+
+      <script>
+        function switchImage(imgElement, fallbackSrc) {
+          let testImg = new Image();
+          testImg.src = imgElement.dataset.src; // 先尝试国外图床
+      
+          testImg.onload = function () {
+            imgElement.src = imgElement.dataset.src; // 成功加载则使用国外图床
+          };
+      
+          testImg.onerror = function () {
+            imgElement.src = fallbackSrc; // 失败则切换到国内图床
+          };
+        }
+      
+        function checkAndReplaceImages() {
+          document.querySelectorAll('img[data-src]').forEach(img => {
+            let fallbackSrc = img.dataset.fallback;
+            switchImage(img, fallbackSrc);
+          });
+        }
+      
+        window.addEventListener("load", checkAndReplaceImages);
+      </script>
+
+  </body>
+<html>

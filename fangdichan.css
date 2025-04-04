@@ -1,0 +1,1962 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px; /* 默认字体大小 16px，1rem = 16px */
+    font-family: 'Noto Serif JP','Microsoft YaHei' , 'Roboto'，'Arial';
+    letter-spacing: 0.06rem; /* 字母之间的间距 */
+    line-height: normal;
+  }
+  
+ /* 背景容器 */
+.background-container {
+    position: relative;
+    background-color: #C3E1F6; /* 蓝灰色背景填充 */
+    display: flex;
+    flex-direction: column; /* 元素从上到下排列 */
+    justify-content: space-between; /* 让内容在顶部和底部分布 */
+    align-items: flex-end; /* 水平居中 */
+   aspect-ratio: 16/9;
+}
+.backgroundImage{
+  display: block;
+  width: 100%;
+  height:auto;
+  margin-top: auto;
+
+}
+  
+  /* 中等屏幕和大屏幕背景 */
+  @media (min-width: 1024px) {
+    .background-container {
+      background-image: url('');
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .background-container {
+      background-image: url('');
+    }
+  }
+  
+  /* 小屏幕背景 */
+  @media (max-width: 768px) {
+    .background-container {
+      background-image: url('');
+    }
+  }
+  
+  /* 顶部导航栏 */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2vh 8vw 1vh ;
+    position: fixed; /* 固定导航栏 */
+    z-index: 9999; /* 确保导航栏处于页面所有其他内容的上层 */
+    background-color: transparent; /* 初始状态下背景透明 */
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+  }
+
+  .header.scrolled {
+    background-color: white; /* 滚动时背景变为白色 */
+  }
+  
+  .logo img {
+    width: 4rem; /* logo 的宽度 */
+    height: auto;
+    padding-top: 1rem;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navbar ul li {
+    margin-left: 5vw;
+  }
+
+/* 汉堡菜单按钮样式 */
+.hamburger-menu {
+  display: none; /* 默认不显示 */
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  top: 4vh;
+  right: 6vw;
+  z-index: 1000; /* 确保按钮在最上层 */
+  position: absolute;
+  border: none;
+  background-color: transparent;
+}
+
+.hamburger-menu span {
+  display: none; /* 默认不显示 */
+  width: 100%;
+  height:2px;
+  background-color: rgb(31, 31, 31);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 1000; /* 确保按钮在最上层 */
+}
+
+.hamburger-menu span:nth-child(1) {
+  top:0;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-menu span:nth-child(3) {
+ bottom: 0;
+}
+
+
+
+
+/* 小屏幕菜单样式 */
+.mobile-menu {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* 铺满整个屏幕 */
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  z-index: 999; /* 确保菜单在内容上层 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mobile-menu ul {
+  list-style: none; /* 去掉列表符号 */
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 文字居中 */
+}
+
+.mobile-menu ul li {
+  margin: 1.5rem 0; /* 菜单项之间的间距 */
+}
+
+.mobile-menu ul li a {
+  color: white; /* 文字颜色 */
+  text-decoration: none; /* 去掉下划线 */
+  font-size: 1.2rem; /* 文字大小 */
+  font-family: Noto Serif JP;
+  font-weight: 500;
+}
+
+/* 小屏幕下显示汉堡按钮 */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hamburger-menu span {
+    display: block; /* 显示汉堡按钮 */
+  }
+
+  .navbar ul {
+  display: none;
+  }
+
+}
+
+/* 点击汉堡按钮后显示菜单 */
+.mobile-menu.active {
+  display: flex; /* 显示菜单 */
+}
+
+
+  /* 导航栏链接样式 */
+.navbar a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: Robot0;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+   /* 下拉菜单样式 */
+.navbar .dropdown {
+    position: relative; /* 使得子菜单可以相对于这个父元素定位 */
+  }
+  
+  .navbar .dropdown-menu {
+    display: none; /* 默认隐藏菜单 */
+    position: absolute;
+    top: 106%; /* 将菜单放置在父项的下方 */
+    left: 0;
+    background-color: white;
+    min-width: 150px; /* 可以根据需要调整菜单宽度 */
+    width: auto;
+    z-index: 1000;
+  }
+  
+  .navbar .dropdown-menu li {
+    padding: 0rem 0.1rem 0.1rem 0.25rem;
+    margin: 0; /* 确保没有额外的 margin */
+    white-space: nowrap; /* 禁止换行 */
+  }
+
+  /* 下拉菜单链接样式 */
+.navbar .dropdown-menu li a {
+    color: rgb(31, 31, 31); /* 初始文字颜色 */
+    font-size: 1rem;
+    text-decoration: none; /* 移除默认的下划线 */
+    position: relative; /* 为了定位伪元素 */
+    transition: color 0.3s ease; /* 平滑过渡文字颜色 */
+  }
+
+    /* 创建下划线的伪元素 */
+    .navbar a::after,
+    .navbar .dropdown-menu li a::after {
+    content: ''; /* 创建伪元素 */
+    position: absolute;
+    bottom: -2px; /* 下划线离文字稍微有些距离 */
+    left: 0;
+    width: 0; /* 初始宽度为0 */
+    height: 1px; /* 下划线的高度 */
+    background-color:#0087B3; /* 下划线的颜色 */
+    transition: width 0.3s ease; /* 平滑过渡下划线的宽度 */
+    }
+
+    /* 鼠标悬停时文字颜色变紫色 */
+    .navbar a:hover,
+    .navbar .dropdown-menu li a:hover {
+    color:#0087B3; /* 鼠标悬停时文字变为紫色 */
+    }
+
+    /* 鼠标悬停时下划线从左到右扩展 */
+    .navbar a:hover::after,
+    .navbar .dropdown-menu li a:hover::after {
+    width: 100%; /* 鼠标悬停时下划线的宽度扩展到100% */
+    }
+  
+  /* 鼠标悬停显示下拉菜单 */
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block; /* 鼠标悬停时显示菜单 */
+  }
+
+  .navbar .dropdown-menu .menu-item-1 {
+    font-family: 'Roboto'; /* 这里是第一个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-2 {
+    font-family: 'Noto Serif JP'; /* 这里是第二个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-3 {
+    font-family: 'Microsoft YaHei'; /* 这里是第三个菜单项的字体 */
+    font-weight: 400;
+  }
+  
+  .navbar .dropdown-menu .menu-item-4 {
+    font-family: 'Noto Serif JP'; /* 这里是第四个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-5 {
+    font-family: 'Noto Serif JP'; /* 这里是第五个菜单项的字体 */
+    font-weight: 500;
+  }
+  
+  .navbar .dropdown-menu .menu-item-6 {
+    font-family: 'Roboto'; /* 这里是第六个菜单项的字体 */
+    font-weight: 400;
+  }
+
+  .navbar .dropdown-menu li::before {
+    content: '—'; /* 使用短横杠 */
+    margin-right: 0.5rem; /* 设置横杠与文字之间的间距 */
+    font-size: 1rem; /* 调整横杠的大小 */
+    color: rgb(31, 31, 31); /* 设置横杠的颜色 */
+  }
+
+  /* 背景图片样式 */
+  /* 响应式图片，独立定位 */
+  .backgroundImage {
+      position: absolute;
+      bottom: 0; /* 图片底部贴着屏幕 */
+      left: 50%; /* 水平居中 */
+      transform: translateX(-50%); /* 通过transform让图片居中 */
+      width: 50vw; /* 根据屏幕宽度调整图片大小 */
+      height: auto; /* 高度自适应 */
+      object-fit: contain; /* 保持图片比例 */
+      z-index: 1; /* 确保图片在背景容器的上层 */
+  }
+
+
+  
+
+   /* 第一个主标题样式 */
+  .mainTitle {
+    position: relative;
+    margin:17vh auto 8vh 11vw; /* 响应式适应屏幕宽度 */
+    display: inline-block;
+  }
+
+  /* 数字样式 */
+  .mainTitle .number {
+    color: #A9CAD5; /* 淡蓝色 */
+    position: relative;
+    font-family: Arial;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  /* 英文文本样式 */
+  .mainTitle .text {
+    color: #1F1F1F; /* 深灰色 */
+    position: absolute;
+    top: 1em; /* 适当向上调整，与01部分重叠 */
+    left: 1.3em; /* 向左部分重叠 */
+    z-index: 0; /* 层级低于数字 */
+    white-space: nowrap; /* 防止文本换行 */
+    font-family: Roboto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    z-index: 1; /* 确保位于上面 */
+  }
+
+  /* 第一个字母I样式 */
+  .mainTitle .firstLetter {
+    color: #0087B3; /* 深蓝色 */
+  }
+
+    /* 概要文本样式 */
+  .mainTitle .subText {
+    display: block;
+    font-size: 1.4rem; /* 字体大小相对较小，可根据需求调整 */
+    color: #1F1F1F; /* 同样为深灰色 */
+    margin-top: 0.75rem; /* 与 INTRODUCTION 间距为 0.75rem */
+    margin-left: 1.3em; /* 与 INTRODUCTION 左对齐 */
+  }
+
+  /* 概要段落文字 */
+    /* 文本容器 */
+  .firstTextContainer {
+    width: 100%; /* 容器宽度占满整个屏幕 */
+    padding: 0 13vw ; /* 左右各留 5% 视口宽度的间距 */
+    margin-bottom: 4vh;
+  }
+
+  /* 文本行样式 */
+  .firstTextLine {
+    text-align: left; /* 左对齐 */
+    color: #1F1F1F; /* 深灰色文字 */
+    font-family: "Noto Serif JP";
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  /* icon模块 */
+  /* 图标模块容器样式 */
+  .icon-modules {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* 使模块能够在小屏幕上换行 */
+    margin: 0 13vw; /* 居中显示 */
+  }
+
+  /* 每个模块的样式 */
+  .icon-module {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    width: auto; /* 模块宽度 */
+     /*margin: 0 auto; 模块之间的间距 */
+    text-align: left;
+  }
+
+  /* 图标样式 */
+  .icon {
+    width: 2rem; /* 38px */
+    height: auto;
+    margin-right: 0.5rem; /* 图标和文字之间的距离 */
+    margin-top: 0.1rem;
+  }
+
+    /* 模块内文字容器样式 */
+  .module-text {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: flex-start; /* 左对齐 */
+  }
+
+  /* 模块内文字样式 */
+  .module-text .title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    position: relative; /* 让伪元素相对于父元素定位 */
+    text-decoration: none; /* 去掉默认的下划线 */
+    margin-bottom: 1rem; /* 增加标题和副标题之间的间距 */
+    font-family: Roboto;
+  }
+
+  .module-text .title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem; /* 调整下划线与文字的距离 */
+    width: 3rem; /* 自定义下划线长度，可以调整为任意百分比或固定值 */
+    height: 2px; /* 下划线的厚度 */
+    background-color: #0087B3; /* 紫色下划线 */
+    border-radius: 999px;
+  }
+
+  .module-text .subtitle {
+    font-size: 1rem;
+    font-family: Roboto;
+  }
+
+  .module-text .subtitle2 {
+    font-size: 1rem;
+    font-family: Noto Serif JP;
+  }
+
+    /* 第二部分主体内容 */
+    /* 父容器: textBlocksContainer */
+  .textBlocksContainer {
+    display: flex;
+    padding: 0 8vw 0 13vw; /* 左右边距为 13vw */
+    margin: 2vh 0;
+    gap:3rem;
+  }
+
+  /* 每个文字块: textBlock */
+  .textBlocksContainer .textBlock {
+    position: relative;
+    width: 30vw;
+    height: auto;
+    background-color: #0087B3;
+    padding: 1.5rem 1.5rem 2rem 1.8rem; /* 上边距 1.5rem，左右 3rem */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 1rem; /* 添加圆角 */
+  }
+
+  /* 文字块底部的旋转背景 */
+  .textBlocksContainer .textBlock::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #D5E923;
+    transform: rotate(4.732deg);
+    z-index: -1;
+    border-radius: 1rem; /* 添加圆角 */
+  }
+
+  /* 文字内容: textContent */
+  .textBlocksContainer .textBlock .textContent {
+    width: 100%;
+  }
+
+  /* 标题: title */
+  .textBlocksContainer .textBlock .textContent .title {
+    color: #FFF;
+    font-family: "Noto Serif JP";
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.08rem;
+  }
+
+  /* 下划线: underline */
+  .textBlocksContainer .textBlock .textContent .underline {
+    width: 100%;
+    height: 1px;
+    background-color: #D5E923;
+    margin-bottom: 1rem;
+  }
+
+  /* 段落文字: paragraph */
+  .textBlocksContainer .textBlock .textContent .paragraph {
+    font-family: "Noto Serif JP";
+    font-size: 1rem;
+    font-weight: 400;
+    color: #FFF;
+  }
+
+  /* 色彩图片 */
+    /* 图片容器 */
+  .secondImageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 (如果容器有一定高度的话) */
+  }
+
+  /* 图片样式 */
+  .secondImageContainer img {
+    width: 49vw; /* 宽度 49vw */
+    height: auto; /* 高度自适应 */
+  }
+
+
+   /* 颜色说明部分 */
+    /* 整个 colorSection */
+  .colorSection {
+    display: flex;
+    justify-content: flex-start; /* 左右排列 */
+    margin: 8vh 10vw 0 13vw; /* 外边距 */
+    color:#1F1F1F;
+    gap:3rem;
+  }
+
+  /* 左边块 */
+  .colorBlock {
+    display: flex;
+    align-items: flex-start; /* 垂直居中 */
+    gap: 0.75rem; /* colorSquare 和 colorCode 之间的间隔 */
+  }
+
+  .colorBlock2 {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    gap: 0.75rem; /* 每行之间的间距 */
+  }
+
+  .colorRow {
+    display: flex;
+    align-items: center; /* 水平居中对齐 */
+    gap: 0.75rem; /* 方块和文字之间的间距 */
+  }
+
+  /* colorSquare 颜色方块 */
+  .colorSquare {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: #ECF4F6;
+  }
+
+  .colorSquare2 {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: #0068B3;
+  }
+
+  .colorSquare3 {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: #D5E923;
+  }
+
+  .colorSquare4 {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: #FFB703; /* 可以根据每行需要的颜色调整 */
+  }
+
+  .colorSquare5 {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: #FB8500; /* 可以根据每行需要的颜色调整 */
+  }
+
+  .colorSquare6 {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: #023047; /* 可以根据每行需要的颜色调整 */
+  }
+
+  /* colorCode 颜色代码文字 */
+  .colorCode {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+    /* 右边块 */
+  .colorDescription {
+    display: flex;
+    flex-direction: column; /* 上下排列 */
+    justify-content: flex-start; /* 顶部对齐 */
+  }
+
+  /* 上面一行文字 */
+  .colorDescriptionTextTop {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  /* 下面的关键词部分 */
+  .keywordSection {
+    display: flex; /* 横向排列 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-top: 1.5rem; /* 与上一行文字间的间距 */
+  }
+
+  /* key words: 部分 */
+  .keyword {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 0.75rem; /* 文字与文字块的间距 */
+    color: #1F1F1F;
+  }
+
+  /* 文字块样式 */
+  .keywordBox {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #ECF4F6;
+    padding: 0.25rem 1.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.75rem; /* 文字块之间的间距 */
+  }
+
+  .keywordBox2 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #0068B3;
+    padding: 0.25rem 1.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.75rem; /* 文字块之间的间距 */
+    color:#FFF
+  }
+
+  .keywordBox3 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #D5E923;
+    padding: 0.25rem 1.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.75rem; /* 文字块之间的间距 */
+  }
+
+  .keywordBox4 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #FFB703;
+    padding: 0.25rem 1.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.75rem; /* 文字块之间的间距 */
+  }
+
+  .keywordBox5 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #FB8500;
+    padding: 0.25rem 1.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.75rem; /* 文字块之间的间距 */
+  }
+
+  .keywordBox6 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #023047;
+    padding: 0.25rem 1.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.75rem; /* 文字块之间的间距 */
+    color:#FFF
+  }
+
+   /* 第三个图片容器 */
+   .thirdImageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 (如果容器有一定高度的话) */
+  }
+
+  /* 第三个图片样式 */
+  .thirdImageContainer img {
+    width: 75vw;
+    height: auto; /* 高度自适应 */
+  }
+
+  /* 优化方向 */
+  .improvementBlock {
+    background-color: #ECF4F6; /* 背景颜色 */
+    border-radius: 1.25rem; /* 圆角 */
+    width: 80vw; /* 固定宽度 */
+    height: auto; /* 固定高度 */
+    padding: 2rem 2rem 0.5rem 2rem; /* 内边距，控制顶部和左右的距离 */
+    box-sizing: border-box; /* 确保 padding 不会影响块的尺寸 */
+    margin-left: 13vw;
+  }
+
+  .improvementTopSection h2 {
+      font-size: 1.4rem; /* 文字大小 */
+      margin: 0; /* 清除默认的外边距 */
+      margin-bottom: 1.5rem; /* 底部和下面块的距离 */
+      color: #1F1F1F; /* 文字颜色 */
+      font-family: "Noto Serif JP";
+      font-weight: 600;
+  }
+
+  .improvementRow {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0 ; /* 行与行之间的间距 */
+  }
+
+  .improvementKeyword {
+      background-color: #D5E923;
+      border-radius: 0.25rem;
+      padding: 0.25rem 1.2rem; /* 上下0.25rem，左右1.5rem */
+      font-size: 1rem;
+      color: #1F1F1F;
+      font-family: "Noto Serif JP";
+  }
+
+  .improvementDots {
+      display: flex;
+      gap: 0.8rem; /* 每个圆点之间的间距 */
+      margin-left: 1.5rem;
+  }
+
+  .improvementDots::before,
+  .improvementDots::after,
+  .improvementDots span {
+      content: '';
+      display: inline-block;
+      width: 0.25rem; /* 圆点直径 */
+      height: 0.25rem;
+      border-radius: 50%;
+      background-color: #0087B3;
+  }
+
+  .improvementText {
+      width: 22rem;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+      color: #1F1F1F;
+      font-family: "Noto Serif JP";
+  }
+
+  /* 优化里的小标题 */
+  .improvementOutlineBox {
+      border: 0.06rem solid #0087B3;
+      border-radius: 0.13rem;
+      padding: 0.13rem 0.75rem;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+      color: #0087B3;
+  }
+
+  .improvementTitle {
+    font-size: 1.4rem;
+    color: #0087B3;
+    font-family: "Noto Serif JP";
+    display: inline-block;
+    margin:10vh auto 4.5vh 13vw; 
+    padding-bottom: 0.25rem; /* 文字与下划线之间的间距 */
+    border-bottom: 0.06rem solid #0087B3; /* 下划线 */
+    font-weight: 500;
+  }
+
+
+  /* 内部小标题 */
+  .innerTitle {
+    font-size: 1.4rem;
+    color: #0087B3;
+    font-family: "Noto Serif JP";
+    display: block;
+    margin: 4.5vh auto 4.5vh 15vw;
+    font-weight: 500;
+    position: relative; /* 为伪元素定位 */
+  }
+
+  .innerTitle::before {
+      content: '•'; /* 添加圆点 */
+      font-size: 1.4rem; /* 圆点大小与文字相同 */
+      color: #0087B3; /* 圆点颜色与文字相同 */
+      position: absolute;
+      left: -1.8rem; /* 圆点距离文字左侧的距离，可以根据需要调整 */
+      top: 0; /* 垂直方向居中 */
+  }
+  
+  /* 改前首页 */
+  .contrastSection {
+    display: flex;
+    justify-content: flex-start; /* 整个行居中 */
+    align-items: center; /* 垂直居中 */
+    margin:4vh auto 8vh 14vw;
+  }
+
+  .contrastSection2 {
+    display: flex;
+    justify-content: flex-start; /* 整个行居中 */
+    align-items: center; /* 垂直居中 */
+    margin:4vh auto 16vh 14vw;
+  }
+
+  .contrastLeft {
+      display: flex;
+      align-items: center;
+  }
+
+  .contrastText {
+      font-size: 1rem;
+      color: #515151;
+  }
+
+  .contrastText2 {
+    font-size: 1rem;
+    color: #bacc1c;
+  }
+
+  .contrastLine {
+      width: 6.8rem;
+      height: 0.06rem;
+      background-color: #515151;
+      margin-left: 0.38rem;
+      z-index: -1;
+  }
+
+  .contrastLine2 {
+    width: 6.8rem;
+    height: 0.06rem;
+    background-color: #D5E923;
+    margin-left: 0.38rem;
+    z-index: -1;
+  }
+
+  .contrastImage {
+      width: 24vw;
+      height: auto;
+      margin: 0 5vw 0 6vw;
+  }
+
+  .contrastImage2 {
+    width: 40vw;
+    height: auto;
+    margin: 0 3vw 0 -2vw;
+  }
+
+  .contrastRight {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+  }
+
+  .contrastTextBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  }
+
+  .contrastSubText {
+      font-size: 1rem;
+      background-color: #E8E8E8;
+      padding: 0.25rem 0.75rem; 
+      border-radius: 0.25rem; 
+  }
+
+  .contrastSubText2{
+    background-color: #D5E923;
+    padding: 0.25rem 0.75rem; 
+    border-radius: 0.25rem; 
+  }
+
+  .contrastDescription {
+      width: 25vw;
+      font-size: 1rem;
+  }
+
+   /* 轮播图 */
+   .imageSlider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 4vh;
+  }
+
+  .imageSlider-container {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .imageSlider-item {
+    position: absolute;
+    width: 52vw;
+    border-radius: 1.25rem;
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5);
+    transition: all 0.5s ease-in-out;
+    transform-origin: center;
+    filter: blur(0); /* 默认无模糊 */
+  }
+
+  /* 下层图片的模糊效果 */
+  .imageSlider-item.blur {
+      filter: blur(2px); /* 调整模糊程度 */
+  }
+
+  .imageSlider-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 1.25rem;
+  }
+
+  .imageSlider-text {
+      text-align: center;
+      margin-top: 20px;
+  }
+
+  .contrastTopText2{
+    margin: 2vh 0;
+  }
+
+  .imageSlider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .imageSlider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid #0087B3; /* 蓝色边框 */
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  .imageSlider-dot.active {
+      background-color: #0087B3; /* 蓝色填充 */
+  }
+
+  /* 轮播图箭头样式 */
+.imageSlider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 135, 179, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.imageSlider-arrow-left {
+  padding-right: 0.2rem; /* 左箭头向右微调 */
+  padding-bottom: 0.2rem;
+}
+.imageSlider-arrow-right {
+  padding-left: 0.2rem; /* 右箭头向左微调 */
+  padding-bottom: 0.2rem;
+}
+
+
+.imageSlider-arrow:hover {
+  background-color: rgba(0, 135, 179, 0.8);
+}
+
+.imageSlider-arrow-left {
+  left: 6vw;
+}
+
+.imageSlider-arrow-right {
+  right: 6vw;
+}
+
+/* 中小屏幕隐藏箭头 */
+@media (max-width: 1024px) {
+  .imageSlider-arrow {
+      display: none;
+  }
+}
+
+ 
+  
+    /* 总览 */
+    /* 最外层容器 */
+  .overviewContainer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  /* 主图片 */
+  .overviewMainImage {
+      width: 45vw;
+      height: auto;
+      z-index: 10; /* 确保主图片在最上层 */
+  }
+
+  /* 背景层 */
+  .overviewBackgroundLayer {
+      position: relative;
+      margin-top: -5rem; /* 背景与主图片稍微重叠 */
+      z-index: 5; /* 主图片在上面 */
+      overflow: hidden; /* 防止内容溢出影响容器的尺寸 */
+      height: auto; /* 高度根据背景图片自适应 */
+      background-image: url('./image/总览背景.png');
+      background-size: cover; /* 保持图片比例，覆盖整个容器 */
+  }
+
+  /* 背景图片 */
+  .overviewBackgroundImage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: -1; /* 背景图片放在所有内容的最底层 */
+      object-fit: cover;
+  }
+
+
+  .overviewBackgroundImage1{
+    display: none;
+  }
+
+  /* 三列图片容器 */
+  .overviewImageColumns {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem; /* 三列图片之间的间距调整为 3rem */
+      z-index: 7; /* 保证列图片位于背景上层，主图片下层 */
+      margin: 0 10vw;
+  }
+
+
+  /* 图片列通用样式 */
+  .overviewImageColumn img {
+      width: 24.5vw;
+      height: auto;
+  }
+
+  /* 第一列 (一张长图) */
+  .overviewFirstColumn img {
+      height: auto; /* 第一列是一张长图，高度自适应 */
+      margin: 20vh 0 0 6vw;
+  }
+
+  .image3 {
+    margin-top: 16vh; /* 调整上边距，值根据需要进行设置 */
+ }
+
+  /* 第二列 (四张图片) */
+  .overviewSecondColumn img {
+      margin-bottom: 3rem; /* 图片之间的距离 */
+  }
+
+  .image1 {
+      margin-top: 30vh; /* 调整上边距，值根据需要进行设置 */
+  }
+
+  /* 第三列 (三张图片) */
+  .overviewThirdColumn img {
+      margin-bottom: 3rem; /* 图片之间的距离 */
+  }
+
+  .image2 {
+      margin-top: 38vh; /* 调整上边距，值根据需要进行设置 */
+  }
+
+  /* 图片作为纯色背景层 */
+  .overviewOverlayLayer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto; /* 高度根据背景图片自适应 */
+      z-index: 8; /* 在图片列的下层，背景图片的上层 */
+      display: flex;
+      align-items: flex-end;
+  }
+
+  .overviewOverlayImage {
+      width: 100%;
+      height: auto;
+      object-fit: cover; /* 确保图片填充整个层 */
+  }
+
+      /* 其他项目 */
+      /* Other Project 部分 */
+    .other-project {
+      text-align: center; /* 标题居中 */
+    }
+
+    .mobileOtherProject{
+      display: none;
+    }
+
+    /* 图片容器 */
+    .image-container {
+      display: flex;
+    }
+
+    .otherimage {
+      display: flex; /* 将图片容器设为 flex 布局 */
+      justify-content: space-between; /* 图片之间保持一定的间距 */
+      margin:0 10vw;
+    }
+
+    .otherimage2 {
+      display: flex; /* 将图片容器设为 flex 布局 */
+      justify-content: space-between; /* 图片之间保持一定的间距 */
+      margin:0 10vw;
+    }
+
+    .otherimage3 {
+      display: flex; /* 将图片容器设为 flex 布局 */
+      justify-content: space-between; /* 图片之间保持一定的间距 */
+    }
+
+    .projectImage {
+      display: flex; /* 将图片容器设为 flex 布局 */
+      justify-content: space-between; /* 图片之间保持一定的间距 */
+    }
+
+
+    /* 图片盒子 */
+    .image-box {
+      position: relative; /* 为蒙版定位做准备 */
+      width: 49%; /* 每个图片占容器的45% */
+      margin: 0.5rem auto; /* 两个图片之间保持一定的间距 */
+    }
+
+    /* 图片样式 */
+    .project-image {
+      width: 100%; /* 图片宽度自适应 */
+      height: auto;
+      display: block; /* 去除图片底部空隙 */
+    }
+
+    /* 图片蒙版样式 */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7); /* 黑色半透明蒙版 */
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: opacity 0.3s ease; /* 蒙版淡入淡出效果 */
+    }
+
+    /* 图片悬浮时蒙版显示 */
+    .image-box:hover .overlay {
+      opacity: 1;
+    }
+
+    /* 标签文字样式 */
+    .label1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #774CE8;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 0 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .label2 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #65A30D;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 0 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .label3 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #F5B038;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 0 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .label4 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #B362FF;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 0 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* 蒙版中的大标题样式 */
+    .overlay-title {
+      font-size: 1.6rem;
+      color: white;
+      margin: 0 0 0 0;
+      font-family:Roboto;
+      font-weight: 500;
+    }
+
+    .overlay-title2{
+      font-size: 1.6rem;
+      color: white;
+      margin: 0 0 0 0;
+      font-family:Noto Serif JP ;
+      font-weight: 600;
+    }
+
+    .overlay-title3{
+      font-size: 1.6rem;
+      color: white;
+      margin: 0 0 0 0;
+      font-family:Microsoft YaHei;
+      font-weight: 500;
+    }
+
+    /* 蒙版中的段落文字样式 */
+    .overlay-description {
+      font-size: 1.2rem;
+      color: white;
+      margin:2rem 2rem;
+      max-width:35rem ;
+      font-weight: 400;
+      font-family:Noto Serif JP ;
+    }
+
+    /* 蒙版中的段落文字样式 */
+    .overlay-description2 {
+      font-size: 1.2rem;
+      color: white;
+      margin:2rem 2rem;
+      max-width:30rem ;
+      font-family: Roboto;
+    }
+
+    /* 按钮样式 */
+    .overlay-btn1 {
+      background-color: #774CE8;
+      color: white;
+      padding: 0.5rem 4rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .overlay-btn2 {
+      background-color: #65A30D;
+      color: white;
+      padding: 0.5rem 4rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .overlay-btn3 {
+      background-color: #F5B038;
+      color: white;
+      padding: 0.5rem 4rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .overlay-btn4 {
+      background-color: #B362FF;
+      color: white;
+      padding: 0.5rem 4rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .overlay-btn5 {
+      background-color: #a3a3a3;
+      color: white;
+      padding: 0.5rem 4rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .overlay-btn1:hover {
+      background-color: transparent; /* 背景变透明 */
+      outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+
+    .overlay-btn2:hover {
+      background-color: transparent; /* 背景变透明 */
+      outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+
+    .overlay-btn3:hover {
+      background-color: transparent; /* 背景变透明 */
+      outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+
+    .overlay-btn4:hover {
+      background-color: transparent; /* 背景变透明 */
+      outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+    .overlay-btn5:hover {
+      background-color: transparent; /* 背景变透明 */
+      outline: 3px solid#FFF; /* 悬浮时添加边框 */
+    }
+
+    /* 底部样式 */
+    .footer {
+      background-color: rgb(31, 31, 31); /* 页脚背景颜色 */
+      padding: 2rem 0; /* 内边距 */
+      text-align: center; /* 居中对齐 */
+      font-size: 1.2rem; /* 字体大小 */
+      color: #fff; /* 文字颜色 */
+      position: relative;
+      width: 100%;
+    }
+
+    .footer p {
+      margin: 0; /* 去掉默认的段落间距 */
+    }
+
+
+
+    @media (max-width:1024px) {
+      .mainTitle{
+        margin: 8vh auto 4vh 6vw;
+      }
+       
+      .textBlocksContainer{
+        padding: 0 7vw;
+      }
+
+      .textBlocksContainer .textBlock{
+        width:16rem;
+        height: auto;
+        padding: 1.5rem 1.5rem;
+      }
+
+      .colorSection{
+        margin: 4vh 10vw 0 13vw;
+      }
+
+      .improvementBlock{
+        margin-left: 7vw;
+        margin-right: 6vw;
+        width: auto;
+      }
+
+      .improvementKeyword{
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+      }
+
+      .improvementDots::before,
+      .improvementDots::after,
+      .improvementDots span {
+          width: 0.1rem; /* 圆点直径 */
+          height: 0.1rem;
+      }
+
+      .improvementText{
+        width: 18rem;
+        font-size: 0.8rem;
+      }
+
+      .improvementOutlineBox{
+        font-size: 0.8rem;
+        padding: 0.13rem 0.5rem;
+        margin-left: 1rem;
+      }
+
+      .improvementDots{
+        gap:0.4rem;
+        margin-left: 1rem;
+      }
+
+      .improvementTitle{
+        margin: 4vh auto 4vh 7vw;
+      }
+
+      .innerTitle{
+        margin: 0 auto 4vh 10vw;
+      }
+
+      .contrastSection{
+        margin:4vh auto 8vh 8vw;
+      }
+
+      .contrastSection2{
+        margin: 4vh auto 8vh 8vw;
+      }
+
+      .contrastText{
+        font-size: 0.8rem;
+      }
+
+      .contrastTextBlock{
+        gap:0.25rem;
+      }
+
+      .contrastSubText{
+        font-size: 0.8rem;
+      }
+
+      .contrastDescription{
+        font-size: 0.8rem;
+        width: 28vw;
+      }
+
+      .imageSlider{
+        height: 32vh;
+      }
+
+      .contrastTopText2{
+        margin: 0 0 2vh 0 ;
+      }
+
+      .imageSlider-text{
+        max-width: 60vw;
+      }
+
+      .overviewFirstColumn img{
+        margin:8vh 0 0 6vw;
+      }
+
+      .image1{
+        margin-top: 13vh;
+      }
+
+      .image2{
+        margin-top: 11vh;
+      }
+
+      .image3{
+        margin-top: 7vh;
+      }
+
+   }
+
+
+    @media (max-width: 768px) {
+      html{
+        line-height:1.4rem;
+      }
+      
+    
+      .header {
+        padding: 3vh 6vw 1vh;
+      }
+    
+      .logo img {
+        width: 3rem; /* logo 的宽度 */
+        height: auto;
+        padding-top: 0;
+      }
+
+      .mainTitle{
+        margin: 4vh auto 2vh 6vw;
+      }
+
+      .mainTitle .number{
+        font-size: 1.6rem;
+      }
+
+      .mainTitle .text{
+        font-size: 1.2rem;
+        top:0.5em;
+        left:0.8em;
+      }
+
+      .mainTitle .subText{
+        font-size: 1rem;
+      }
+
+      .firstTextContainer{
+        padding: 0 11vw;
+      }
+
+      .firstTextLine{
+        font-size: 0.8rem;
+      }
+
+      .icon-modules{
+        margin:2vh 8vw 2vh 11vw ;
+        justify-content: center; /* 每行水平居中 */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* 模块之间的间距，可根据需要调整 */
+      }
+      
+      .icon-module {
+        display: flex;
+        justify-content: flex-start; /* 每列元素左对齐 */
+        width: calc(50% - 10px); /* 每行两个模块，减去间距的一半 */
+      }
+    
+       /* 图标样式 */
+       .icon {
+        width: 1.2rem; /* 38px */
+        height: auto;
+        margin-right: 0.3rem; /* 图标和文字之间的距离 */
+        margin-top: 0.2rem;
+      }
+    
+       /* 模块内文字样式 */
+       .module-text .title {
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin-bottom: 0.3rem; /* 增加标题和副标题之间的间距 */
+    
+      }
+    
+      .module-text .title::after {
+        bottom: -0.1rem; /* 调整下划线与文字的距离 */
+        width: 1.5rem; /* 自定义下划线长度，可以调整为任意百分比或固定值 */
+        height: 1px; /* 下划线的厚度 */
+      }
+    
+      .module-text .subtitle {
+        font-size: 0.8rem;
+        font-family: Roboto;
+      }
+
+      .module-text .subtitle2{
+        font-size: 0.8rem;
+      }
+
+      .textBlocksContainer{
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .textBlocksContainer .textBlock{
+        margin: 2vh;
+      }
+
+      .textBlocksContainer .textBlock .textContent .title{
+        font-size: 1rem;
+      }
+
+      .textBlocksContainer .textBlock .textContent .paragraph{
+        font-size: 0.8rem;
+      }
+
+      .colorSection{
+        margin: 4vh 6vw 2vh 11vw;
+        flex-direction: column;
+        gap:1rem;
+      }
+
+      .colorSquare{
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .colorCode{
+        font-size: 0.8rem;
+      }
+
+      .colorDescriptionTextTop{
+        font-size: 0.8rem;
+      }
+
+      .keyword{
+        font-size: 0.8rem;
+      }
+
+      .keywordBox{
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+      }
+
+      .keywordSection{
+        margin-top: 1rem;
+      }
+
+      .colorSquare2{
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .keywordBox2{
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+      }
+
+      .colorSquare3{
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .keywordBox3{
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+      }
+
+      .colorBlock2{
+        flex-direction: row;
+      }
+
+      .colorSquare4{
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .colorSquare5{
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .colorSquare6{
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .keywordBox4{
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.6rem;
+      }
+
+      .keywordBox5{
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.6rem;
+      }
+
+      .keywordBox6{
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.6rem;
+      }
+
+      .thirdImageContainer{
+        margin-bottom: 2vh;
+      }
+
+      .improvementRow{
+        flex-direction: column;
+        align-items: flex-start;
+        gap:0.8rem;
+        margin: 2rem 0;
+        width: 20rem;
+      }
+
+      .improvementDots{
+        display: none;
+      }
+
+      .improvementText{
+        margin-left: 0;
+      }
+
+      .improvementOutlineBox{
+        margin-left: 0;
+      }
+
+      .improvementTopSection{
+        font-size: 0.8rem;
+      }
+
+      .improvementBlock{
+        padding: 1rem ;
+        border-radius:0.75rem;
+      }
+
+      .improvementTitle{
+        font-size: 1rem;
+        margin: 4vh auto 2vh 7vw;
+      }
+
+      .innerTitle{
+        font-size: 0.8rem;
+      }
+
+      .innerTitle::before{
+        font-size: 0.8rem;
+        left: -0.5rem;
+      }
+
+      .contrastSection{
+        flex-direction: column;
+        align-items: flex-start;
+        gap:1rem;
+      }
+
+      .contrastLine{
+        display: none;
+      }
+
+      .contrastImage{
+        width: 50vw;
+        margin: 0;
+      }
+
+      .contrastDescription{
+        width: 70vw;
+      }
+
+      .contrastRight{
+        gap:1rem;
+      }
+
+      .contrastSection2{
+        flex-direction: column;
+        align-items: flex-start;
+        gap:1rem;
+        margin:4vh auto 4vh 8vw;
+      }
+
+      .contrastSection{
+        margin:4vh auto 2vh 8vw;
+      }
+
+      .contrastLine2{
+        display: none;
+      }
+
+      .contrastText2{
+        font-size: 0.8rem;
+      }
+
+      .contrastImage2{
+        width: 75vw;
+      }
+
+      .contrastSubText2{
+        font-size: 0.8rem;
+      }
+
+      .imageSlider{
+        height: 60vh;
+      }
+
+      .imageSlider-item{
+        border-radius:0.5rem;
+      }
+
+      .imageSlider-dot{
+        width: 0.3rem;
+        height: 0.3rem;
+        border: 0.1rem  solid #0087B3; 
+      }
+
+      .imageSlider-text{
+        font-size: 0.8rem;
+      }
+
+      .overviewImageColumn img{
+        width: 20vw;
+        margin-bottom: 0.5rem;
+      }
+
+      .overviewImageColumns{
+        gap:1rem;
+        padding: 0 1rem;
+      }
+
+      .other-project{
+        display: none;
+      }
+    
+      .mobileOtherProject{
+        display: block;
+      }
+    
+      .mobile-layout {
+        display: flex; /* 使用 flex 布局 */
+        flex-direction: column; /* 垂直排列 */
+        align-items: center; /* 内容居中 */
+        justify-content: center; /* 内容居中 */
+        text-align: center; /* 文字居中 */
+         /*background-color: #E7E2F4; 背景色 */
+      }
+    
+      .mobile-layout img {
+        width: 100%; /* 图片宽度占满容器 */
+        height: auto; /* 高度自适应 */
+      }
+    
+      .mobile-layout .button {
+        display: inline-block;
+        background-color: #ffff;
+        text-decoration: none; 
+        font-size: 0.8rem;
+        transition: background-color 0.3s ease;
+        font-family: 'Roboto'; 
+        font-weight: 400;
+        border-radius: 999rem; /* 圆角设置为两边圆弧 */
+        text-align: center; /* 设置按钮内文字水平居中 */
+        padding: 0.2rem 3rem; 
+        width: auto;
+        margin: 2vh auto; 
+        color: #1F1F1F;
+      }
+    
+      .mobile-layout .button:hover {
+        background-color: transparent; /* 悬浮时背景色透明 */
+        color: rgb(31, 31, 31); /* 保持文字颜色 */
+        outline: 2px solid#FFF; /* 悬浮时添加边框 */
+      }
+    
+      .bg-color-1 {
+        background-color: #E7E2F4; /* 背景色 1 */
+      }
+      
+      .bg-color-2 {
+        background-color: #E7E2F4; /* 背景色 2 */
+      }
+    
+      .bg-color-3 {
+        background-color: #F8EDDB; /* 背景色 2 */
+      }
+    
+      .bg-color-4 {
+        background-color: #F5F5F5; /* 背景色 2 */
+      }
+    
+      .bg-color-5 {
+        background-color: #EFF9E1; /* 背景色 2 */
+      }
+    
+      .footer{
+        font-size: 0.7rem;
+        padding: 0.8rem 0; /* 内边距 */
+      }
+
+      .overviewBackgroundLayer{
+        margin-top: -2rem;
+      }
+
+      .image3{
+        margin-top: 7vh;
+      }
+
+      .image1{
+        margin-top: 8vh;
+      }
+
+      .image2{
+        margin-top: 10vh;
+      }
+
+      .overviewImageColumns{
+        margin: 0 ;
+      }
+
+      .overviewImageColumn img{
+        width: 28vw;
+      }
+
+      .overviewBackgroundImage1 {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: -1; /* 背景图片放在所有内容的最底层 */
+        object-fit: cover;
+      }
+
+      .overviewBackgroundImage{
+      display: none;
+      }
+  
+
+
+    
+
+
+
+
+   }
+
+
+
+
+
+
+
+  
+
+
+    
+
+
+
+
