@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./yimiyihuo.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_1234567_xxx.css">
+    <!-- 网站 logo -->
+    <link id="favicon" rel="icon" type="image/png" data-src="https://i.imgur.com/yy6ipds.png" data-fallback="https://pic1.imgdb.cn/item/67f0adf60ba3d5a1d7ed93c2.png" href="https://i.imgur.com/yy6ipds.png">
 
   </head>
 
@@ -260,12 +262,12 @@
 
             <section class="surveyResults2">
            
-                <img data-src="https://i.imgur.com/HjjFIT0.png"
-              data-fallback="https://pic1.imgdb.cn/item/67eccaa40ba3d5a1d7e9f828.png"
+                <img data-src="https://i.imgur.com/ELDMzDw.png"
+              data-fallback="https://pic1.imgdb.cn/item/67f0ce2e0ba3d5a1d7eda280.png"
               alt="image" class="surveyImage"/>
          
-                <img data-src="https://i.imgur.com/7awsb4w.png"
-              data-fallback="https://pic1.imgdb.cn/item/67eccaa40ba3d5a1d7e9f827.png"
+                <img data-src="https://i.imgur.com/RsBYTRB.png"
+              data-fallback="https://pic1.imgdb.cn/item/67f0ce2e0ba3d5a1d7eda281.png"
               alt="image" class="surveyImage"/>
             </section>
 
@@ -581,7 +583,27 @@
           });
         }
       
-        window.addEventListener("load", checkAndReplaceImages);
+        // 新增的 favicon 切换函数
+        function switchFavicon() {
+          const favicon = document.getElementById('favicon');
+          if (!favicon) return;
+      
+          let testImg = new Image();
+          testImg.src = favicon.dataset.src;
+      
+          testImg.onload = function () {
+            favicon.href = favicon.dataset.src;
+          };
+      
+          testImg.onerror = function () {
+            favicon.href = favicon.dataset.fallback;
+          };
+        }
+      
+        window.addEventListener("load", function () {
+          checkAndReplaceImages();
+          switchFavicon(); // 加载完成后也切换 favicon
+        });
       </script>
 
   </body>

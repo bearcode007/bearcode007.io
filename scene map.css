@@ -693,7 +693,7 @@
 .userTestContainer {
   display: flex; /* 使用 Flexbox 布局 */
   align-items: center; /* 垂直居中 */
-  justify-content: ce; /* 水平居中 */
+  justify-content: center; /* 水平居中 */
   width: 100%; /* 宽度填满父容器 */
   margin: 16vh 0 0 0; /* 水平居中 */
 }
@@ -701,7 +701,7 @@
 .userTestContainer1 {
   display: flex; /* 使用 Flexbox 布局 */
   align-items: center; /* 垂直居中 */
-  justify-content: ce; /* 水平居中 */
+  justify-content: center; /* 水平居中 */
   width: 100%; /* 宽度填满父容器 */
   margin: 12vh 0 12vh 0; /* 水平居中 */
 }
@@ -709,12 +709,15 @@
 .userTestContainer2 {
   display: flex; /* 使用 Flexbox 布局 */
   align-items: center; /* 垂直居中 */
-  justify-content: ce; /* 水平居中 */
+  justify-content: center; /* 水平居中 */
   width: 100%; /* 宽度填满父容器 */
   margin: 0 0 16vh 0; /* 水平居中 */
 }
 
-
+.userTestImage{
+  display: flex;
+  align-items:flex-start;
+}
 
 /* 图片样式 */
 .testImage {
@@ -1050,7 +1053,7 @@
  .overlay-btn1 {
   background-color: #0087B3;
   color: white;
-  padding: 0.5rem 4rem;
+  padding: 0.25rem 4rem;
   border: none;
   font-size: 1rem;
   cursor: pointer;
@@ -1063,7 +1066,7 @@
 .overlay-btn2 {
   background-color: #65A30D;
   color: white;
-  padding: 0.5rem 4rem;
+  padding: 0.25rem 4rem;
   border: none;
   font-size: 1rem;
   cursor: pointer;
@@ -1076,7 +1079,7 @@
 .overlay-btn3 {
   background-color: #F5B038;
   color: white;
-  padding: 0.5rem 4rem;
+  padding: 0.25rem 4rem;
   border: none;
   font-size: 1rem;
   cursor: pointer;
@@ -1089,7 +1092,7 @@
 .overlay-btn4 {
   background-color: #B362FF;
   color: white;
-  padding: 0.5rem 4rem;
+  padding: 0.25rem 4rem;
   border: none;
   font-size: 1rem;
   cursor: pointer;
@@ -1102,7 +1105,7 @@
 .overlay-btn5 {
   background-color: #a3a3a3;
   color: white;
-  padding: 0.5rem 4rem;
+  padding: 0.25rem 4rem;
   border: none;
   font-size: 1rem;
   cursor: pointer;
@@ -1278,11 +1281,11 @@
    /* 介绍文本样式 */
    .intro-text {
     font-size: 1rem; /* 可调整大小 */
-    margin: 2vh 8vw 4vh 8vw;
+    margin: 2vh 16vw 4vh 16vw;
   }
 
   .icon-modules{
-    margin:2vh 8vw 2vh 16vw ;
+    margin:2vh 8vw 2vh 11vw ;
     justify-content: center; /* 每行水平居中 */
       display: flex;
       flex-wrap: wrap;
@@ -1429,13 +1432,15 @@
   /* 容器样式 */
   .two-blocks {
     display: flex; /* 使用flex布局 */
-    justify-content: space-between; /* 让两个块在容器内左右分布 */
-    margin: 1vh 4vw 0 4vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vh 4vw 0 4vw;
+    gap:1rem;
   }
 
   /* 每个块的基本样式 */
   .block {
-    width: 49%; /* 每个块的宽度占容器的48%，中间留一点空隙 */
+    width: 90%; /* 每个块的宽度占容器的48%，中间留一点空隙 */
     height: auto;
     background-color: #774CE8; /* 背景色紫色 */
     border-radius: 10px; /* 圆角效果 */
@@ -1505,21 +1510,22 @@
   }
 
   .image-item {
-    text-align: left; /* 文字与图片左对齐 */
-    width: 24vw;
+    text-align: center; /* 文字与图片左对齐 */
+    width: 60vw;
     height: auto;
   }
 
   .image {
-    width: 17vw; 
+    width: 50vw; 
     height: auto; /* 图片高度自适应 */
   }
 
   .image-subtitle {
     font-size: 1rem; /* 小标题的字体大小 */
     font-weight: 600; 
-    text-align: justify; /* 小标题文字两端对齐 */
+    text-align: center; /* 小标题文字两端对齐 */
     line-height: 1.2rem;
+    margin-top: 1vh;
   }
 
   .image-caption {
@@ -1528,6 +1534,7 @@
     text-align: justify; /* 段落文字两端对齐 */
     margin-top: 1vh; /* 文字和小标题之间的间距 */
     line-height: 1.2rem;
+    margin-bottom: 4vh;
   }
 
   .sub-title{
@@ -1658,6 +1665,7 @@
     padding: 0.2rem 3rem; 
     width: auto;
     margin: 2vh auto; 
+    color:#1F1F1F; ;
   }
 
   .mobile-layout .button:hover {
@@ -1765,7 +1773,26 @@
   }
 
   .otherimage2{
-    margin: 0 6vw 6vh 6vw;
+    margin: 0 2vw 6vh 2vw;
+  }
+
+  .otherimage{
+    margin: 0 3vw;
+  }
+
+  .otherimage3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .handImageFive1{
+    width: 160vw;
+    margin-left: -30vw;
+  }
+
+  .finaldesign1{
+    margin: 0 6vw;
   }
 
 

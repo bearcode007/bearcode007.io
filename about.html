@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./about.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_1234567_xxx.css">
+    <!-- 网站 logo -->
+    <link id="favicon" rel="icon" type="image/png" data-src="https://i.imgur.com/yy6ipds.png" data-fallback="https://pic1.imgdb.cn/item/67f0adf60ba3d5a1d7ed93c2.png" href="https://i.imgur.com/yy6ipds.png">
 
   </head>
 
@@ -145,7 +147,7 @@
               </section>
 
               <section class="centeredTextSection">
-                <p class="centeredText">UI/UXデザインの新人で、GoogleのUIデザインコースを修了し、3つのプロジェクトを独立して完成させました。フリーランスとして、中国のECアプリと日本の不動産会社のウェブデザインに携わりました。私のデザイン理念は、ユーザーに親しみやすさと使いやすさを提供することです。</p>
+                <p class="centeredText">UI/UXデザインの新人で、GoogleのUXデザインコースを修了し、3つのプロジェクトを独立して完成させました。フリーランスとして、中国のECアプリと日本の不動産会社のウェブデザインに携わりました。私のデザイン理念は、ユーザーに親しみやすさと使いやすさを提供することです。</p>
                 <p class="centeredText">以前はグラフィックデザインや児童向けストーリーの脚本制作に従事し、ユーザーニーズを深く理解しています。趣味は手芸、絵画、サイクリングで、これらの経験がデザインにおける細部と創造性を重視する姿勢につながっています。</p>
                 <p class="centeredText">現在、成長できるデザインポジションを探しており、デザインを通じてユーザーにより良い体験を提供できることを楽しみにしています。</p>
               </section>
@@ -351,7 +353,27 @@
           });
         }
       
-        window.addEventListener("load", checkAndReplaceImages);
+        // 新增的 favicon 切换函数
+        function switchFavicon() {
+          const favicon = document.getElementById('favicon');
+          if (!favicon) return;
+      
+          let testImg = new Image();
+          testImg.src = favicon.dataset.src;
+      
+          testImg.onload = function () {
+            favicon.href = favicon.dataset.src;
+          };
+      
+          testImg.onerror = function () {
+            favicon.href = favicon.dataset.fallback;
+          };
+        }
+      
+        window.addEventListener("load", function () {
+          checkAndReplaceImages();
+          switchFavicon(); // 加载完成后也切换 favicon
+        });
       </script>
 
   </body>

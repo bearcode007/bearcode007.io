@@ -773,10 +773,22 @@
 
     /* 图片容器 */
     .image-container {
-      width: 60vw; /* 图片宽度 */
+      width: 80vw; /* 图片宽度 */
       height: auto; /* 高度自适应 */
-      margin: 0 auto 0vh 20vw; /* 上边距 17vh，水平居中 */
+      margin: 2vh auto 0vh 10vw; /* 上边距 17vh，水平居中 */
       position: relative; /* 相对定位，用于内部文字的绝对定位 */
     }
+
+    .button{
+      font-size: 0.8rem;
+      color: #1F1F1F;
+      padding: 0.2rem 3rem; 
+      margin: 2vh auto; 
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-family: 'Roboto'; 
+      font-weight: 400;
+    }
+  
 
 }

@@ -138,6 +138,7 @@
 
 }
 
+
 /* 小屏幕下显示汉堡按钮 */
 @media screen and (max-width: 768px) {
   .hamburger-menu {
@@ -553,7 +554,7 @@
     
     /* 图片样式 */
     .insightImage {
-        width: 33vw; /* 宽度为33vw */
+        width: 50vw; /* 宽度为33vw */
         height: auto; /* 高度自适应，保持图片比例 */
     }
 
@@ -872,7 +873,7 @@
     .overlay-btn1 {
         background-color: #774CE8;
         color: white;
-        padding: 0.5rem 4rem;
+        padding: 0.25rem 4rem;
         border: none;
         font-size: 1rem;
         cursor: pointer;
@@ -885,7 +886,7 @@
     .overlay-btn2 {
       background-color: #0087B3;
       color: white;
-      padding: 0.5rem 4rem;
+      padding: 0.25rem 4rem;
       border: none;
       font-size: 1rem;
       cursor: pointer;
@@ -898,7 +899,7 @@
   .overlay-btn3 {
     background-color: #65A30D;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -911,7 +912,7 @@
   .overlay-btn4 {
     background-color: #B362FF;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -924,7 +925,7 @@
   .overlay-btn5 {
     background-color: #a3a3a3;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -972,6 +973,23 @@
     
     .footer p {
         margin: 0; /* 去掉默认的段落间距 */
+    }
+
+    @media (max-width: 1400px) {
+      .goalBlock{
+        height: 20vh;
+      }
+      
+      .goalBlock p{
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+
+      .surveyImage{
+        width: 40vw;
+      }
+
+
     }
 
     @media (max-width: 768px) {
@@ -1099,6 +1117,7 @@
 
           .firstTextContainer1{
             margin-bottom: 8vh;
+            padding: 0 12vw;
           }
 
           .firstTextContainer{
@@ -1113,7 +1132,7 @@
           }
 
           .surveyImage{
-            width: 70vw;
+            width: 90vw;
           }
 
           .surveyResults1{
@@ -1133,11 +1152,11 @@
           }
 
           .insightImage{
-            width: 70vw;
+            width: 95vw;
           }
 
           .solutionImage{
-            width: 90vw;
+            width: 95vw;
           }
 
           .solution{
@@ -1180,7 +1199,7 @@
           }
 
           .wireframeFourImagesSection{
-            margin: 4vh 10vw;
+            margin: 4vh 6vw;
           }
 
           .mobileOtherProject{
@@ -1260,6 +1279,10 @@
 
           .tiaozhanTitle::before{
             display: none;
+          }
+
+          .wireframeFourImage{
+            width: 18vw;
           }
 
     }

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./laonian.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_1234567_xxx.css">
+    <!-- 网站 logo -->
+    <link id="favicon" rel="icon" type="image/png" data-src="https://i.imgur.com/yy6ipds.png" data-fallback="https://pic1.imgdb.cn/item/67f0adf60ba3d5a1d7ed93c2.png" href="https://i.imgur.com/yy6ipds.png">
 
   </head>
 
@@ -244,8 +246,8 @@
                     </div> -->
                     <!-- 图片 -->
            
-                    <img data-src="https://i.imgur.com/RBHziWZ.png"
-              data-fallback="https://pic1.imgdb.cn/item/67ecc15c0ba3d5a1d7e9f4d7.png"
+                    <img data-src="https://i.imgur.com/kMJCzuN.png"
+              data-fallback="https://pic1.imgdb.cn/item/67f0c8e50ba3d5a1d7eda03e.png"
               alt="Image" class="problemLeftImage"/>
                 </div>
             </div>
@@ -571,7 +573,7 @@
         
         <!-- 流程文字部分 -->
         <section class="userFlowTextSection1">
-            <p class="userFlowText">次回もその友達と一緒に参加したいです</p>
+            <p class="userFlowText">次回も友達と一緒に参加したいです</p>
         </section>
 
          <!-- 通用小标题4 -->
@@ -619,7 +621,7 @@
             data-fallback="https://pic1.imgdb.cn/item/67ecc3b10ba3d5a1d7e9f571.png"
             alt="Image" class="wireframeFourImage"/>
             
-            <img data-src="https://i.imgur.com/nJP9hSE.png"
+            <img data-src="https://i.imgur.com/BPPbO4a.png"
             data-fallback="https://pic1.imgdb.cn/item/67ecc3b10ba3d5a1d7e9f572.png"
             alt="Image" class="wireframeFourImage"/>
           
@@ -922,7 +924,27 @@
           });
         }
       
-        window.addEventListener("load", checkAndReplaceImages);
+        // 新增的 favicon 切换函数
+        function switchFavicon() {
+          const favicon = document.getElementById('favicon');
+          if (!favicon) return;
+      
+          let testImg = new Image();
+          testImg.src = favicon.dataset.src;
+      
+          testImg.onload = function () {
+            favicon.href = favicon.dataset.src;
+          };
+      
+          testImg.onerror = function () {
+            favicon.href = favicon.dataset.fallback;
+          };
+        }
+      
+        window.addEventListener("load", function () {
+          checkAndReplaceImages();
+          switchFavicon(); // 加载完成后也切换 favicon
+        });
       </script>
 
   </body>

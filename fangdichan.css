@@ -360,7 +360,7 @@
   .firstTextContainer {
     width: 100%; /* 容器宽度占满整个屏幕 */
     padding: 0 13vw ; /* 左右各留 5% 视口宽度的间距 */
-    margin-bottom: 4vh;
+    margin-bottom: 6vh;
   }
 
   /* 文本行样式 */
@@ -1006,7 +1006,7 @@
 }
 
 /* 中小屏幕隐藏箭头 */
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
   .imageSlider-arrow {
       display: none;
   }
@@ -1482,6 +1482,7 @@
 
       .imageSlider{
         height: 32vh;
+        margin-top: 0;
       }
 
       .contrastTopText2{
@@ -1547,10 +1548,11 @@
 
       .firstTextContainer{
         padding: 0 11vw;
+        margin-bottom: 4vh;
       }
 
       .firstTextLine{
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
 
       .icon-modules{
@@ -1807,6 +1809,7 @@
 
       .imageSlider-item{
         border-radius:0.5rem;
+        width: 75vw;
       }
 
       .imageSlider-dot{
@@ -1936,12 +1939,34 @@
       .overviewBackgroundImage{
       display: none;
       }
+
+      .background-container {
+       aspect-ratio: 16/14;
+      }
+
+      .backgroundImage{
+        width: 65vw;
+      }
   
+      .secondImageContainer img{
+        width: 80vw;
+      }
 
+      .thirdImageContainer img{
+        width: 90vw;
+      }
 
-    
+      .improvementTopSection h2{
+        font-size: 1rem;
+      }
 
+      .imageSlider-container {
+        height: 25vh;
+    }
 
+    .overviewMainImage {
+      width: 70vw;
+    }
 
 
    }

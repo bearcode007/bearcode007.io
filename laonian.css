@@ -1354,7 +1354,7 @@
    .overlay-btn1 {
     background-color: #774CE8;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -1367,7 +1367,7 @@
   .overlay-btn2 {
     background-color: #0087B3;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -1380,7 +1380,7 @@
   .overlay-btn3 {
     background-color: #F5B038;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -1393,7 +1393,7 @@
   .overlay-btn4 {
     background-color: #B362FF;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -1406,7 +1406,7 @@
   .overlay-btn5 {
     background-color: #a3a3a3;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -1680,15 +1680,21 @@
       .mapTextSubItem{
         font-size: 0.6rem;
         width: 26vw;
+        padding-left: 0.8rem;
       }
 
       .mapTextSubItem1{
         font-size: 0.6rem;
         width: 26vw;
+        padding-left: 0.8rem;
+      }
+
+      .mapTextSubItem1::before{
+        top:0.6rem;
       }
 
       .mapImage{
-        width: 80vw;
+        width: 90vw;
       }
 
       .commonTitleSection2{
@@ -1735,7 +1741,11 @@
       }
 
       .wireframeFourImagesSection{
-        margin: 4vh 10vw;
+        margin: 4vh 6vw;
+      }
+
+      .wireframeFourImage{
+        width: 18vw;
       }
 
       .prototypeSecondRow{
@@ -1883,7 +1893,11 @@
       }
 
       .chart-container{
-        margin: 8vh ;
+        margin: 8vh 10vw ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
       }
 
       .footer-text {
@@ -1908,7 +1922,7 @@
       }
 
       .mapCenteredText{
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
 
       .commonTitleText3{
@@ -1919,8 +1933,40 @@
       .firstTextContainer {
         padding: 0 16vw ; /* 左右各留 5% 视口宽度的间距 */
         margin:4vh auto ;
-    }
+      }
 
+      .mapTextSubItem::before{
+        top:0.6rem;
+      }
+
+      .commonTitleSection3 {
+        margin: 0vh 0 4vh 0 ; /* 上下边距，可根据需要调整 */
+      }
+
+      .prototypeFirstRowImage{
+        width: 60vw;
+      }
+
+      .prototypeLeftImage{
+        width: 50vw;
+      }
+
+      .prototypeRightImage{
+        width: 35vw;
+      }
+
+      .prototypeSecondRow{
+        margin-top: -10vh;
+        gap:6vw
+      }
+
+      .finaldesign1{
+        margin: 0 6vw;
+      }
+
+      .fansiImage{
+        width: 100%;
+      }
  
 
 

@@ -1051,6 +1051,14 @@
         margin: 0; /* 去掉默认的段落间距 */
     }
 
+
+    @media (max-width: 1400px) {
+      .firstTextContainer1{
+        padding: 0 6vw;
+      }
+
+    }
+
     @media (max-width: 768px) {
       html{
         line-height:1.4rem;
@@ -1129,7 +1137,7 @@
         }
 
         .backgroundImage{
-          width: 40vw;
+          width: 65vw;
         }
 
         .commonTitleSection{
@@ -1187,10 +1195,11 @@
         .surveyResults2{
           flex-direction: column;
           padding: 0;
+          gap:4vh;
         }
 
         .surveyImage{
-          width: 65vw;
+          width: 90vw;
         }
 
         .researchGoals{
@@ -1238,6 +1247,11 @@
          margin-bottom: 4vh;
         }
 
+        .firstTextContainer{
+          padding: 0 16vw;
+          margin: 4vh 0;
+        }
+
         .firstTextContainer1{
           width: 100%;
           padding: 0 5vw;
@@ -1245,7 +1259,7 @@
         }
 
         .prototypeImage{
-          width: 60vw;
+          width: 80vw;
           border-radius: 0.25rem;
         }
 
@@ -1348,7 +1362,7 @@
         }
 
         .tiaozhanTitle::before{
-          font-size: 1rem;
+          display: none;
         }
 
         .personaImageText{
@@ -1363,6 +1377,14 @@
           padding-bottom: 1rem;
           height: auto;
           border-radius:0.5rem;
+        }
+
+        .background-container{
+          aspect-ratio:16/14;
+        }
+
+        .firstPrototypeImage{
+          width: 65vw;
         }
 
       }

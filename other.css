@@ -871,7 +871,7 @@
    .overlay-btn1 {
     background-color: #774CE8;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -884,7 +884,7 @@
   .overlay-btn2 {
     background-color: #0087B3;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -897,7 +897,7 @@
   .overlay-btn3 {
     background-color: #65A30D;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -910,7 +910,7 @@
   .overlay-btn4 {
     background-color: #F5B038;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -923,7 +923,7 @@
   .overlay-btn5 {
     background-color: #B362FF;
     color: white;
-    padding: 0.5rem 4rem;
+    padding: 0.25rem 4rem;
     border: none;
     font-size: 1rem;
     cursor: pointer;
@@ -1253,6 +1253,7 @@
             padding: 0.2rem 3rem; 
             width: auto;
             margin: 2vh auto; 
+            color: #1F1F1F;
           }
         
           .mobile-layout .button:hover {
